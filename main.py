@@ -7,8 +7,8 @@ if __name__ == "__main__":
     try:
         shutdown_signal = Event()
         sniffing_active = Event()
-        menu = Menu()
         sniffer = Sniffer(sniffing_active, shutdown_signal)
+        menu = Menu(sniffer)
         menu_thread = Thread(target=menu.main_menu)
         menu_thread.start()
         menu_thread.join()

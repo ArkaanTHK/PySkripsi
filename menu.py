@@ -1,9 +1,11 @@
-from threading import Thread
 from colorama import Fore, Style
-import sniffer
+from sniffer import Sniffer
 
 class Menu:
-    def print_menu(title, options):
+    def __init__(self, sniffer: Sniffer):
+        self.sniffer = sniffer
+
+    def print_menu(self, title, options):
         print(Fore.GREEN + Style.BRIGHT + f"=== {title} ===" + Style.RESET_ALL)
         for i, option in enumerate(options, start=1):
             print(f"{Fore.YELLOW}{i}. {option}{Style.RESET_ALL}")
@@ -28,10 +30,10 @@ class Menu:
             choice = self.get_user_choice(options)
 
             if choice == 1:
-                if sniffer.is_sniffing_active():
-                    sniffer.stop_sniffing()
+                if self.sniffer.is_sniffing_active():
+                    self.sniffer.stop_sniffing()
                 else:
-                    sniffer.start_sniffing()
+                    self.sniffer.start_sniffing()
             elif choice == 2:
                 print("You chose Option 2.")
                 # Add your logic here for Option 2
@@ -39,6 +41,6 @@ class Menu:
                 print("You chose Option 3.")
                 # Add your logic here for Option 3
             elif choice == 4:
-                sniffer.stop_sniffing()
+                self.sniffer.stop_sniffing()
                 print(Fore.GREEN + "Exiting the program. Goodbye!" + Style.RESET_ALL)
                 break
