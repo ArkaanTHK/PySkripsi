@@ -8,7 +8,15 @@ class Menu:
     def print_menu(self, title, options):
         print(Fore.GREEN + Style.BRIGHT + f"=== {title} ===" + Style.RESET_ALL)
         for i, option in enumerate(options, start=1):
-            print(f"{Fore.YELLOW}{i}. {option}{Style.RESET_ALL}")
+            if self.sniffer.is_sniffing_active() and i == 1:
+                # green checkmark
+                checkmark_color = Fore.GREEN
+                checkmark = "\u2713"
+            else:
+                # red X
+                checkmark_color = Fore.RED
+                checkmark = "\u2717"
+            print(f"{Fore.YELLOW}{i}. {option}{checkmark_color}{checkmark}{Style.RESET_ALL}")
         
     def get_user_choice(self, options):
         while True:
