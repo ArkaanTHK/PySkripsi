@@ -1,4 +1,4 @@
-from scapy.all import sniff
+from scapy.all import sniff, wrpcap
 from datetime import datetime
 from time import sleep
 from os import path
@@ -28,7 +28,10 @@ class Sniffer:
                 with open('temporary_packets.log', 'w'):
                     pass
 
-            sniff(timeout=5, prn=self.packet_callback, store=0)
+            packets = sniff(timeout=5, prn=self.packet_callback, store=0)
+            
+            # Save captured packets to a PCAP file
+            wrpcap('captured_packets.pcap', packets)
 
             with open('temporary_packets.log', 'r') as temp_log:
                 logs = temp_log.read()
