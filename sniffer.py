@@ -13,12 +13,10 @@ class Sniffer:
 
     def start_sniffing(self):
         self.sniffing_active.set()
-        print("Packet Sniffing turned on.")
         Thread(target=self.sniff_packets).start()
 
     def stop_sniffing(self):
         self.sniffing_active.clear()
-        print("Packet Sniffing turned off.")
     
     def packet_callback(self, packet):
         with open('temporary_packets.log', 'a') as temp_log:
