@@ -16,6 +16,9 @@ class Menu:
                 # red X
                 checkmark_color = Fore.RED
                 checkmark = "X"
+            else:
+                checkmark_color = ""
+                checkmark = ""
             print(f"{Fore.YELLOW}{i}. {option}{checkmark_color} {checkmark}{Style.RESET_ALL}")
         
     def get_user_choice(self, options):
