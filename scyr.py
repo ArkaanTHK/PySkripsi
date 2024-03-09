@@ -3,9 +3,9 @@ import os
 
 def main():
     # Lokasi file aturan YARA
-    yara_rules_path = '/home/maruu/skripsi/packages/core/yara-rules-core.yar'
+    yara_rules_path = 'path_rules.yar'
     # Direktori yang ingin dipindai
-    directory_to_scan = '/home/maruu/skripsi2/'
+    directory_to_scan = 'path'
 
     try:
         # Kompilasi aturan YARA dari file
