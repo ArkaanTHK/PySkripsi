@@ -27,12 +27,6 @@ class Configuration:
         set_key(self.file_path, key, value)
 
     def load_values(self):
-        # if there is no .env file, create one
-        if not self.file_path:
-            self.file_path = open(self.file_path, "w")
-            self.file_path.close()
-        
-        # load values from .env file if they exist
         self.yara_rules_path = self.get_value("YARA_RULES_PATH") or self.yara_rules_path
         self.pcap_path = self.get_value("PCAP_PATH") or self.pcap_path
         self.log_path = self.get_value("LOG_PATH") or self.log_path
