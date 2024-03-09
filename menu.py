@@ -70,11 +70,7 @@ class Menu:
             exit(0)
 
     def show_config_menu(self):
-        configs = {
-            "YARA_RULES_PATH": self.configuration.yara_rules_path,
-            "PCAP_PATH": self.configuration.pcap_path,
-            "LOG_PATH": self.configuration.log_path
-        }
+        configs = self.configuration.get_all_values()
         print("\033c")
         print(f"{Fore.YELLOW}=== Configuration ==={Style.RESET_ALL}")
         for i, (key, value) in enumerate(configs.items(), start=1):
@@ -89,7 +85,7 @@ class Menu:
             new_value = input()
             if new_value != "-":
                 setattr(self.configuration, key.lower(), new_value)
-                self.configuration.save_values()
+                self.configuration.set_value(key, new_value)
                 print(f"{Fore.LIGHTGREEN_EX}{key} has been updated to {new_value}.{Style.RESET_ALL}")
                 input("Press Enter to continue...")
         elif choice == len(configs) + 1:

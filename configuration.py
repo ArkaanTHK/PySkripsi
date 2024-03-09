@@ -1,12 +1,9 @@
-from dotenv import set_key, get_key, find_dotenv
-from colorama import Fore, Style
+from dotenv import set_key, get_key, find_dotenv, dotenv_values
 
 class Configuration:
     def __init__(self):
         self.file_path = find_dotenv()
-        self.yara_rules_path = "./yara_rules.yar"
-        self.pcap_path = "./captured_packets.pcap"
-        self.log_path = "./finals_packets.log"
+        self.configurations = {}
 
         if self.file_path == "":
             self.write_default_values()
@@ -17,6 +14,9 @@ class Configuration:
     def get_value(self, key):
         return get_key(self.file_path, key)
     
+    def load_values(self):
+        self.configurations = dotenv_values(self.file_path)
+
     def write_default_values(self):
         with open(".env", "w") as file:
             file.write("YARA_RULES_PATH=./yara_rules.yar\n")
@@ -25,13 +25,7 @@ class Configuration:
     
     def set_value(self, key, value):
         set_key(self.file_path, key, value)
+        self.configurations[key] = value
 
-    def load_values(self):
-        self.yara_rules_path = self.get_value("YARA_RULES_PATH") or self.yara_rules_path
-        self.pcap_path = self.get_value("PCAP_PATH") or self.pcap_path
-        self.log_path = self.get_value("LOG_PATH") or self.log_path
-
-    def save_values(self):
-        self.set_value("YARA_RULES_PATH", self.yara_rules_path)
-        self.set_value("PCAP_PATH", self.pcap_path)
-        self.set_value("LOG_PATH", self.log_path)
+    def get_all_values(self):
+        return self.configurations
