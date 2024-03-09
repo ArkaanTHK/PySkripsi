@@ -15,12 +15,21 @@ class Menu:
         print("\033c")
         print(Fore.GREEN + Style.BRIGHT + f"=== {title} ===" + Style.RESET_ALL)
         for i, option in enumerate(options, start=1):
-            if self.sniffer.is_sniffing_active() and i == 1:
-                checkmark_color = Fore.GREEN
-                checkmark = "\u2713"
-            elif i == 1 and not self.sniffer.is_sniffing_active():
-                checkmark_color = Fore.RED
-                checkmark = "X"
+            if i == 1:
+                if self.sniffer.is_sniffing_active():
+                    checkmark_color = Fore.GREEN
+                    checkmark = "\u2713"
+                else:
+                    checkmark_color = Fore.RED
+                    checkmark = "X"
+
+            elif i == 2:
+                if self.watchdog.is_watchdog_active():
+                    checkmark_color = Fore.GREEN
+                    checkmark = "\u2713"
+                else:
+                    checkmark_color = Fore.RED
+                    checkmark = "X"
             else:
                 checkmark_color = ""
                 checkmark = ""
@@ -45,7 +54,7 @@ class Menu:
 
     def main_menu(self):
         title = "System Control"
-        options = ["Toggle Packet Sniffing", "Option 2", "Configuration", "Exit"]
+        options = ["Toggle Packet Sniffing", "Toggle Watchdog Scanning", "Configuration", "Exit"]
 
         try:
             while True:
@@ -60,7 +69,7 @@ class Menu:
                         self.sniffer.start_sniffing()
                 elif choice == 2:
                     print("You choose Option 2.")
-                    if self.watchdog.observer.is_alive():
+                    if self.watchdog.is_watchdog_active():
                         print("Please wait...")
                         self.watchdog.stop_watchdog()
                     else:
