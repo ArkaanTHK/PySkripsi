@@ -1,6 +1,7 @@
 from menu import Menu
 from threading import Thread, Event
 from sniffer import Sniffer
+from configuration import Configuration
 from colorama import Fore, Style
 
 if __name__ == "__main__":
@@ -8,7 +9,8 @@ if __name__ == "__main__":
         shutdown_signal = Event()
         sniffing_active = Event()
         sniffer = Sniffer(sniffing_active, shutdown_signal)
-        menu = Menu(sniffer)
+        configuration = Configuration()
+        menu = Menu(sniffer, configuration)
         menu_thread = Thread(target=menu.main_menu)
         menu_thread.start()
         menu_thread.join()
