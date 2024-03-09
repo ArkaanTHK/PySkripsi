@@ -2,12 +2,14 @@ from colorama import Fore, Style
 from sniffer import Sniffer
 from configuration import Configuration
 from threading import Event
+from watchdog_py import Watchdog_Py
 
 class Menu:
-    def __init__(self, sniffer: Sniffer, configuration: Configuration, shutdown_signal: Event):
+    def __init__(self, sniffer: Sniffer,watchdog: Watchdog_Py, configuration: Configuration, shutdown_signal: Event):
         self.sniffer = sniffer
         self.configuration = configuration
         self.shutdown_signal = shutdown_signal
+        self.watchdog = watchdog
 
     def print_menu(self, title, options):
         print("\033c")
@@ -58,7 +60,11 @@ class Menu:
                         self.sniffer.start_sniffing()
                 elif choice == 2:
                     print("You choose Option 2.")
-                    # Add your logic here for Option 2
+                    if self.watchdog.observer.is_alive():
+                        print("Please wait...")
+                        self.watchdog.stop_watchdog()
+                    else:
+                        self.watchdog.start_watchdog()
                 elif choice == 3:
                     self.show_config_menu()
                 elif choice == 4:

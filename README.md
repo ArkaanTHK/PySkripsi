@@ -8,6 +8,6 @@ Project ini berjalan menggunakan bahasa pemrograman Python.
 | Nama             | Role                       |
 |------------------|----------------------------|
 | Arkaan Nabiil    | Ketua (Project Manager)    |
-| Bintang Hermawan | BNN (Bagian Nengok Nengok) |
+| Bintang Hermawan | Ketua Logika & Pemrograman |
 | Putu Indra       | Researcher Handal          |
 
