@@ -1,7 +1,7 @@
 # PySkripsi
 >"Skripsi bang, mau lulus ga?" -Indra Seorang Putu
 
-Project skripsi berupa simple IDS menggunakan Scapy, Watchdog, dan YARA.
+Project skripsi berupa simple IDS menggunakan Scapy, Watchdog, dan YARA.  
 Project ini berjalan menggunakan bahasa pemrograman Python.
 
 ### Members
