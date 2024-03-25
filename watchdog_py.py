@@ -59,14 +59,17 @@ class Watchdog_Py:
         return self.watchdog_active.is_set()
 
 class Handler(FileSystemEventHandler):
+    lock = Lock()
     global YARA_SKENER
     global LOG_PATH
 
+    @staticmethod
     def on_any_event(event):
-        if event.is_directory:
-            return None
-        elif event.event_type == 'created':
-            with open(LOG_PATH, 'a') as logs:
-                logs.write(f"{time.ctime()} - {event.src_path} Created\n")
-            YARA_SKENER.set_file_path(event.src_path)
-            YARA_SKENER.scan()
+        with Handler.lock:
+            if event.is_directory:
+                return None
+            elif event.event_type == 'created':
+                with open(LOG_PATH, 'a') as logs:
+                    logs.write(f"{time.ctime()} - {event.src_path} Created\n")
+                YARA_SKENER.set_file_path(event.src_path)
+                YARA_SKENER.scan()
