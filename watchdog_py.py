@@ -34,7 +34,6 @@ class Watchdog_Py:
 
     def check_and_create_paths(self, file_path):
         folder_path = path.dirname(file_path)
-        print(folder_path)
         if not path.exists(folder_path):
             makedirs(folder_path)
 
@@ -48,10 +47,13 @@ class Watchdog_Py:
         self.observer.start()
         
     def stop_watchdog(self):
+        if not self.watchdog_active.is_set():
+            return
         self.watchdog_active.clear()
         self.shutdown_signal.set()
         self.observer.stop()
         self.observer.join()
+        del self.observer
         self.observer = Observer()
         
 

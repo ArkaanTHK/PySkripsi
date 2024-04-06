@@ -2,6 +2,7 @@ import yara
 import os
 import time
 from os import path, makedirs
+from configuration import Configuration
 
 class Yara_Py:
     def __init__ (self, yara_rules_path='/home/maruu/skripsi/packages/core/yara-rules-core.yar', logs_path='./new_logs/yara_logs.log'):
@@ -24,7 +25,6 @@ class Yara_Py:
 
     def check_and_create_paths(self, file_path):
         folder_path = path.dirname(file_path)
-        print(folder_path)
         if not path.exists(folder_path):
             makedirs(folder_path)
 
@@ -61,8 +61,11 @@ class Yara_Py:
                     print("Masukkan alamat file aturan YARA: ", end="")
                     self.yara_rules_path = input()
                     self.set_rules()
-                    print("Lokasi file aturan YARA telah diatur ulang!\nPress any key to continue...")
+                    print("Lokasi file aturan YARA telah diatur ulang!\nPress enter to continue...")
                     input()
+                    configuration = Configuration()
+                    configuration.set_value("YARA_RULES_PATH", self.yara_rules_path)
+                    del configuration
                 else:
                     exit(1)
                 

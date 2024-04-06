@@ -28,4 +28,6 @@ class Configuration:
         self.configurations[key] = value
 
     def get_all_values(self):
+        # refresh configurations
+        self.load_values()
         return self.configurations
