@@ -89,10 +89,9 @@ class Sniffer:
         # use mergecap to merge pcap files
         pcap_files_path = path.abspath(self.current_pcap_dir)
         merge_files_path = pcap_files_path + "/merged.pcap"
-        merged_file_exists = False
+        
         if path.exists(merge_files_path):
             system(f'mv {merge_files_path} {merge_files_path}.bak')
-            merged_file_exists = True
 
         pcap_files = listdir(self.current_pcap_dir)
 
@@ -100,14 +99,8 @@ class Sniffer:
             pcap_files_string = ""
             for pcap_file in pcap_files:
                 pcap_files_string += f"{pcap_files_path}/{pcap_file} "
-                
-            if merged_file_exists:
-                pcap_files_string += f'{merge_files_path}.bak'
 
             system(f'mergecap -w {merge_files_path} {pcap_files_string}')
-
-            if merged_file_exists:
-                system(f'rm {merge_files_path}.bak')
 
             for pcap_file in pcap_files:
                 system(f'rm {pcap_files_path}/{pcap_file}')
@@ -121,7 +114,7 @@ class Sniffer:
             
             self.set_pcap_path(self.root_pcap_dir)
             self.check_day_change()
-            sniff(filter="inbound", timeout=5, prn=self.packet_callback, store=0, iface="ens33")
+            sniff(timeout=5, prn=self.packet_callback, store=0)
             # self.detect_attacks(path.abspath(self.pcap_path))
             detect_attack_thread = Thread(target=self.detect_attacks, args=(self.pcap_path,))
             detect_attack_thread.start()
@@ -144,7 +137,7 @@ class Sniffer:
         except AttributeError:
             return False
 
-    def detect_attacks(self, pcap_file):
+    def detect_attacks(self, pcap_file: str):
         cap = pyshark.FileCapture(pcap_file)
         cap.set_debug(log_level=logging.ERROR)
 
@@ -158,23 +151,15 @@ class Sniffer:
         src_ips = (packet.ip.src for packet in cap if self.check_packet(packet, excluded_ips))
         source_ips_count = Counter(src_ips)
             
-        # if len(source_ips) > 0:
-        #     for ip, count in source_ips.items():
-        #         if count > ddos_threshold:
-        #             print(f"Potential DDoS attack detected from {ip} with {count} packets")
-
         # check for potential DDoS attacks
         for ip, count in source_ips_count.items():
             if count > ddos_threshold:
                 print(f"Potential DDoS attack detected from {ip} with {count} packets")
 
-        # filter packets only http stream
-        http_packets = (packet for packet in cap if 'HTTP' in packet)
         # create temporary pcap for yara scan
         temp_pcap = pcap_file.replace(".pcap", "_temp.pcap")
-        temp_cap = pyshark.FileCapture(temp_pcap, output_file=temp_pcap)
-        for packet in http_packets:
-            temp_cap.write(packet)
+        temp_cap = pyshark.FileCapture(pcap_file, display_filter="http", output_file=temp_pcap)
+        temp_cap.load_packets()
         temp_cap.close()
 
         self.yara_skener.set_file_path(temp_pcap)
