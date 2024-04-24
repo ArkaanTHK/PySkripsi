@@ -92,8 +92,10 @@ class Sniffer:
         # use mergecap to merge pcap files
         pcap_files_path = path.abspath(self.current_pcap_dir)
         merge_files_path = pcap_files_path + "/merged.pcap"
+        merged_file_exists = False
         if path.exists(merge_files_path):
-            system(f'rm {merge_files_path}')
+            system(f'mv {merge_files_path} {merge_files_path}.bak')
+            merged_file_exists = True
 
         pcap_files = listdir(self.current_pcap_dir)
 
@@ -101,8 +103,15 @@ class Sniffer:
             pcap_files_string = ""
             for pcap_file in pcap_files:
                 pcap_files_string += f"{pcap_files_path}/{pcap_file} "
+                
+            if merged_file_exists:
+                pcap_files_string += f'{merge_files_path}.bak'
+
             system(f'mergecap -w {merge_files_path} {pcap_files_string}')
 
+            if merged_file_exists:
+                system(f'rm {merge_files_path}.bak')
+                
             for pcap_file in pcap_files:
                 system(f'rm {pcap_files_path}/{pcap_file}')
 
