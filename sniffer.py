@@ -9,6 +9,7 @@ from time import sleep
 from os import path, makedirs, listdir, system
 from threading import Event, Thread
 from collections import Counter
+from yara_py import Yara_Py
 
 import pyshark
 
@@ -21,6 +22,7 @@ class Sniffer:
         self.temp_log_path = ""
         self.current_pcap_dir = ""
         self.root_pcap_dir = pcap_dir
+        self.yara_skener = Yara_Py()
 
         self.set_pcap_path(pcap_dir)
         self.set_log_path(log_dir)
@@ -82,6 +84,9 @@ class Sniffer:
         pkt_dump = PcapWriter(self.pcap_path, append=True, sync=True)
         pkt_dump.write(packet)
         pkt_dump.close()
+        yara_scan_thread = Thread(target=self.scan_packet)
+        yara_scan_thread.start()
+        yara_scan_thread.join()
 
     def merge_pcap_files(self):
         # use mergecap to merge pcap files
@@ -158,6 +163,10 @@ class Sniffer:
                 print(f"Potential DDoS attack detected from {ip} with {count} packets")
 
         cap.close()
+
+    def scan_packet(self):
+        self.yara_skener.set_file_path(self.pcap_path)
+        self.yara_skener.scan()
 
     def is_sniffing_active(self):
         return self.sniffing_active.is_set()

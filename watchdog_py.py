@@ -10,14 +10,14 @@ YARA_SKENER = None
 LOG_PATH = ""
 
 class Watchdog_Py:
-    def __init__(self, watchdog_active: Event, shutdown_signal: Event, yara_skener: Yara_Py, watchdog_path="/home/testtest/Downloads/", logs_path="./new_logs/watchdog_logs.log"):
+    def __init__(self, watchdog_active: Event, shutdown_signal: Event, watchdog_path="/home/testtest/Downloads/", logs_path="./new_logs/watchdog_logs.log"):
         self.watchdog_active = watchdog_active
         self.shutdown_signal = shutdown_signal
         self.watchdog_path = ""
         self.observer = Observer()
         self.event_handler = Handler()
         global YARA_SKENER
-        YARA_SKENER = yara_skener
+        YARA_SKENER = Yara_Py()
         self.logs_path = ""
 
         self.set_watchdog_path(watchdog_path)
