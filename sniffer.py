@@ -84,9 +84,6 @@ class Sniffer:
         pkt_dump = PcapWriter(self.pcap_path, append=True, sync=True)
         pkt_dump.write(packet)
         pkt_dump.close()
-        yara_scan_thread = Thread(target=self.scan_packet)
-        yara_scan_thread.start()
-        yara_scan_thread.join()
 
     def merge_pcap_files(self):
         # use mergecap to merge pcap files
@@ -111,7 +108,7 @@ class Sniffer:
 
             if merged_file_exists:
                 system(f'rm {merge_files_path}.bak')
-                
+
             for pcap_file in pcap_files:
                 system(f'rm {pcap_files_path}/{pcap_file}')
 
@@ -171,11 +168,22 @@ class Sniffer:
             if count > ddos_threshold:
                 print(f"Potential DDoS attack detected from {ip} with {count} packets")
 
-        cap.close()
+        # filter packets only http stream
+        http_packets = (packet for packet in cap if 'HTTP' in packet)
+        # create temporary pcap for yara scan
+        temp_pcap = pcap_file.replace(".pcap", "_temp.pcap")
+        temp_cap = pyshark.FileCapture(temp_pcap, output_file=temp_pcap)
+        for packet in http_packets:
+            temp_cap.write(packet)
+        temp_cap.close()
 
-    def scan_packet(self):
-        self.yara_skener.set_file_path(self.pcap_path)
+        self.yara_skener.set_file_path(temp_pcap)
         self.yara_skener.scan()
+
+        # remove temporary pcap file
+        system(f'rm {temp_pcap}')
+
+        cap.close()
 
     def is_sniffing_active(self):
         return self.sniffing_active.is_set()
