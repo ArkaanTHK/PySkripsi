@@ -167,6 +167,7 @@ rule SQLi: mal 								// tag: mal
 	"Brute Force Column Name by Boolean based"=>/(EXISTS.(SELECT.(\`|)(\[|\]|)(\w+|(\w+\-)*\w+)(\[|\]|)(\`|).FROM.*\w+))/i,
 
 }
+
 rule xss_multiple_payload_detection {
     meta:
         description = "Detect XSS attacks with specific payloads"
@@ -205,9 +206,30 @@ rule xss_multiple_payload_detection {
         $xss_svg_payload9 = "<svg><script>alert('33')"
         $xss_svg_payload10 = "<svg><script>alert&lpar;'33'&rpar;"
 
+        $additional_payload1 = "<script>alert(123);</script>"
+        $additional_payload2 = "<ScRipT>alert(\"XSS\");</ScRipT>"
+        $additional_payload3 = "<script>alert(123)</script>"
+        $additional_payload4 = "<script>alert(\"hellox worldss\");</script>"
+        $additional_payload5 = "<script>alert(“XSS”)</script>"
+        $additional_payload6 = "<script>alert(“XSS”);</script>"
+        $additional_payload7 = "<script>alert(‘XSS’)</script>"
+        $additional_payload8 = "\" ><script>alert(“XSS”)</script>"
+        $additional_payload9 = "<script>alert(/XSS”)</script>"
+        $additional_payload10 = "<script>alert(/XSS/)</script>"
+        $additional_payload11 = "</script><script>alert(1)</script>"
+        $additional_payload12 = "'; alert(1);"
+        $additional_payload13 = "')alert(1);//"
+        $additional_payload14 = "<ScRiPt>alert(1)</sCriPt>"
+        $additional_payload15 = "<IMG SRC=jAVasCrIPt:alert(‘XSS’)>"
+        $additional_payload16 = "<IMG SRC=”javascript:alert(‘XSS’);”>"
+        $additional_payload17 = "<IMG SRC=javascript:alert(&quot;XSS&quot;)>"
+        $additional_payload18 = "<IMG SRC=javascript:alert(‘XSS’)>"
+        $additional_payload19 = "<img src=xss onerror=alert(1)>"
+
     condition:
-        any of ($xss_payload*) or any of ($xss_image_payload*) or any of ($xss_svg_payload*)
+        any of ($xss_payload*) or any of ($xss_image_payload*) or any of ($xss_svg_payload*) or any of ($additional_payload*)
 }
+
 rule detect_xss_payloads_bypass_with_condition_and_bypass_HTML5 {
     meta:
         description = "Detect various XSS payloads"
