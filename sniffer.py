@@ -86,6 +86,8 @@ class Sniffer:
         if self.sniffing_thread and self.sniffing_thread.is_alive():
             print("Waiting for the sniffing thread to stop...")
             self.sniffing_thread.join()
+            while self.sniffing_thread.is_alive():
+                sleep(1)
             self.sniffing_thread = None
             
 
