@@ -1,17 +1,17 @@
 from colorama import Fore, Style
+from configuration import get_all_values, set_value
+
 from sniffer import Sniffer
-from configuration import Configuration
 from threading import Event
 from watchdog_py import Watchdog_Py
 
 class Menu:
-    def __init__(self, sniffer: Sniffer,watchdog: Watchdog_Py, configuration: Configuration, shutdown_signal: Event):
+    def __init__(self, sniffer: Sniffer,watchdog: Watchdog_Py, shutdown_signal: Event) -> None:
         self.sniffer = sniffer
-        self.configuration = configuration
         self.shutdown_signal = shutdown_signal
         self.watchdog = watchdog
 
-    def print_menu(self, title, options):
+    def print_menu(self, title, options) -> None:
         print("\033c")
         print(Fore.GREEN + Style.BRIGHT + f"=== {title} ===" + Style.RESET_ALL)
         for i, option in enumerate(options, start=1):
@@ -35,7 +35,7 @@ class Menu:
                 checkmark = ""
             print(f"{Fore.YELLOW}{i}. {option}{checkmark_color} {checkmark}{Style.RESET_ALL}")
         
-    def get_user_choice(self, length):
+    def get_user_choice(self, length) -> int:
         try:
             while True:
                 try:
@@ -52,7 +52,7 @@ class Menu:
             raise SystemExit
         
 
-    def main_menu(self):
+    def main_menu(self) -> None:
         title = "System Control"
         options = ["Toggle Packet Sniffing", "Toggle Watchdog Scanning", "Configuration", "Exit"]
 
@@ -84,8 +84,9 @@ class Menu:
             print("keyboard interrupt dari main_menu")
             exit(0)
 
-    def show_config_menu(self):
-        configs = self.configuration.get_all_values()
+    def show_config_menu(self) -> None:
+        configs = get_all_values()
+
         print("\033c")
         print(f"{Fore.YELLOW}=== Configuration ==={Style.RESET_ALL}")
         for i, (key, value) in enumerate(configs.items(), start=1):
@@ -93,14 +94,19 @@ class Menu:
 
         print(f"{Fore.YELLOW}{len(configs) + 1}. Back")
         print(f"====================={Style.RESET_ALL}")
+
         choice = self.get_user_choice(len(configs) + 1)
+
         if 1 <= choice <= len(configs):
             key = list(configs.keys())[choice - 1]
+
             print(f"Enter new value for {key} ('-' to back): ", end="")
             new_value = input()
+
             if new_value != "-":
                 setattr(self.configuration, key.lower(), new_value)
-                self.configuration.set_value(key, new_value)
+                set_value(key, new_value)
+                
                 print(f"{Fore.LIGHTGREEN_EX}{key} has been updated to {new_value}.{Style.RESET_ALL}")
                 input("Press Enter to continue...")
         elif choice == len(configs) + 1:

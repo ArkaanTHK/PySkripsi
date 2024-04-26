@@ -1,33 +1,31 @@
 from dotenv import set_key, get_key, find_dotenv, dotenv_values
 
-class Configuration:
-    def __init__(self):
-        self.file_path = find_dotenv()
-        self.configurations = {}
+def get_value(key) -> str:
+    dotenv_path = check_file()
+    return get_key(dotenv_path, key)
 
-        if self.file_path == "":
-            self.write_default_values()
-        
-        else:
-            self.load_values()
+def set_value(key, value) -> None:
+    dotenv_path = check_file()
+    set_key(dotenv_path, key, value)
     
-    def get_value(self, key):
-        return get_key(self.file_path, key)
-    
-    def load_values(self):
-        self.configurations = dotenv_values(self.file_path)
+def get_all_values() -> dict:
+    dotenv_path = check_file()
+    return dotenv_values(dotenv_path)
 
-    def write_default_values(self):
-        with open(".env", "w") as file:
-            file.write("YARA_RULES_PATH=./yara_rules.yar\n")
-            file.write("PCAP_PATH=./captured_packets.pcap\n")
-            file.write("LOG_PATH=./finals_packets.log\n")
+def check_file() -> str:
+    dotenv_path = find_dotenv()
+    if dotenv_path == "":
+        write_default_values()
+        check_file()
     
-    def set_value(self, key, value):
-        set_key(self.file_path, key, value)
-        self.configurations[key] = value
+    return dotenv_path
 
-    def get_all_values(self):
-        # refresh configurations
-        self.load_values()
-        return self.configurations
+def write_default_values() -> None:
+    with open(".env", "w") as file:
+        file.write('YARA_RULES_FOR_APPLICATION_PATH="/mnt/hgfs/yara-rules-full.yar"\n')
+        file.write('YARA_RULES_FOR_WATCHDOG_PATH="/mnt/hgfs/yara-rules-full.yar"\n')
+        file.write('PCAP_DIR="./pcap/"\n')
+        file.write('LOG_DIR="./logs/"\n')
+        file.write('WATCHDOGDIR_PATH="/home/arkaan/Downloads/"\n')
+        file.write('YARA_LOGS_PATH="./new_logs/yara_logs.log"\n')
+        file.write('WATCHDOG_LOGS_PATH="./new_logs/watchdog_logs.log"\n')
