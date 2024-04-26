@@ -13,7 +13,7 @@ YARA_SKENER = None
 LOG_PATH = ""
 
 class Watchdog_Py:
-    def __init__(self, watchdog_active: Event, shutdown_signal: Event) -> None:
+    def __init__(self, watchdog_active: Event) -> None:
         global YARA_SKENER
 
         YARA_SKENER = Yara_Py(get_value("YARA_RULES_FOR_WATCHDOG_PATH"), get_value("YARA_LOGS_FOR_WATCHDOG_PATH"))
@@ -22,7 +22,6 @@ class Watchdog_Py:
         self.event_handler = Handler()
 
         self.watchdog_active = watchdog_active
-        self.shutdown_signal = shutdown_signal
         self.watchdog_path = ""
         self.logs_path = ""
 
@@ -72,14 +71,13 @@ class Watchdog_Py:
             return
         
         self.watchdog_active.clear()
-        self.shutdown_signal.set()
         self.observer.stop()
 
         # check if the observer is still running
         if self.observer.is_alive():
             print("Waiting for the watchdog to stop...")
             self.observer.join()
-            
+
         del self.observer
         self.observer = Observer()
         

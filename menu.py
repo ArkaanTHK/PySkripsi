@@ -6,9 +6,8 @@ from threading import Event
 from watchdog_py import Watchdog_Py
 
 class Menu:
-    def __init__(self, sniffer: Sniffer,watchdog: Watchdog_Py, shutdown_signal: Event) -> None:
+    def __init__(self, sniffer: Sniffer,watchdog: Watchdog_Py) -> None:
         self.sniffer = sniffer
-        self.shutdown_signal = shutdown_signal
         self.watchdog = watchdog
 
     def print_menu(self, title, options) -> None:
@@ -47,7 +46,6 @@ class Menu:
                 except ValueError:
                     print(Fore.RED + "Invalid input. Please enter a number." + Style.RESET_ALL)
         except KeyboardInterrupt:
-            self.shutdown_signal.set()
             print(f"{Fore.RED}\n\nKeyboard Interrupt Detected!{Style.RESET_ALL}")
             raise SystemExit
         
@@ -63,14 +61,12 @@ class Menu:
             
                 if choice == 1:
                     if self.sniffer.is_sniffing_active():
-                        print("Please wait...")
                         self.sniffer.stop_sniffing()
                     else:
                         self.sniffer.start_sniffing()
                 elif choice == 2:
                     print("You choose Option 2.")
                     if self.watchdog.is_watchdog_active():
-                        print("Please wait...")
                         self.watchdog.stop_watchdog()
                     else:
                         self.watchdog.start_watchdog()

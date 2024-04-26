@@ -17,9 +17,8 @@ from collections import Counter
 from threading import Event, Thread
 
 class Sniffer:
-    def __init__(self, sniffing_active: Event, shutdown_signal: Event) -> None:
+    def __init__(self, sniffing_active: Event) -> None:
         self.sniffing_active = sniffing_active
-        self.shutdown_signal = shutdown_signal
         self.pcap_path = ""
         self.log_path = ""
         self.temp_log_path = ""
@@ -84,12 +83,11 @@ class Sniffer:
 
     def stop_sniffing(self) -> None:
         self.sniffing_active.clear()
-        self.shutdown_signal.set()
         if self.sniffing_thread and self.sniffing_thread.is_alive():
             print("Waiting for the sniffing thread to stop...")
             self.sniffing_thread.join()
-            del self.sniffing_thread
             self.sniffing_thread = None
+            
 
         merge_pcap_thread = Thread(target=self.merge_pcap_files)
         print("Merging pcap files...")
@@ -139,7 +137,7 @@ class Sniffer:
         The packet result will be written into a pcap file and log file.
         After 5 seconds, the pcap file will be scanned for potential attacks.
         '''
-        while not self.shutdown_signal.is_set() and self.sniffing_active.is_set():
+        while not self.sniffing_active.is_set():
             self.temp_log_path = path.dirname(self.log_path) + '/temporary_packets.log'
             if not path.exists(self.temp_log_path):
                 with open(self.temp_log_path, 'w'):
