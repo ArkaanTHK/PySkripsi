@@ -1,4 +1,5 @@
 import logging
+from configuration import get_value
 import pyshark
 import pyshark.config
 import pyshark.tshark
@@ -16,18 +17,18 @@ from collections import Counter
 from threading import Event, Thread
 
 class Sniffer:
-    def __init__(self, sniffing_active: Event, shutdown_signal: Event, yara_rules_path, yara_logs_path, pcap_dir="./pcap/", log_dir="./logs/") -> None:
+    def __init__(self, sniffing_active: Event, shutdown_signal: Event) -> None:
         self.sniffing_active = sniffing_active
         self.shutdown_signal = shutdown_signal
         self.pcap_path = ""
         self.log_path = ""
         self.temp_log_path = ""
         self.current_pcap_dir = ""
-        self.root_pcap_dir = pcap_dir
-        self.yara_skener = Yara_Py(yara_rules_path, yara_logs_path)
+        self.root_pcap_dir = ""
+        self.yara_skener = Yara_Py(get_value("YARA_RULES_FOR_APPLICATION_PATH"), get_value("YARA_LOGS_FOR_APPLICATION_PATH"))
 
-        self.set_pcap_path(pcap_dir)
-        self.set_log_path(log_dir)
+        self.set_pcap_path(get_value("PCAP_DIR"))
+        self.set_log_path(get_value("LOG_DIR"))
 
     def set_log_path(self, log_dir) -> None:
         log_dir = path.dirname(log_dir)
@@ -59,7 +60,21 @@ class Sniffer:
             with open(file_path, 'w'):
                 pass
 
+    def check_configurations(self) -> None:
+        if get_value("PCAP_DIR") != self.root_pcap_dir:
+            self.set_pcap_path(get_value("PCAP_DIR"))
+        
+        if get_value("LOG_DIR") != self.log_path:
+            self.set_log_path(get_value("LOG_DIR"))
+        
+        if get_value("YARA_RULES_FOR_APPLICATION_PATH") != self.yara_skener.yara_rules_path:
+            self.yara_skener.set_yara_rules_path(get_value("YARA_RULES_FOR_APPLICATION_PATH"))
+
+        if get_value("YARA_LOGS_FOR_APPLICATION_PATH") != self.yara_skener.yara_logs_path:
+            self.yara_skener.set_yara_logs_path(get_value("YARA_LOGS_FOR_APPLICATION_PATH"))
+
     def start_sniffing(self) -> None:
+        self.check_configurations()
         self.sniffing_active.set()
         Thread(target=self.sniff_packets).start()
 

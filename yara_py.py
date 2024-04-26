@@ -2,10 +2,10 @@ import yara
 import os
 import time
 from os import path, makedirs
-from configuration import Configuration
+from configuration import set_value, get_value
 
 class Yara_Py:
-    def __init__ (self, yara_rules_path='/home/maruu/skripsi/packages/core/yara-rules-core.yar', logs_path='./new_logs/yara_logs.log'):
+    def __init__ (self, yara_rules_path='./libs/yara-rules.yar', logs_path='./new_logs/yara_logs.log'):
         self.yara_rules_path = ""
         self.file_path = ""
         self.rules = None
@@ -63,9 +63,7 @@ class Yara_Py:
                     self.set_rules()
                     print("Lokasi file aturan YARA telah diatur ulang!\nPress enter to continue...")
                     input()
-                    configuration = Configuration()
-                    configuration.set_value("YARA_RULES_PATH", self.yara_rules_path)
-                    del configuration
+                    set_value("YARA_RULES_PATH", self.yara_rules_path)
                 else:
                     exit(1)
                 

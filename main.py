@@ -1,5 +1,4 @@
 from colorama import Fore, Style
-from configuration import get_value
 
 from menu import Menu
 from sniffer import Sniffer
@@ -13,18 +12,9 @@ if __name__ == "__main__":
         sniffing_active = Event()
         watchdog_active = Event()
 
-        # Get all necessary values from the configuration file
-        pcap_dir = get_value("PCAP_DIR")
-        log_dir = get_value("LOG_DIR")
-        watchdog_path = get_value("WATCHDOGDIR_PATH")
-        yara_rules_for_application_path = get_value("YARA_RULES_FOR_APPLICATION_PATH")
-        yara_rules_for_watchdog_path = get_value("YARA_RULES_FOR_WATCHDOG_PATH")
-        yara_logs_path = get_value("YARA_LOGS_PATH")
-        watchdog_logs_path = get_value("WATCHDOG_LOGS_PATH")
-
         # Initialize the Sniffer and Watchdog
-        sniffer = Sniffer(sniffing_active, shutdown_signal, yara_rules_for_application_path, yara_logs_path, pcap_dir, log_dir)
-        watchdog = Watchdog_Py(watchdog_active, shutdown_signal, yara_rules_for_watchdog_path, yara_logs_path, watchdog_path, watchdog_logs_path)
+        sniffer = Sniffer(sniffing_active, shutdown_signal)
+        watchdog = Watchdog_Py(watchdog_active, shutdown_signal)
 
         # Start the main menu
         menu = Menu(sniffer, watchdog, shutdown_signal)

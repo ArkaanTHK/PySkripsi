@@ -1,5 +1,6 @@
 from time import ctime
 from os import path, makedirs
+from configuration import get_value
 
 from threading import Lock
 from threading import Event
@@ -12,10 +13,10 @@ YARA_SKENER = None
 LOG_PATH = ""
 
 class Watchdog_Py:
-    def __init__(self, watchdog_active: Event, shutdown_signal: Event, yara_rules_path, yara_logs_path, watchdog_path="/opt/lampp/htdocs/", logs_path="./logs/watchdog_logs.log") -> None:
+    def __init__(self, watchdog_active: Event, shutdown_signal: Event) -> None:
         global YARA_SKENER
 
-        YARA_SKENER = Yara_Py(yara_rules_path, yara_logs_path)
+        YARA_SKENER = Yara_Py(get_value("YARA_RULES_FOR_WATCHDOG_PATH"), get_value("YARA_LOGS_FOR_WATCHDOG_PATH"))
 
         self.observer = Observer()
         self.event_handler = Handler()
@@ -25,8 +26,8 @@ class Watchdog_Py:
         self.watchdog_path = ""
         self.logs_path = ""
 
-        self.set_watchdog_path(watchdog_path)
-        self.set_logs_path(logs_path)
+        self.set_watchdog_path(get_value("WATCHDOGDIR_PATH"))
+        self.set_logs_path(get_value("WATCHDOG_LOGS_PATH"))
 
     def set_watchdog_path (self, watchdog_path) -> None:
         self.watchdog_path = watchdog_path
@@ -47,7 +48,21 @@ class Watchdog_Py:
             with open(file_path, 'w'):
                 pass
 
+    def check_configurations(self) -> None:
+        if get_value("WATCHDOGDIR_PATH") != self.watchdog_path:
+            self.set_watchdog_path(get_value("WATCHDOGDIR_PATH"))
+        
+        if get_value("WATCHDOG_LOGS_PATH") != self.logs_path:
+            self.set_logs_path(get_value("WATCHDOG_LOGS_PATH"))
+        
+        if get_value("YARA_RULES_FOR_WATCHDOG_PATH") != YARA_SKENER.yara_rules_path:
+            YARA_SKENER.set_yara_rules_path(get_value("YARA_RULES_FOR_WATCHDOG_PATH"))
+
+        if get_value("YARA_LOGS_FOR_WATCHDOG_PATH") != YARA_SKENER.logs_path:
+            YARA_SKENER.set_yara_logs_path(get_value("YARA_LOGS_FOR_WATCHDOG_PATH"))
+
     def start_watchdog(self) -> None:
+        self.check_configurations()
         self.watchdog_active.set()
         self.observer.schedule(self.event_handler, self.watchdog_path, recursive=True)
         self.observer.start()
