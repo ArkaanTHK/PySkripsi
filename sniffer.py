@@ -25,6 +25,9 @@ class Sniffer:
         self.temp_log_path = ""
         self.current_pcap_dir = ""
         self.root_pcap_dir = ""
+
+        self.sniffing_thread = None
+            
         self.yara_skener = Yara_Py(get_value("YARA_RULES_FOR_APPLICATION_PATH"), get_value("YARA_LOGS_FOR_APPLICATION_PATH"))
 
         self.set_pcap_path(get_value("PCAP_DIR"))
@@ -70,18 +73,26 @@ class Sniffer:
         if get_value("YARA_RULES_FOR_APPLICATION_PATH") != self.yara_skener.yara_rules_path:
             self.yara_skener.set_yara_rules_path(get_value("YARA_RULES_FOR_APPLICATION_PATH"))
 
-        if get_value("YARA_LOGS_FOR_APPLICATION_PATH") != self.yara_skener.yara_logs_path:
+        if get_value("YARA_LOGS_FOR_APPLICATION_PATH") != self.yara_skener.logs_path:
             self.yara_skener.set_yara_logs_path(get_value("YARA_LOGS_FOR_APPLICATION_PATH"))
 
     def start_sniffing(self) -> None:
         self.check_configurations()
         self.sniffing_active.set()
-        Thread(target=self.sniff_packets).start()
+        self.sniffing_thread = Thread(target=self.sniff_packets)
+        self.sniffing_thread.start()
 
     def stop_sniffing(self) -> None:
         self.sniffing_active.clear()
         self.shutdown_signal.set()
+        if self.sniffing_thread and self.sniffing_thread.is_alive():
+            print("Waiting for the sniffing thread to stop...")
+            self.sniffing_thread.join()
+            del self.sniffing_thread
+            self.sniffing_thread = None
+
         merge_pcap_thread = Thread(target=self.merge_pcap_files)
+        print("Merging pcap files...")
         merge_pcap_thread.start()
         merge_pcap_thread.join()
     

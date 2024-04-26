@@ -74,7 +74,12 @@ class Watchdog_Py:
         self.watchdog_active.clear()
         self.shutdown_signal.set()
         self.observer.stop()
-        self.observer.join()
+
+        # check if the observer is still running
+        if self.observer.is_alive():
+            print("Waiting for the watchdog to stop...")
+            self.observer.join()
+            
         del self.observer
         self.observer = Observer()
         
