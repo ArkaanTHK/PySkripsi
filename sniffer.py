@@ -17,17 +17,18 @@ from collections import Counter
 from threading import Event, Thread
 
 class Sniffer:
-    def __init__(self, sniffing_active: Event) -> None:
+    def __init__(self, sniffing_active: Event, iface: str) -> None:
         self.sniffing_active = sniffing_active
         self.pcap_path = ""
         self.log_path = ""
         self.temp_log_path = ""
         self.current_pcap_dir = ""
         self.root_pcap_dir = ""
+        self.iface = iface
 
         self.sniffing_thread = None
             
-        self.yara_skener = Yara_Py(get_value("YARA_RULES_FOR_APPLICATION_PATH"), get_value("YARA_LOGS_FOR_APPLICATION_PATH"))
+        self.yara_skener = Yara_Py(get_value("YARA_RULES_FOR_APPLICATION_PATH"), get_value("YARA_LOGS_FOR_APPLICATION_PATH"), 'Web App')
 
         self.set_pcap_path(get_value("PCAP_DIR"))
         self.set_log_path(get_value("LOG_DIR"))
@@ -81,20 +82,37 @@ class Sniffer:
         self.sniffing_thread = Thread(target=self.sniff_packets)
         self.sniffing_thread.start()
 
+    # def stop_sniffing(self) -> None:
+    #     self.sniffing_active.clear()
+    #     if self.sniffing_thread and self.sniffing_thread.is_alive():
+    #         print("Waiting for the sniffing thread to stop...")
+    #         self.sniffing_thread.join()
+    #         while self.sniffing_thread.is_alive():
+    #             sleep(1)
+    #         self.sniffing_thread = None
+            
+
+    #     merge_pcap_thread = Thread(target=self.merge_pcap_files)
+    #     print("Merging pcap files...")
+    #     merge_pcap_thread.start()
+    #     merge_pcap_thread.join()
+
     def stop_sniffing(self) -> None:
         self.sniffing_active.clear()
         if self.sniffing_thread and self.sniffing_thread.is_alive():
             print("Waiting for the sniffing thread to stop...")
             self.sniffing_thread.join()
             while self.sniffing_thread.is_alive():
-                sleep(1)
+                pass
             self.sniffing_thread = None
-            
+            print("Sniffing thread stopped.")
 
         merge_pcap_thread = Thread(target=self.merge_pcap_files)
         print("Merging pcap files...")
         merge_pcap_thread.start()
         merge_pcap_thread.join()
+        print("Pcap files merged.")
+        input("All activities have been stopped. Press Enter to continue...")
     
     def check_day_change(self) -> None:
         if self.current_pcap_dir != self.root_pcap_dir + datetime.now().strftime("%Y%m%d") + "/":
@@ -139,7 +157,7 @@ class Sniffer:
         The packet result will be written into a pcap file and log file.
         After 5 seconds, the pcap file will be scanned for potential attacks.
         '''
-        while not self.sniffing_active.is_set():
+        while self.sniffing_active.is_set():
             self.temp_log_path = path.dirname(self.log_path) + '/temporary_packets.log'
             if not path.exists(self.temp_log_path):
                 with open(self.temp_log_path, 'w'):
@@ -147,7 +165,7 @@ class Sniffer:
             
             self.set_pcap_path(self.root_pcap_dir)
             self.check_day_change()
-            sniff(timeout=5, prn=self.packet_callback, store=0)
+            sniff(timeout=5, prn=self.packet_callback, store=0, iface=self.iface)
             detect_attack_thread = Thread(target=self.detect_attacks, args=(self.pcap_path,))
             detect_attack_thread.start()
             detect_attack_thread.join()

@@ -16,7 +16,7 @@ class Watchdog_Py:
     def __init__(self, watchdog_active: Event) -> None:
         global YARA_SKENER
 
-        YARA_SKENER = Yara_Py(get_value("YARA_RULES_FOR_WATCHDOG_PATH"), get_value("YARA_LOGS_FOR_WATCHDOG_PATH"))
+        YARA_SKENER = Yara_Py(get_value("YARA_RULES_FOR_WATCHDOG_PATH"), get_value("YARA_LOGS_FOR_WATCHDOG_PATH"), 'Watchdog')
 
         self.observer = Observer()
         self.event_handler = Handler()

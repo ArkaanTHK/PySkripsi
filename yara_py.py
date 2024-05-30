@@ -5,11 +5,12 @@ from os import path, makedirs
 from configuration import set_value, get_value
 
 class Yara_Py:
-    def __init__ (self, yara_rules_path='./libs/yara-rules.yar', logs_path='./new_logs/yara_logs.log'):
+    def __init__ (self, yara_rules_path='./libs/yara-rules.yar', logs_path='./new_logs/yara_logs.log', process=''):
         self.yara_rules_path = ""
         self.file_path = ""
         self.rules = None
         self.logs_path = ""
+        self.process=process
 
         yara.set_config(max_strings_per_rule=1000000, stack_size=99999999)
         self.set_yara_rules_path(yara_rules_path)
@@ -54,7 +55,7 @@ class Yara_Py:
                     print("YARA rules still compiled with warnings. Retrying...")
                 
             except yara.Error as e:
-                print(f"Terjadi kesalahan dalam aturan YARA: {e}")
+                print(f"Terjadi kesalahan dalam aturan YARA untuk {self.process}: {e}")
                 print("apakah ingin mengatur ulang lokasi file yara rules? (y/n): ", end="")
                 answer = input()
                 if answer == "y":
@@ -63,7 +64,10 @@ class Yara_Py:
                     self.set_rules()
                     print("Lokasi file aturan YARA telah diatur ulang!\nPress enter to continue...")
                     input()
-                    set_value("YARA_RULES_PATH", self.yara_rules_path)
+                    if self.process == "Watchdog":
+                        set_value("YARA_RULES_FOR_WATCHDOG_PATH", self.yara_rules_path)
+                    elif self.process == "Web App":
+                        set_value("YARA_RULES_FOR_APPLICATION_PATH", self.yara_rules_path)
                 else:
                     exit(1)
                 

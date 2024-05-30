@@ -1,14 +1,15 @@
 from colorama import Fore, Style
 from configuration import get_all_values, set_value
-
-from sniffer import Sniffer
 from threading import Event
+from sniffer import Sniffer
 from watchdog_py import Watchdog_Py
 
 class Menu:
-    def __init__(self, sniffer: Sniffer,watchdog: Watchdog_Py) -> None:
+    def __init__(self, sniffer: Sniffer,watchdog: Watchdog_Py, sniffing_active: Event, watchdog_active: Event) -> None:
         self.sniffer = sniffer
         self.watchdog = watchdog
+        self.sniffing_active = sniffing_active
+        self.watchdog_active = watchdog_active
 
     def print_menu(self, title, options) -> None:
         print("\033c")
@@ -100,10 +101,32 @@ class Menu:
             new_value = input()
 
             if new_value != "-":
-                setattr(self.configuration, key.lower(), new_value)
-                set_value(key, new_value)
+                if key == 'YARA_RULES_FOR_APPLICATION_PATH':
+                    if self.sniffer.is_sniffing_active():
+                        print(f"{Fore.RED}Please stop the packet sniffing before changing the value of {key}.{Style.RESET_ALL}")
+                        input("Press Enter to continue...")
+                        return
+                    else:
+                        set_value(key, new_value)
+                        print(f"{Fore.LIGHTGREEN_EX}{key} has been updated to {new_value}.{Style.RESET_ALL}")
+                        print(f"{Fore.YELLOW}Recompiling YARA rules...{Style.RESET_ALL}")
+                        self.sniffer = Sniffer(self.sniffer_active)
+            
+                if key == 'YARA_RULES_FOR_WATCHDOG_PATH':
+                    if self.watchdog.is_watchdog_active():
+                        print(f"{Fore.RED}Please stop the watchdog scanning before changing the value of {key}.{Style.RESET_ALL}")
+                        input("Press Enter to continue...")
+                        return
+                    else:
+                        set_value(key, new_value)
+                        print(f"{Fore.LIGHTGREEN_EX}{key} has been updated to {new_value}.{Style.RESET_ALL}")
+                        print(f"{Fore.YELLOW}Recompiling YARA rules...{Style.RESET_ALL}")
+                        self.watchdog = Watchdog_Py(self.watchdog_active)
                 
-                print(f"{Fore.LIGHTGREEN_EX}{key} has been updated to {new_value}.{Style.RESET_ALL}")
+                else:
+                    set_value(key, new_value)
+                    print(f"{Fore.LIGHTGREEN_EX}{key} has been updated to {new_value}.{Style.RESET_ALL}")
+                
                 input("Press Enter to continue...")
         elif choice == len(configs) + 1:
             return
