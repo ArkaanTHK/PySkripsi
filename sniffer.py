@@ -8,29 +8,35 @@ import pyshark.tshark.tshark
 from time import sleep
 from os import path, makedirs, listdir, system, remove
 
-from scapy.all import sniff
+from scapy.all import *
 from scapy.utils import PcapWriter
 
 from yara_py import Yara_Py
 from datetime import datetime
 from collections import Counter
 from threading import Event, Thread
+from multiprocessing import Process
 
 class Sniffer:
     def __init__(self, sniffing_active: Event, iface: str) -> None:
         self.sniffing_active = sniffing_active
         self.pcap_path = ""
+        self.port_pcap_path = ""
         self.log_path = ""
         self.temp_log_path = ""
         self.current_pcap_dir = ""
+        self.current_port_pcap_dir = ""
         self.root_pcap_dir = ""
+        self.root_port_pcap_dir = ""
         self.iface = iface
 
         self.sniffing_thread = None
+        self.port_sniffing_thread = None
             
         self.yara_skener = Yara_Py(get_value("YARA_RULES_FOR_APPLICATION_PATH"), get_value("YARA_LOGS_FOR_APPLICATION_PATH"), 'Web App')
 
         self.set_pcap_path(get_value("PCAP_DIR"))
+        self.set_port_pcap_path(get_value("PORT_SCAN_PCAP_DIR"))
         self.set_log_path(get_value("LOG_DIR"))
 
     def set_log_path(self, log_dir) -> None:
@@ -47,6 +53,15 @@ class Sniffer:
         pcap_path = pcap_dir + datetime.now().strftime("%H%M%S") + ".pcap"
         self.pcap_path = pcap_path
         self.current_pcap_dir = pcap_dir
+        self.check_and_create_paths(pcap_dir)
+
+    def set_port_pcap_path(self, pcap_dir) -> None:
+        pcap_dir = path.dirname(pcap_dir)
+        pcap_dir = self.check_valid_dir_path(pcap_dir)
+        pcap_dir += datetime.now().strftime("%Y%m%d") + "/"
+        pcap_path = pcap_dir + datetime.now().strftime("%H%M%S") + ".pcap"
+        self.port_pcap_path = pcap_path
+        self.current_port_pcap_dir = pcap_dir
         self.check_and_create_paths(pcap_dir)
 
     def check_valid_dir_path(self, dir_path) -> str:
@@ -66,6 +81,9 @@ class Sniffer:
     def check_configurations(self) -> None:
         if get_value("PCAP_DIR") != self.root_pcap_dir:
             self.set_pcap_path(get_value("PCAP_DIR"))
+
+        if get_value("PORT_SCAN_PCAP_DIR") != self.root_port_pcap_dir:
+            self.set_pcap_path(get_value("PORT_SCAN_PCAP_DIR"))
         
         if get_value("LOG_DIR") != self.log_path:
             self.set_log_path(get_value("LOG_DIR"))
@@ -79,30 +97,19 @@ class Sniffer:
     def start_sniffing(self) -> None:
         self.check_configurations()
         self.sniffing_active.set()
-        self.sniffing_thread = Thread(target=self.sniff_packets)
+        self.sniffing_thread = Process(target=self.sniff_packets)
+        self.port_sniffing_thread = Process(target=self.scan_port_scanning)
+
         self.sniffing_thread.start()
-
-    # def stop_sniffing(self) -> None:
-    #     self.sniffing_active.clear()
-    #     if self.sniffing_thread and self.sniffing_thread.is_alive():
-    #         print("Waiting for the sniffing thread to stop...")
-    #         self.sniffing_thread.join()
-    #         while self.sniffing_thread.is_alive():
-    #             sleep(1)
-    #         self.sniffing_thread = None
-            
-
-    #     merge_pcap_thread = Thread(target=self.merge_pcap_files)
-    #     print("Merging pcap files...")
-    #     merge_pcap_thread.start()
-    #     merge_pcap_thread.join()
+        self.port_sniffing_thread.start()
 
     def stop_sniffing(self) -> None:
         self.sniffing_active.clear()
-        if self.sniffing_thread and self.sniffing_thread.is_alive():
+        if self.sniffing_thread and self.sniffing_thread.is_alive() and self.port_sniffing_thread.is_alive():
             print("Waiting for the sniffing thread to stop...")
             self.sniffing_thread.join()
-            while self.sniffing_thread.is_alive():
+            self.port_sniffing_thread.join()
+            while self.sniffing_thread.is_alive() or self.port_sniffing_thread.is_alive():
                 pass
             self.sniffing_thread = None
             print("Sniffing thread stopped.")
@@ -124,7 +131,12 @@ class Sniffer:
         with open(self.temp_log_path, 'a') as temp_log:
             temp_log.write(f"{datetime.now()} - {packet.summary()}\n")
 
-        pkt_dump = PcapWriter(self.pcap_path, append=True, sync=True)
+        pkt_dump = Thread(target=self.write_packet_to_pcap, args=(packet, self.pcap_path))
+        pkt_dump.start()
+        pkt_dump.join()
+
+    def write_packet_to_pcap(self, packet, path) -> None:
+        pkt_dump = PcapWriter(path, append=True)
         pkt_dump.write(packet)
         pkt_dump.close()
 
@@ -150,6 +162,25 @@ class Sniffer:
 
             for pcap_file in pcap_files:
                 remove(f'{pcap_files_path}/{pcap_file}')
+                
+        # merge pcap files in port scan pcap directory
+        pcap_files_path = path.abspath(self.current_port_pcap_dir)
+        merge_files_path = pcap_files_path + "/merged.pcap"
+        
+        if path.exists(merge_files_path):
+            system(f'mv {merge_files_path} {merge_files_path}.bak')
+
+        pcap_files = listdir(self.current_port_pcap_dir)
+
+        if len(pcap_files) > 1:
+            pcap_files_string = ""
+            for pcap_file in pcap_files:
+                pcap_files_string += f"{pcap_files_path}/{pcap_file} "
+
+            system(f'mergecap -w {merge_files_path} {pcap_files_string}')
+
+            for pcap_file in pcap_files:
+                remove(f'{pcap_files_path}/{pcap_file}')
 
     def sniff_packets(self) -> None:
         '''
@@ -157,7 +188,7 @@ class Sniffer:
         The packet result will be written into a pcap file and log file.
         After 5 seconds, the pcap file will be scanned for potential attacks.
         '''
-        while self.sniffing_active.is_set():
+        while True:
             self.temp_log_path = path.dirname(self.log_path) + '/temporary_packets.log'
             if not path.exists(self.temp_log_path):
                 with open(self.temp_log_path, 'w'):
@@ -178,8 +209,10 @@ class Sniffer:
                     final_log.write(logs)
 
                 open(self.temp_log_path, 'w').close()
-
-            sleep(5)
+            if self.sniffing_active.is_set():
+                sleep(5)
+            else:
+                break
 
     def check_packet(self, packet, excluded_ips=[]) -> bool:
         try:
@@ -206,6 +239,7 @@ class Sniffer:
             
         # check for potential DDoS attacks
         for ip, count in source_ips_count.items():
+            print(f"{datetime.now()} - {ip} sent {count} packets")
             if count > ddos_threshold:
                 print(f"Potential DDoS attack detected from {ip} with {count} packets")
 
@@ -222,6 +256,54 @@ class Sniffer:
         remove(temp_pcap)
 
         cap.close()
+
+    def detect_port_scan_attacks(self, packet) -> None:
+        '''
+        This method will detect potential port scanning attacks from the packet.
+        It will write the result into a temporary log file.
+        If the packet tries to access any port than the default port, it will be considered as a potential port scanning attack.
+        If there are any, dump the packet to pcap file.
+        '''
+        if packet.haslayer(IP) and packet.haslayer(TCP):
+            if packet[TCP].dport not in [80, 443]:
+                print(f"{datetime.now()} - potential port scanning attack from {packet[IP].src} to port {packet[TCP].dport}\n")
+        if packet.haslayer(IP) and packet.haslayer(UDP):
+            if packet[UDP].dport not in [53, 67, 68, 69, 123, 161, 162, 500, 514, 520]:
+                print(f"{datetime.now()} - potential port scanning attack from {packet[IP].src} to port {packet[UDP].dport}\n")
+        # print(packet.summary())
+
+            # pkt_dump = Thread(target=self.write_packet_to_pcap, args=(packet, self.port_pcap_path))
+            # pkt_dump.start()
+            # pkt_dump.join()
+
+    def scan_port_scanning(self) -> None:
+        '''
+        This method will scan for potential port scanning attacks with new sniffer.
+        '''
+        while True:
+            self.temp_log_path = path.dirname(self.log_path) + '/temporary_port_scan_packets.log'
+            if not path.exists(self.temp_log_path):
+                with open(self.temp_log_path, 'w'):
+                    pass
+            
+            self.set_pcap_path(self.root_pcap_dir)
+            self.check_day_change()
+            sniff(timeout=5, prn=self.detect_port_scan_attacks, store=0, iface=self.iface)
+
+            with open(self.temp_log_path, 'r') as temp_log:
+                logs = temp_log.read()
+
+            if logs:
+                with open(self.log_path, 'a') as final_log:
+                    final_log.write(logs)
+
+                open(self.temp_log_path, 'w').close()
+            
+            if self.sniffing_active.is_set():
+                sleep(5)
+            else:
+                break
+
 
     def is_sniffing_active(self) -> bool:
         return self.sniffing_active.is_set()

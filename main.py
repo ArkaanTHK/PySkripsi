@@ -4,6 +4,7 @@ from colorama import Fore, Style
 from menu import Menu
 from sniffer import Sniffer
 from threading import Event
+from multiprocessing import Process
 from watchdog_py import Watchdog_Py
 
 if __name__ == "__main__":
