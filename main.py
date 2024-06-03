@@ -4,7 +4,7 @@ from colorama import Fore, Style
 from menu import Menu
 from sniffer import Sniffer
 from threading import Event
-from multiprocessing import Process
+from multiprocessing import Event as MEvent
 from watchdog_py import Watchdog_Py
 
 if __name__ == "__main__":
@@ -17,7 +17,7 @@ if __name__ == "__main__":
         iface = args.iface
 
         # Event for signaling the shutdown of the program
-        sniffing_active = Event()
+        sniffing_active = MEvent()
         watchdog_active = Event()
 
         # Initialize the Sniffer and Watchdog
