@@ -49,7 +49,7 @@ class Yara_Py:
                     self.rules = yara.compile(filepath=self.yara_rules_path)
                     compiling = True
                 if self.rules is not None:
-                    print("YARA rules compiled successfully.")
+                    print(f"YARA rules for {self.process} compiled successfully.")
                     break  # Exit loop if compilation is successful
                 else:
                     print("YARA rules still compiled with warnings. Retrying...")

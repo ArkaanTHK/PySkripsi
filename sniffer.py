@@ -34,9 +34,24 @@ class Sniffer:
         self.root_port_pcap_dir = ""
 
         self.iface = iface
+        self.interfaces = get_if_list()
+        self.all_interfaces_ip = []
+
+        additional_excluded_ips = get_value("ADDITIONAL_EXCLUDED_IPS")
+        if additional_excluded_ips:
+            additional_excluded_ips = additional_excluded_ips.split(';')
+
+        for interface in self.interfaces:
+            self.all_interfaces_ip.append(get_if_addr(interface))
+
+        for ip in additional_excluded_ips:
+            if ip != "":
+                self.all_interfaces_ip.append(ip)
 
         self.sniffing_thread = None
         self.port_sniffing_thread = None
+
+        self.has_port_scan = False
             
         self.yara_skener = Yara_Py(get_value("YARA_RULES_FOR_APPLICATION_PATH"), get_value("YARA_LOGS_FOR_APPLICATION_PATH"), 'Web App')
 
@@ -46,23 +61,23 @@ class Sniffer:
         self.set_port_log_path(get_value("PORT_SCAN_LOG_DIR"))
 
     def set_log_path(self, log_dir) -> None:
-        log_dir = path.dirname(log_dir)
+        # log_dir = path.dirname(log_dir)
         log_dir = self.check_valid_dir_path(log_dir)
         log_path = log_dir + datetime.now().strftime("%Y-%m-%d") + ".log"
         self.log_path = log_path
-        self.temp_log_path = path.dirname(self.log_path) + '/temporary_packets.log'
+        self.temp_log_path = log_dir + 'temporary_packets.log'
         self.check_and_create_paths(log_path)
 
     def set_port_log_path(self, log_dir) -> None:
-        log_dir = path.dirname(log_dir)
+        # log_dir = path.dirname(log_dir)
         log_dir = self.check_valid_dir_path(log_dir)
         log_path = log_dir + datetime.now().strftime("%Y-%m-%d") + ".log"
         self.port_scan_log_path = log_path
-        self.temp_port_scan_log_path = path.dirname(self.port_scan_log_path) + '/temporary_packets.log'
+        self.temp_port_scan_log_path = log_dir + 'temporary_packets.log'
         self.check_and_create_paths(log_path)
 
     def set_pcap_path(self, pcap_dir) -> None:
-        pcap_dir = path.dirname(pcap_dir)
+        # pcap_dir = path.dirname(pcap_dir)
         pcap_dir = self.check_valid_dir_path(pcap_dir)
         
         self.root_pcap_dir = pcap_dir
@@ -73,7 +88,7 @@ class Sniffer:
         self.check_and_create_paths(pcap_dir)
 
     def set_port_pcap_path(self, pcap_dir) -> None:
-        pcap_dir = path.dirname(pcap_dir)
+        # pcap_dir = path.dirname(pcap_dir)
         pcap_dir = self.check_valid_dir_path(pcap_dir)
         pcap_dir += datetime.now().strftime("%Y%m%d") + "/"
         pcap_path = pcap_dir + datetime.now().strftime("%H%M%S") + ".pcap"
@@ -102,10 +117,10 @@ class Sniffer:
         if get_value("PORT_SCAN_PCAP_DIR") != self.root_port_pcap_dir:
             self.set_port_pcap_path(get_value("PORT_SCAN_PCAP_DIR"))
         
-        if get_value("LOG_DIR") != self.log_path:
+        if get_value("LOG_DIR") + datetime.now().strftime("%Y-%m-%d") + ".log" != self.log_path:
             self.set_log_path(get_value("LOG_DIR"))
 
-        if get_value("PORT_SCAN_LOG_DIR") != self.port_scan_log_path:
+        if get_value("PORT_SCAN_LOG_DIR") + datetime.now().strftime("%Y-%m-%d") + ".log" != self.port_scan_log_path:
             self.set_port_log_path(get_value("PORT_SCAN_LOG_DIR"))
         
         if get_value("YARA_RULES_FOR_APPLICATION_PATH") != self.yara_skener.yara_rules_path:
@@ -146,14 +161,20 @@ class Sniffer:
             merge_pcap_thread = Thread(target=self.merge_pcap_files)
             merge_pcap_thread.start()
             merge_pcap_thread.join()
+            self.set_pcap_path(get_value("PCAP_DIR"))
+
+        if self.current_port_pcap_dir != path.dirname(get_value("PORT_SCAN_PCAP_DIR")) + datetime.now().strftime("%Y-%m-%d") + "/":
+            self.set_port_pcap_path(get_value("PORT_SCAN_PCAP_DIR"))
+        
+        if self.log_path != path.dirname(get_value("LOG_DIR")) + datetime.now().strftime("%Y-%m-%d") + ".log":
+            self.set_log_path(get_value("LOG_DIR"))
+
+        if self.port_scan_log_path != path.dirname(get_value("PORT_SCAN_LOG_DIR")) + datetime.now().strftime("%Y-%m-%d") + ".log":
+            self.set_port_log_path(get_value("PORT_SCAN_LOG_DIR"))
 
     def packet_callback(self, packet) -> None:
         with open(self.temp_log_path, 'a') as temp_log:
             temp_log.write(f"{datetime.now()} - {packet.summary()}\n")
-
-        pkt_dump = Thread(target=self.write_packet_to_pcap, args=(packet, self.pcap_path))
-        pkt_dump.start()
-        pkt_dump.join()
 
     def write_packet_to_pcap(self, packet, path) -> None:
         pkt_dump = PcapWriter(path, append=True)
@@ -182,6 +203,8 @@ class Sniffer:
 
             for pcap_file in pcap_files:
                 remove(f'{pcap_files_path}/{pcap_file}')
+        else:
+            system(f'mv {merge_files_path}.bak {merge_files_path}')
                 
     def sniff_packets(self) -> None:
         '''
@@ -190,18 +213,28 @@ class Sniffer:
         After 5 seconds, the pcap file will be scanned for potential attacks.
         '''
         while True:
-            print("Scanning for packets...")
-            self.temp_log_path = path.dirname(self.log_path) + '/temporary_packets.log'
+            # self.temp_log_path = path.dirname(self.log_path) + '/temporary_packets.log'
             if not path.exists(self.temp_log_path):
                 with open(self.temp_log_path, 'w'):
                     pass
             
-            self.set_pcap_path(self.root_pcap_dir)
+            # self.set_pcap_path(self.root_pcap_dir)
             self.check_day_change()
-            sniff(timeout=5, prn=self.packet_callback, store=0, iface=self.iface)
-            detect_attack_thread = Thread(target=self.detect_attacks, args=(self.pcap_path,))
-            detect_attack_thread.start()
-            detect_attack_thread.join()
+            # sniff(timeout=5, prn=self.packet_callback, store=0, iface=self.iface)
+            sniff_packet = AsyncSniffer(iface=self.iface, prn=self.packet_callback)
+            sniff_packet.start()
+            sleep(5)
+            sniff_packet.stop()
+            result = sniff_packet.results
+            
+            if len(result) != 0:
+                pkt_dump = Thread(target=self.write_packet_to_pcap, args=(result, self.pcap_path))
+                pkt_dump.start()
+                pkt_dump.join()
+
+                detect_attack_thread = Thread(target=self.detect_attacks, args=(self.pcap_path,))
+                detect_attack_thread.start()
+                detect_attack_thread.join()
 
             with open(self.temp_log_path, 'r') as temp_log:
                 logs = temp_log.read()
@@ -211,14 +244,11 @@ class Sniffer:
                     final_log.write(logs)
 
                 open(self.temp_log_path, 'w').close()
-            if self.sniffing_active.is_set():
-                sleep(5)
-            else:
+            if not self.sniffing_active.is_set():
                 break
-
-    def check_packet(self, packet, excluded_ips=[]) -> bool:
+    def check_packet(self, packet, excluded_ip) -> bool:
         try:
-            return 'IP' in packet and packet.ip.src not in excluded_ips
+            return 'IP' in packet and packet.ip.src not in excluded_ip
         except AttributeError:
             return False
 
@@ -230,13 +260,10 @@ class Sniffer:
         cap = pyshark.FileCapture(pcap_file)
         cap.set_debug(log_level=logging.ERROR)
 
-        # Dictionary to store packet counts per source IP for DDoS detection
-        excluded_ips = ['192.168.1.100', '66.22.221.93']
-
         # Threshold for identifying DDoS traffic
         ddos_threshold = 100
 
-        src_ips = (packet.ip.src for packet in cap if self.check_packet(packet, excluded_ips))
+        src_ips = (packet.ip.src for packet in cap if self.check_packet(packet, self.all_interfaces_ip))
         source_ips_count = Counter(src_ips)
             
         # check for potential DDoS attacks
@@ -256,6 +283,7 @@ class Sniffer:
         temp_cap.load_packets()
         packet_count = len(temp_cap)
         temp_cap.close() 
+        cap.close()
 
         if packet_count == 0:
             remove(temp_pcap)
@@ -267,8 +295,6 @@ class Sniffer:
         # remove temporary pcap file
         remove(temp_pcap)
 
-        cap.close()
-
     def detect_port_scan_attacks(self, packet) -> None:
         '''
         This method will detect potential port scanning attacks from the packet.
@@ -276,40 +302,41 @@ class Sniffer:
         If the packet tries to access any port than the default port, it will be considered as a potential port scanning attack.
         If there are any, dump the packet to pcap file.
         '''
-        has_port_scan = False
         if packet.haslayer('IP') and packet.haslayer('TCP'):
-            if packet['TCP'].dport not in [80, 443]:
+            if packet['TCP'].dport not in [80, 443] and (packet['IP'].src not in self.all_interfaces_ip and packet['IP'].dst in self.all_interfaces_ip):
                 with open(self.temp_port_scan_log_path, 'a') as temp_log:
-                    temp_log.write(f"{datetime.now()} - potential port scanning attack from {packet['IP'].src} to port {packet['TCP'].dport}\n")
+                    temp_log.write(f"{datetime.now()} - potential port scanning attack from {packet['IP'].src} to port {packet['TCP'].dport} (TCP)\n")
 
-                has_port_scan = True
+                self.has_port_scan = True
 
         if packet.haslayer('IP') and packet.haslayer('UDP'):
-            if packet['UDP'].dport not in [53, 67, 68, 69, 123, 161, 162, 500, 514, 520]:
+            if packet['UDP'].dport not in [53, 67, 68, 69, 123, 161, 162, 500, 514, 520] and (packet['IP'].src not in self.all_interfaces_ip and packet['IP'].dst in self.all_interfaces_ip):
                 with open(self.temp_port_scan_log_path, 'a') as temp_log:
-                    temp_log.write(f"{datetime.now()} - potential port scanning attack from {packet['IP'].src} to port {packet['UDP'].dport}\n")
+                    temp_log.write(f"{datetime.now()} - potential port scanning attack from {packet['IP'].src} to port {packet['UDP'].dport} (UDP)\n")
 
-                has_port_scan = True
-
-        if has_port_scan:
-            pkt_dump = Thread(target=self.write_packet_to_pcap, args=(packet, self.port_pcap_path))
-            pkt_dump.start()
-            pkt_dump.join()
+                self.has_port_scan = True
 
     def scan_port_scanning(self) -> None:
         '''
         This method will scan for potential port scanning attacks with new sniffer.
         '''
-        interfaces = get_if_list()
         while True:
-            print("Scanning for potential port scanning attacks...")
-            self.temp_port_scan_log_path = path.dirname(self.port_scan_log_path) + '/temporary_port_scan_packets.log'
+            # self.temp_port_scan_log_path = path.dirname(self.port_scan_log_path) + '/temporary_port_scan_packets.log'
             if not path.exists(self.temp_port_scan_log_path):
                 with open(self.temp_port_scan_log_path, 'w'):
                     pass
-
-            sniff(timeout=5, prn=self.detect_port_scan_attacks, store=0, iface=interfaces)
-
+            
+            self.has_port_scan = False
+            port_sniff = AsyncSniffer(prn=self.detect_port_scan_attacks, iface=self.interfaces)
+            port_sniff.start()
+            sleep(5)
+            port_sniff.stop()
+            result = port_sniff.results
+            if self.has_port_scan:
+                pkt_dump = Thread(target=self.write_packet_to_pcap, args=(result, self.port_pcap_path))
+                pkt_dump.start()
+                pkt_dump.join()
+            
             with open(self.temp_port_scan_log_path, 'r') as temp_log:
                 logs = temp_log.read()
 
@@ -319,9 +346,7 @@ class Sniffer:
 
                 open(self.temp_port_scan_log_path, 'w').close()
             
-            if self.sniffing_active.is_set():
-                sleep(5)
-            else:
+            if self.sniffing_active.is_set() != True:
                 break
 
 
