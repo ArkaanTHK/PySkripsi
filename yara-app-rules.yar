@@ -36,23 +36,24 @@ rule SQLi: mal
         $str24 = "sleep"                      // for MySQL
         $str25 = "--sp_password" nocase
         $str26 = "SHA1" nocase
-        $str27 = "ENCODE" nocase
-        $str28 = "COMPRESS" nocase
-        $str29 = "SCHEME" nocase
-        $str30 = "ROW_COUNT" nocase
-        $str31 = "DROP members--" nocase
-        $str32 = "ASCII" nocase
-        $str33 = "UNION" nocase
-        $str34 = "UNION SELECT" nocase
-        $str35 = "INFORMATION" nocase
-        $str36 = "SCHEMA" nocase
-        $str37 = "INFORMATION_SCHEMA" nocase
-        $str38 = "OR" nocase
+        $str27 = "PASSWORD" nocase
+        $str28 = "ENCODE" nocase
+        $str29 = "COMPRESS" nocase
+        $str30 = "SCHEME" nocase
+        $str31 = "ROW_COUNT" nocase
+        $str32 = "DROP members--" nocase
+        $str33 = "ASCII" nocase
+        $str34 = "UNION" nocase
+        $str35 = "UNION SELECT" nocase
+        $str36 = "INFORMATION" nocase
+        $str37 = "SCHEMA" nocase
+        $str38 = "INFORMATION_SCHEMA" nocase 
 
     condition:
         any of ($char1, $char2, $char3) and
-        any of ($str1, $str2, $str3, $str4, $str5, $str6, $str7, $str8, $str9, $str10, $str11, $str12, $str13, $str14, $str15, $str16, $str17, $str18, $str19, $str20, $str21, $str22, $str23, $str24, $str25, $str26, $str27, $str28, $str29, $str30, $str31, $str32, $str33, $str34, $str35, $str36, $str37)
+        any of ($str1, $str2, $str3, $str4, $str5, $str6, $str7, $str8, $str9, $str10, $str11, $str12, $str13, $str14, $str15, $str16, $str17, $str18, $str19, $str20, $str21, $str22, $str23, $str24, $str25, $str26, $str27, $str28, $str29, $str30, $str31, $str32, $str33, $str34, $str35, $str36, $str37, $str38)
 }
+
 
 
 rule xss_multiple_payload_detection {
