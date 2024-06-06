@@ -46,7 +46,8 @@ rule SQLi: mal
         $str34 = "UNION SELECT" nocase
         $str35 = "INFORMATION" nocase
         $str36 = "SCHEMA" nocase
-        $str37 = "INFORMATION_SCHEMA" nocase 
+        $str37 = "INFORMATION_SCHEMA" nocase
+        $str38 = "OR" 
 
     condition:
         any of ($char1, $char2, $char3) and
