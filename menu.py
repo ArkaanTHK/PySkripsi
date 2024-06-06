@@ -110,7 +110,7 @@ class Menu:
                         set_value(key, new_value)
                         print(f"{Fore.LIGHTGREEN_EX}{key} has been updated to {new_value}.{Style.RESET_ALL}")
                         print(f"{Fore.YELLOW}Recompiling YARA rules...{Style.RESET_ALL}")
-                        self.sniffer = Sniffer(self.sniffer_active)
+                        self.sniffer = Sniffer(self.sniffing_active)
             
                 if key == 'YARA_RULES_FOR_WATCHDOG_PATH':
                     if self.watchdog.is_watchdog_active():

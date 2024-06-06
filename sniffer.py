@@ -4,6 +4,7 @@ import pyshark
 import pyshark.config
 import pyshark.tshark
 import pyshark.tshark.tshark
+import urllib
 
 from time import sleep
 from os import path, makedirs, listdir, system, remove
@@ -228,6 +229,7 @@ class Sniffer:
             result = sniff_packet.results
             
             if len(result) != 0:
+                self.pcap_path = self.current_pcap_dir + datetime.now().strftime("%H%M%S") + ".pcap"
                 pkt_dump = Thread(target=self.write_packet_to_pcap, args=(result, self.pcap_path))
                 pkt_dump.start()
                 pkt_dump.join()
@@ -261,7 +263,7 @@ class Sniffer:
         cap.set_debug(log_level=logging.ERROR)
 
         # Threshold for identifying DDoS traffic
-        ddos_threshold = 100
+        ddos_threshold = 1000
 
         src_ips = (packet.ip.src for packet in cap if self.check_packet(packet, self.all_interfaces_ip))
         source_ips_count = Counter(src_ips)
@@ -278,22 +280,60 @@ class Sniffer:
                     ddos_log.write(f"{datetime.now()} - potential DDoS attack detected from {ip} with {count} packets\n")
 
         # create temporary pcap for yara scan
-        temp_pcap = pcap_file.replace(".pcap", "_temp.pcap")
-        temp_cap = pyshark.FileCapture(pcap_file, display_filter="http", output_file=temp_pcap)
-        temp_cap.load_packets()
-        packet_count = len(temp_cap)
-        temp_cap.close() 
+        http_requests = []
+    
+        for packet in cap:
+            if 'HTTP' in packet:
+                http_layer = packet.http
+                host = http_layer.get_field_value('host')
+                if host is not None:
+                    method = http_layer.get_field_value('request_method')
+                    path = http_layer.get_field_value('request_uri')
+                    ip_address = http_layer.get_field_value('x-forwarded-for')
+                    if method == 'POST':
+                        payload = http_layer.get_field_value('file_data')
+                        if payload is not None:
+                            payload = payload.split(':')
+                            payload = urllib.parse.unquote("".join([chr(int(byte, 16)) for byte in payload]))
+                        else:
+                            payload = ""
+                    else:
+                        try:
+                            payload = urllib.parse.unquote(http_layer.get_field_value('request_uri_query'))
+                        except Exception:
+                            payload = http_layer.get_field_value('request_uri_query')
+                            
+                        if payload is None:
+                            payload = ""
+                    
+                    http_data = {
+                        'Method': method,
+                        'Host': host,
+                        'Path': path,
+                        'IP Address': ip_address,
+                        'Full URL': f"http://{host}{path}",
+                        'Payload': payload
+                    }
+                    
+                    http_requests.append(http_data)
+                    # print(http_data)
         cap.close()
 
-        if packet_count == 0:
-            remove(temp_pcap)
-            return
+        filtered_requests = []
+    
+        for request in http_requests:
+            data = request['Payload']
+            filtered_requests.append({'Method': request['Method'], 'URL': request['Full URL'], 'Data': data, 'IP Address': request['IP Address']})
 
-        self.yara_skener.set_file_path(temp_pcap)
-        self.yara_skener.scan()
+        self.yara_skener.scan(filtered_requests)
 
-        # remove temporary pcap file
-        remove(temp_pcap)
+    def extract_http_fields(self, packet):
+        http_fields = {}
+        if 'HTTP' in packet:
+            http_layer = packet['HTTP']
+            for field in http_layer.field_names:
+                http_fields[field] = http_layer.get(field, None)
+        return http_fields
 
     def detect_port_scan_attacks(self, packet) -> None:
         '''

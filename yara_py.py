@@ -79,18 +79,27 @@ class Yara_Py:
             # Wait before checking again
             time.sleep(1)  # Adjust sleep time as needed
 
-    def scan(self):
+    def scan(self, data):
         if os.path.isfile(self.file_path):
             try:
                 if self.rules is not None:
                     matches = self.rules.match(self.file_path, timeout=3600)
                     with open(self.logs_path, 'a') as logs:
                         if matches:
-                            logs.write(f"{time.ctime()} - {self.file_path} - {matches}\n")
+                            logs.write(f"{time.ctime()} - {self.file_path} | {matches}\n")
                         else:
-                            logs.write(f"{time.ctime()} - {self.file_path} - No Match\n")
+                            logs.write(f"{time.ctime()} - {self.file_path} | No Match\n")
                 else:
                     print("Tidak ada aturan YARA yang ditemukan.")
             except yara.Error as e:
                 print(f"Error saat memindai {self.file_path}: {e}")
-                
+        else:
+            try:
+                if data is not None and len(data) > 0:
+                    for packet in data:
+                        matches = self.rules.match(data=packet['Data'], timeout=3600)
+                        with open(self.logs_path, 'a') as logs:
+                            if matches:
+                                logs.write(f"{time.ctime()} - From: {packet['IP Address']} | Match: {matches} | request: {packet['Data']}\n")
+            except yara.Error as e:
+                print(f"Error saat memindai data paket: {e}")
