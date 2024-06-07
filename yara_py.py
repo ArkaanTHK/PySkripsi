@@ -2,6 +2,7 @@ import yara
 import os
 import time
 from os import path, makedirs
+from colorama import Fore, Style
 from configuration import set_value, get_value
 
 class Yara_Py:
@@ -49,21 +50,21 @@ class Yara_Py:
                     self.rules = yara.compile(filepath=self.yara_rules_path)
                     compiling = True
                 if self.rules is not None:
-                    print(f"YARA rules for {self.process} compiled successfully.")
+                    print(f"{Fore.GREEN}{Style.BRIGHT}YARA rules for {self.process} compiled successfully.{Style.RESET_ALL}")
                     break  # Exit loop if compilation is successful
                 else:
-                    print("YARA rules still compiled with warnings. Retrying...")
+                    print(Fore.YELLOW + Style.BRIGHT + "YARA rules still compiled with warnings. Retrying..." + Style.RESET_ALL)
                 
             except yara.Error as e:
-                print(f"Terjadi kesalahan dalam aturan YARA untuk {self.process}: {e}")
+                print(f"{Fore.RED}{Style.BRIGHT}Terjadi kesalahan dalam aturan YARA untuk {self.process}: {e}{Style.RESET_ALL}")
                 print("apakah ingin mengatur ulang lokasi file yara rules? (y/n): ", end="")
                 answer = input()
                 if answer == "y":
                     print("Masukkan alamat file aturan YARA: ", end="")
                     self.yara_rules_path = input()
                     self.set_rules()
-                    print("Lokasi file aturan YARA telah diatur ulang!\nPress enter to continue...")
-                    input()
+                    print(Fore.GREEN + Style.BRIGHT + "Lokasi file aturan YARA telah diatur ulang!" + Style.RESET_ALL)
+                    input("Press enter to continue...")
                     if self.process == "Watchdog":
                         set_value("YARA_RULES_FOR_WATCHDOG_PATH", self.yara_rules_path)
                     elif self.process == "Web App":
@@ -73,7 +74,7 @@ class Yara_Py:
                 
             # Check if timeout has been reached
             if time.time() - start_time >= timeout:
-                print("Timeout reached. Failed to compile YARA rules within specified time.")
+                print(Fore.RED + Style.BRIGHT + "Timeout reached. Failed to compile YARA rules within specified time." + Style.RESET_ALL)
                 break  # Exit loop if timeout is reached
                 
             # Wait before checking again
@@ -90,9 +91,9 @@ class Yara_Py:
                         else:
                             logs.write(f"{time.ctime()} - {self.file_path} | No Match\n")
                 else:
-                    print("Tidak ada aturan YARA yang ditemukan.")
+                    print(Fore.RED + Style.BRIGHT + "Tidak ada aturan YARA yang ditemukan." + Style.RESET_ALL)
             except yara.Error as e:
-                print(f"Error saat memindai {self.file_path}: {e}")
+                print(f"{Fore.RED}{Style.BRIGHT}Error saat memindai {self.file_path}: {e}{Style.RESET_ALL}")
         else:
             try:
                 if data is not None and len(data) > 0:
@@ -102,4 +103,4 @@ class Yara_Py:
                             if matches:
                                 logs.write(f"{time.ctime()} - From: {packet['IP Address']} | Match: {matches} | request: {packet['Data']}\n")
             except yara.Error as e:
-                print(f"Error saat memindai data paket: {e}")
+                print(f"{Fore.RED}{Style.BRIGHT}Error saat memindai data paket: {e}{Style.RESET_ALL}")

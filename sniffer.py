@@ -1,5 +1,4 @@
 import logging
-from configuration import get_value
 import pyshark
 import pyshark.config
 import pyshark.tshark
@@ -17,6 +16,8 @@ from datetime import datetime
 from collections import Counter
 from threading import Event, Thread
 from multiprocessing import Process
+from configuration import get_value
+from colorama import Fore, Style
 
 class Sniffer:
     def __init__(self, sniffing_active: Event, iface: str) -> None:
@@ -142,19 +143,19 @@ class Sniffer:
     def stop_sniffing(self) -> None:
         self.sniffing_active.clear()
         if self.sniffing_thread and self.sniffing_thread.is_alive() and self.port_sniffing_thread.is_alive():
-            print("Waiting for the sniffing thread to stop...")
+            print(Fore.YELLOW + "Waiting for the sniffing thread to stop..." + Style.RESET_ALL)
             self.sniffing_thread.join()
             self.port_sniffing_thread.join()
             while self.sniffing_thread.is_alive() or self.port_sniffing_thread.is_alive():
                 pass
             self.sniffing_thread = None
-            print("Sniffing thread stopped.")
+            print(Fore.GREEN + "Sniffing thread stopped." + Style.RESET_ALL)
 
         merge_pcap_thread = Thread(target=self.merge_pcap_files)
-        print("Merging pcap files...")
+        print(Fore.YELLOW + "Merging pcap files..." + Style.RESET_ALL)
         merge_pcap_thread.start()
         merge_pcap_thread.join()
-        print("Pcap files merged.")
+        print(Fore.GREEN + "Pcap files merged." + Style.RESET_ALL)
         input("All activities have been stopped. Press Enter to continue...")
     
     def check_day_change(self) -> None:
@@ -189,9 +190,12 @@ class Sniffer:
         '''
         pcap_files_path = path.abspath(self.current_pcap_dir)
         merge_files_path = pcap_files_path + "/merged.pcap"
+
+        isMergeFileExists = False
         
         if path.exists(merge_files_path):
             system(f'mv {merge_files_path} {merge_files_path}.bak')
+            isMergeFileExists = True
 
         pcap_files = listdir(self.current_pcap_dir)
 
@@ -205,7 +209,8 @@ class Sniffer:
             for pcap_file in pcap_files:
                 remove(f'{pcap_files_path}/{pcap_file}')
         else:
-            system(f'mv {merge_files_path}.bak {merge_files_path}')
+            if isMergeFileExists:
+                system(f'mv {merge_files_path}.bak {merge_files_path}')
                 
     def sniff_packets(self) -> None:
         '''

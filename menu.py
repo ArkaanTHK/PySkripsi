@@ -75,10 +75,10 @@ class Menu:
                     self.show_config_menu()
                 elif choice == 4:
                     self.sniffer.stop_sniffing()
-                    print(Fore.GREEN + "Exiting the program. Goodbye! (Please wait until all activites to be stopped. The program will closed by itself)" + Style.RESET_ALL)
+                    print(Fore.GREEN + "Exiting the program. Goodbye!" + Style.RESET_ALL)
                     break
         except KeyboardInterrupt:
-            print("keyboard interrupt dari main_menu")
+            print(Fore.RED + Style.BRIGHT + "keyboard interrupt dari main_menu" + Style.RESET_ALL)
             exit(0)
 
     def show_config_menu(self) -> None:
@@ -97,7 +97,7 @@ class Menu:
         if 1 <= choice <= len(configs):
             key = list(configs.keys())[choice - 1]
 
-            print(f"Enter new value for {key} ('-' to back): ", end="")
+            print(f"{Fore.YELLOW}Enter new value for {key} ('-' to back): {Style.RESET_ALL}", end="")
             new_value = input()
 
             if new_value != "-":
@@ -131,5 +131,5 @@ class Menu:
         elif choice == len(configs) + 1:
             return
         else:
-            print("Invalid choice. Please enter a valid option.")
+            print(Fore.RED + Style.BRIGHT + "Invalid choice. Please enter a valid option." + Style.RESET_ALL)
             return
