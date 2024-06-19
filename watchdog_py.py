@@ -106,4 +106,4 @@ class Handler(FileSystemEventHandler):
                 with open(LOG_PATH, 'a') as logs:
                     logs.write(f"{ctime()} - {event.src_path} Created\n")
                 YARA_SKENER.set_file_path(event.src_path)
-                YARA_SKENER.scan()
+                YARA_SKENER.scan(data=None)

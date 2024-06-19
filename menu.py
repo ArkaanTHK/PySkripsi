@@ -5,7 +5,8 @@ from sniffer import Sniffer
 from watchdog_py import Watchdog_Py
 
 class Menu:
-    def __init__(self, sniffer: Sniffer,watchdog: Watchdog_Py, sniffing_active: Event, watchdog_active: Event) -> None:
+    def __init__(self, sniffer: Sniffer,watchdog: Watchdog_Py, sniffing_active: Event, watchdog_active: Event, iface:str) -> None:
+        self.iface = iface
         self.sniffer = sniffer
         self.watchdog = watchdog
         self.sniffing_active = sniffing_active
@@ -110,7 +111,7 @@ class Menu:
                         set_value(key, new_value)
                         print(f"{Fore.LIGHTGREEN_EX}{key} has been updated to {new_value}.{Style.RESET_ALL}")
                         print(f"{Fore.YELLOW}Recompiling YARA rules...{Style.RESET_ALL}")
-                        self.sniffer = Sniffer(self.sniffing_active)
+                        self.sniffer = Sniffer(self.sniffing_active, self.iface)
             
                 if key == 'YARA_RULES_FOR_WATCHDOG_PATH':
                     if self.watchdog.is_watchdog_active():

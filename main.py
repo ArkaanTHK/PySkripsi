@@ -35,7 +35,7 @@ if __name__ == "__main__":
         watchdog = Watchdog_Py(watchdog_active)
 
         # Start the main menu
-        menu = Menu(sniffer, watchdog, sniffing_active, watchdog_active)
+        menu = Menu(sniffer, watchdog, sniffing_active, watchdog_active, iface)
         input("Press enter to continue...")
         menu.main_menu()
     except ValueError:
