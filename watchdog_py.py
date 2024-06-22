@@ -1,4 +1,4 @@
-from time import ctime
+from time import ctime, perf_counter
 from os import path, makedirs
 from configuration import get_value
 
@@ -103,7 +103,12 @@ class Handler(FileSystemEventHandler):
             if event.is_directory:
                 return None
             elif event.event_type == 'created':
+                # watchdog_timer_start = perf_counter()
+                
                 with open(LOG_PATH, 'a') as logs:
                     logs.write(f"{ctime()} - {event.src_path} Created\n")
                 YARA_SKENER.set_file_path(event.src_path)
                 YARA_SKENER.scan(data=None)
+                
+                # watchdog_timer_end = perf_counter()
+                # print(f"Duration for Watchdog + YARA scan: {watchdog_timer_end - watchdog_timer_start}s")

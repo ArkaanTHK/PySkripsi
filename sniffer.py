@@ -5,8 +5,8 @@ import pyshark.tshark
 import pyshark.tshark.tshark
 import urllib
 
-from time import sleep
-from os import path, makedirs, listdir, system, remove
+from time import sleep, perf_counter
+import os
 
 from scapy.all import *
 from scapy.utils import PcapWriter
@@ -34,6 +34,9 @@ class Sniffer:
         self.temp_port_scan_log_path = ""
         self.current_port_pcap_dir = ""
         self.root_port_pcap_dir = ""
+
+        self.timer_start = None
+        self.timer_end = None
 
         self.iface = iface
         self.interfaces = get_if_list()
@@ -104,11 +107,11 @@ class Sniffer:
         return dir_path
 
     def check_and_create_paths(self, file_path) -> None:
-        folder_path = path.dirname(file_path)
-        if not path.exists(folder_path):
-            makedirs(folder_path)
+        folder_path = os.path.dirname(file_path)
+        if not os.path.exists(folder_path):
+            os.makedirs(folder_path)
 
-        if not path.exists(file_path):
+        if not os.path.exists(file_path):
             with open(file_path, 'w'):
                 pass
 
@@ -165,13 +168,13 @@ class Sniffer:
             merge_pcap_thread.join()
             self.set_pcap_path(get_value("PCAP_DIR"))
 
-        if self.current_port_pcap_dir != path.dirname(get_value("PORT_SCAN_PCAP_DIR")) + datetime.now().strftime("%Y-%m-%d") + "/":
+        if self.current_port_pcap_dir != os.path.dirname(get_value("PORT_SCAN_PCAP_DIR")) + datetime.now().strftime("%Y-%m-%d") + "/":
             self.set_port_pcap_path(get_value("PORT_SCAN_PCAP_DIR"))
         
-        if self.log_path != path.dirname(get_value("LOG_DIR")) + datetime.now().strftime("%Y-%m-%d") + ".log":
+        if self.log_path != os.path.dirname(get_value("LOG_DIR")) + datetime.now().strftime("%Y-%m-%d") + ".log":
             self.set_log_path(get_value("LOG_DIR"))
 
-        if self.port_scan_log_path != path.dirname(get_value("PORT_SCAN_LOG_DIR")) + datetime.now().strftime("%Y-%m-%d") + ".log":
+        if self.port_scan_log_path != os.path.dirname(get_value("PORT_SCAN_LOG_DIR")) + datetime.now().strftime("%Y-%m-%d") + ".log":
             self.set_port_log_path(get_value("PORT_SCAN_LOG_DIR"))
 
     def packet_callback(self, packet) -> None:
@@ -188,29 +191,29 @@ class Sniffer:
         This method will merge all pcap files in the current pcap directory into a single pcap file using mergecap executables when the program stopped or on day change.
         The merged pcap file will be saved as 'merged.pcap'.
         '''
-        pcap_files_path = path.abspath(self.current_pcap_dir)
+        pcap_files_path = os.path.abspath(self.current_pcap_dir)
         merge_files_path = pcap_files_path + "/merged.pcap"
 
         isMergeFileExists = False
         
-        if path.exists(merge_files_path):
-            system(f'mv {merge_files_path} {merge_files_path}.bak')
+        if os.path.exists(merge_files_path):
+            os.system(f'mv {merge_files_path} {merge_files_path}.bak')
             isMergeFileExists = True
 
-        pcap_files = listdir(self.current_pcap_dir)
+        pcap_files = os.listdir(self.current_pcap_dir)
 
         if len(pcap_files) > 1:
             pcap_files_string = ""
             for pcap_file in pcap_files:
                 pcap_files_string += f"{pcap_files_path}/{pcap_file} "
 
-            system(f'mergecap -w {merge_files_path} {pcap_files_string}')
+            os.system(f'mergecap -w {merge_files_path} {pcap_files_string}')
 
             for pcap_file in pcap_files:
-                remove(f'{pcap_files_path}/{pcap_file}')
+                os.remove(f'{pcap_files_path}/{pcap_file}')
         else:
             if isMergeFileExists:
-                system(f'mv {merge_files_path}.bak {merge_files_path}')
+                os.system(f'mv {merge_files_path}.bak {merge_files_path}')
                 
     def sniff_packets(self) -> None:
         '''
@@ -220,7 +223,7 @@ class Sniffer:
         '''
         while True:
             # self.temp_log_path = path.dirname(self.log_path) + '/temporary_packets.log'
-            if not path.exists(self.temp_log_path):
+            if not os.path.exists(self.temp_log_path):
                 with open(self.temp_log_path, 'w'):
                     pass
             
@@ -234,6 +237,7 @@ class Sniffer:
             result = sniff_packet.results
             
             if len(result) != 0:
+                self.timer_start = perf_counter()
                 self.pcap_path = self.current_pcap_dir + datetime.now().strftime("%H%M%S") + ".pcap"
                 pkt_dump = Thread(target=self.write_packet_to_pcap, args=(result, self.pcap_path))
                 pkt_dump.start()
@@ -268,23 +272,29 @@ class Sniffer:
         cap.set_debug(log_level=logging.ERROR)
 
         # Threshold for identifying DDoS traffic
-        ddos_threshold = 1000
+        # ddos_threshold = 1000
 
-        src_ips = (packet.ip.src for packet in cap if self.check_packet(packet, self.all_interfaces_ip))
-        source_ips_count = Counter(src_ips)
+        # src_ips = (packet['IP'].src for packet in cap if 'IP' in packet and packet['IP'].src not in self.all_interfaces_ip)
             
-        # check for potential DDoS attacks
-        for ip, count in source_ips_count.items():
-            if count > ddos_threshold:
-                log_path = path.dirname(self.port_scan_log_path) + f'/ddos-{datetime.now().strftime("%Y%m%d")}.log'
-                if not path.exists(log_path):
-                    with open(log_path, 'w'):
-                        pass
+        # source_ips_count = Counter(src_ips)
+            
+        # # check for potential DDoS attacks
+        # for ip, count in source_ips_count.items():
+        #     if count > ddos_threshold:
+        #         log_path = os.path.dirname(self.port_scan_log_path) + f'/ddos-{datetime.now().strftime("%Y%m%d")}.log'
+        #         if not os.path.exists(log_path):
+        #             with open(log_path, 'w'):
+        #                 pass
 
-                with open(log_path, 'a') as ddos_log:
-                    ddos_log.write(f"{datetime.now()} - potential DDoS attack detected from {ip} with {count} packets\n")
+        #         with open(log_path, 'a') as ddos_log:
+        #             ddos_log.write(f"{datetime.now()} - potential DDoS attack detected from {ip} with {count} packets\n")
+
+        # self.timer_end = perf_counter()
+        # print(f"Duration for DDoS scan: {self.timer_end - self.timer_start}s")
 
         # create temporary pcap for yara scan
+
+        # yara_scan_timer_start = perf_counter()
         http_requests = []
     
         for packet in cap:
@@ -305,13 +315,19 @@ class Sniffer:
                     else:
                         try:
                             payload = urllib.parse.unquote(http_layer.get_field_value('request_uri_query'))
+                            while True:
+                                payload_decoded = urllib.parse.unquote(payload)
+                                if payload_decoded != payload:
+                                    payload = payload_decoded
+                                else:
+                                    break
                         except Exception:
                             payload = http_layer.get_field_value('request_uri_query')
                             
                         if payload is None:
                             payload = ""
                     
-                    http_data = {
+                    http_data = {  
                         'Method': method,
                         'Host': host,
                         'Path': path,
@@ -321,7 +337,6 @@ class Sniffer:
                     }
                     
                     http_requests.append(http_data)
-                    # print(http_data)
         cap.close()
 
         filtered_requests = []
@@ -329,8 +344,10 @@ class Sniffer:
         for request in http_requests:
             data = request['Payload']
             filtered_requests.append({'Method': request['Method'], 'URL': request['Full URL'], 'Data': data, 'IP Address': request['IP Address']})
-
         self.yara_skener.scan(filtered_requests)
+
+        yara_scan_timer_end = perf_counter()
+        print(f"Duration for YARA Packet Scan: {yara_scan_timer_end - self.timer_start}s")
 
     def extract_http_fields(self, packet):
         http_fields = {}
@@ -367,10 +384,11 @@ class Sniffer:
         '''
         while True:
             # self.temp_port_scan_log_path = path.dirname(self.port_scan_log_path) + '/temporary_port_scan_packets.log'
-            if not path.exists(self.temp_port_scan_log_path):
+            if not os.path.exists(self.temp_port_scan_log_path):
                 with open(self.temp_port_scan_log_path, 'w'):
                     pass
             
+            # benchmark_timer_start = perf_counter()
             self.has_port_scan = False
             port_sniff = AsyncSniffer(prn=self.detect_port_scan_attacks, iface=self.interfaces)
             port_sniff.start()
@@ -391,6 +409,8 @@ class Sniffer:
 
                 open(self.temp_port_scan_log_path, 'w').close()
             
+            # benchmark_timer_end = perf_counter()
+            # print(f"Duration for detect port scan attack: {benchmark_timer_end - benchmark_timer_start}s")
             if self.sniffing_active.is_set() != True:
                 break
 
