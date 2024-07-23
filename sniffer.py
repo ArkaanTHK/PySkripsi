@@ -53,6 +53,26 @@ class Sniffer:
             if ip != "":
                 self.all_interfaces_ip.append(ip)
 
+        self.allowed_tcp_ports = []
+
+        allowed_tcp_port = get_value("ALLOWED_TCP_PORTS")
+        if allowed_tcp_port:
+            allowed_tcp_port = allowed_tcp_port.split(';')
+
+        for port in allowed_tcp_port:
+            if port != "":
+                self.allowed_tcp_ports.append(port)
+
+        self.allowed_udp_ports = []
+
+        allowed_udp_port = get_value("ALLOWED_UDP_PORTS")
+        if allowed_udp_port:
+            allowed_udp_port = allowed_udp_port.split(';')
+
+        for port in allowed_udp_port:
+            if port != "":
+                self.allowed_udp_ports.append(port)
+
         self.sniffing_thread = None
         self.port_sniffing_thread = None
 
@@ -272,25 +292,25 @@ class Sniffer:
         cap.set_debug(log_level=logging.ERROR)
 
         # Threshold for identifying DDoS traffic
-        # ddos_threshold = 1000
+        ddos_threshold = 1000
 
-        # src_ips = (packet['IP'].src for packet in cap if 'IP' in packet and packet['IP'].src not in self.all_interfaces_ip)
+        src_ips = (packet['IP'].src for packet in cap if 'IP' in packet and packet['IP'].src not in self.all_interfaces_ip)
             
-        # source_ips_count = Counter(src_ips)
+        source_ips_count = Counter(src_ips)
             
-        # # check for potential DDoS attacks
-        # for ip, count in source_ips_count.items():
-        #     if count > ddos_threshold:
-        #         log_path = os.path.dirname(self.port_scan_log_path) + f'/ddos-{datetime.now().strftime("%Y%m%d")}.log'
-        #         if not os.path.exists(log_path):
-        #             with open(log_path, 'w'):
-        #                 pass
+        # check for potential DDoS attacks
+        for ip, count in source_ips_count.items():
+            if count > ddos_threshold:
+                log_path = os.path.dirname(self.port_scan_log_path) + f'/ddos-{datetime.now().strftime("%Y%m%d")}.log'
+                if not os.path.exists(log_path):
+                    with open(log_path, 'w'):
+                        pass
 
-        #         with open(log_path, 'a') as ddos_log:
-        #             ddos_log.write(f"{datetime.now()} - potential DDoS attack detected from {ip} with {count} packets\n")
+                with open(log_path, 'a') as ddos_log:
+                    ddos_log.write(f"{datetime.now()} - potential DDoS attack detected from {ip} with {count} packets\n")
 
-        # self.timer_end = perf_counter()
-        # print(f"Duration for DDoS scan: {self.timer_end - self.timer_start}s")
+        self.timer_end = perf_counter()
+        print(f"Duration for DDoS scan: {self.timer_end - self.timer_start}s")
 
         # create temporary pcap for yara scan
 
@@ -346,8 +366,8 @@ class Sniffer:
             filtered_requests.append({'Method': request['Method'], 'URL': request['Full URL'], 'Data': data, 'IP Address': request['IP Address']})
         self.yara_skener.scan(filtered_requests)
 
-        yara_scan_timer_end = perf_counter()
-        print(f"Duration for YARA Packet Scan: {yara_scan_timer_end - self.timer_start}s")
+        # yara_scan_timer_end = perf_counter()
+        # print(f"Duration for YARA Packet Scan: {yara_scan_timer_end - self.timer_start}s")
 
     def extract_http_fields(self, packet):
         http_fields = {}
@@ -365,14 +385,14 @@ class Sniffer:
         If there are any, dump the packet to pcap file.
         '''
         if packet.haslayer('IP') and packet.haslayer('TCP'):
-            if packet['TCP'].dport not in [80, 443] and (packet['IP'].src not in self.all_interfaces_ip and packet['IP'].dst in self.all_interfaces_ip):
+            if packet['TCP'].dport not in self.allowed_tcp_ports and (packet['IP'].src not in self.all_interfaces_ip and packet['IP'].dst in self.all_interfaces_ip):
                 with open(self.temp_port_scan_log_path, 'a') as temp_log:
                     temp_log.write(f"{datetime.now()} - potential port scanning attack from {packet['IP'].src} to port {packet['TCP'].dport} (TCP)\n")
 
                 self.has_port_scan = True
 
         if packet.haslayer('IP') and packet.haslayer('UDP'):
-            if packet['UDP'].dport not in [53, 67, 68, 69, 123, 161, 162, 500, 514, 520] and (packet['IP'].src not in self.all_interfaces_ip and packet['IP'].dst in self.all_interfaces_ip):
+            if packet['UDP'].dport not in self.allowed_udp_ports and (packet['IP'].src not in self.all_interfaces_ip and packet['IP'].dst in self.all_interfaces_ip):
                 with open(self.temp_port_scan_log_path, 'a') as temp_log:
                     temp_log.write(f"{datetime.now()} - potential port scanning attack from {packet['IP'].src} to port {packet['UDP'].dport} (UDP)\n")
 

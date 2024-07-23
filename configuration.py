@@ -34,5 +34,7 @@ def write_default_values() -> None:
         file.write("PORT_SCAN_LOG_DIR='./logs/port_scan/'\n")
         file.write("PCAP_DIR='./pcap/'\n")
         file.write("LOG_DIR='./logs/'\n")
-        file.write("# Please use ; delimiter for each ip to be excluded.\n")
+        file.write("# Please use ; delimiter for each ip or port to be excluded.\n")
         file.write("ADDITIONAL_EXCLUDED_IPS=''\n")
+        file.write("ALLOWED_TCP_PORTS=''\n")
+        file.write("ALLOWED_UDP_PORTS=''\n")

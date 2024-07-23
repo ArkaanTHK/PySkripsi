@@ -1,0 +1,868 @@
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<a id=x tabindex=1 onbeforedeactivate=alert(1)></a><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<a id=x tabindex=1 onactivate=alert(1)></a>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<a draggable="true" ondragend="alert(1)">test</a>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<a draggable="true" ondragenter="alert(1)">test</a>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<a id=x tabindex=1 ondeactivate=alert(1)></a><input id=y autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<a draggable="true" ondragleave="alert(1)">test</a>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<a draggable="true" ondragstart="alert(1)">test</a>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<a id=x tabindex=1 onbeforeactivate=alert(1)></a>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<a draggable="true" ondrag="alert(1)">test</a>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<a id=x tabindex=1 onfocus=alert(1)></a>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<a onbeforecopy="alert(1)" contenteditable>test</a>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<a id=x tabindex=1 onfocusin=alert(1)></a>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<a onbeforecut="alert(1)" contenteditable>test</a>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<a onblur=alert(1) tabindex=1 id=x></a><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<a onbeforepaste="alert(1)" contenteditable>test</a>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<a onclick="alert(1)">test</a>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<a oncopy="alert(1)" contenteditable>test</a>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<a oncontextmenu="alert(1)">test</a>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<a oncut="alert(1)" contenteditable>test</a>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<a onfocusout=alert(1) tabindex=1 id=x></a><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<a onkeydown="alert(1)" contenteditable>test</a>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<a onkeypress="alert(1)" contenteditable>test</a>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<a onkeyup="alert(1)" contenteditable>test</a>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<a onmousedown="alert(1)">test</a>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<a onmouseenter="alert(1)">test</a>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<a onmouseleave="alert(1)">test</a>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<a onmousemove="alert(1)">test</a>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<a onmouseout="alert(1)">test</a>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<a onmouseover="alert(1)">test</a>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<a onmouseup="alert(1)">test</a>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<a onpaste="alert(1)" contenteditable>test</a>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<abbr draggable="true" ondrag="alert(1)">test</abbr>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<abbr draggable="true" ondragend="alert(1)">test</abbr>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<abbr draggable="true" ondragenter="alert(1)">test</abbr>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<abbr draggable="true" ondragleave="alert(1)">test</abbr>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<abbr draggable="true" ondragstart="alert(1)">test</abbr>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<abbr id=x tabindex=1 onactivate=alert(1)></abbr>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<abbr id=x tabindex=1 onbeforeactivate=alert(1)></abbr>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<abbr id=x tabindex=1 onbeforedeactivate=alert(1)></abbr><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<abbr id=x tabindex=1 ondeactivate=alert(1)></abbr><input id=y autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<abbr id=x tabindex=1 onfocus=alert(1)></abbr>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<abbr id=x tabindex=1 onfocusin=alert(1)></abbr>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<abbr onbeforecopy="alert(1)" contenteditable>test</abbr>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<abbr onbeforecut="alert(1)" contenteditable>test</abbr>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<abbr onbeforepaste="alert(1)" contenteditable>test</abbr>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<abbr onblur=alert(1) tabindex=1 id=x></abbr><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<abbr onclick="alert(1)">test</abbr>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<abbr oncontextmenu="alert(1)">test</abbr>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<abbr oncopy="alert(1)" contenteditable>test</abbr>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<abbr oncut="alert(1)" contenteditable>test</abbr>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<abbr ondblclick="alert(1)">test</abbr>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<abbr onfocusout=alert(1) tabindex=1 id=x></abbr><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<abbr onkeydown="alert(1)" contenteditable>test</abbr>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<abbr onkeypress="alert(1)" contenteditable>test</abbr>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<abbr onkeyup="alert(1)" contenteditable>test</abbr>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<abbr onmouseleave="alert(1)">test</abbr>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<abbr onmousemove="alert(1)">test</abbr>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<abbr onmouseout="alert(1)">test</abbr>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<abbr onmouseover="alert(1)">test</abbr>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<abbr onmouseup="alert(1)">test</abbr>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<abbr onpaste="alert(1)" contenteditable>test</abbr>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<acronym draggable="true" ondrag="alert(1)">test</acronym>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<acronym draggable="true" ondragenter="alert(1)">test</acronym>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<acronym draggable="true" ondragend="alert(1)">test</acronym>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<acronym draggable="true" ondragleave="alert(1)">test</acronym>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<acronym draggable="true" ondragstart="alert(1)">test</acronym>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<acronym id=x tabindex=1 onactivate=alert(1)></acronym>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<acronym id=x tabindex=1 onbeforeactivate=alert(1)></acronym>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<acronym id=x tabindex=1 onbeforedeactivate=alert(1)></acronym><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<acronym id=x tabindex=1 ondeactivate=alert(1)></acronym><input id=y autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<acronym id=x tabindex=1 onfocus=alert(1)></acronym>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<acronym id=x tabindex=1 onfocusin=alert(1)></acronym>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<acronym onbeforecopy="alert(1)" contenteditable>test</acronym>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<acronym onbeforepaste="alert(1)" contenteditable>test</acronym>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<acronym onbeforecut="alert(1)" contenteditable>test</acronym>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<acronym onblur=alert(1) tabindex=1 id=x></acronym><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<acronym onclick="alert(1)">test</acronym>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<acronym oncopy="alert(1)" contenteditable>test</acronym>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<acronym oncut="alert(1)" contenteditable>test</acronym>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<acronym ondblclick="alert(1)">test</acronym>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<acronym onfocusout=alert(1) tabindex=1 id=x></acronym><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<acronym onkeydown="alert(1)" contenteditable>test</acronym>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<acronym onkeypress="alert(1)" contenteditable>test</acronym>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<acronym onkeyup="alert(1)" contenteditable>test</acronym>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<acronym onmousedown="alert(1)">test</acronym>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<acronym onmouseenter="alert(1)">test</acronym>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<acronym onmouseleave="alert(1)">test</acronym>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<acronym onmouseup="alert(1)">test</acronym>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<acronym onpaste="alert(1)" contenteditable>test</acronym>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<address draggable="true" ondrag="alert(1)">test</address>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<address draggable="true" ondragend="alert(1)">test</address>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<address draggable="true" ondragenter="alert(1)">test</address>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<address draggable="true" ondragstart="alert(1)">test</address>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<address draggable="true" ondragleave="alert(1)">test</address>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<address id=x tabindex=1 onactivate=alert(1)></address>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<address id=x tabindex=1 onbeforeactivate=alert(1)></address>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<address id=x tabindex=1 onbeforedeactivate=alert(1)></address><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<address id=x tabindex=1 ondeactivate=alert(1)></address><input id=y autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<address id=x tabindex=1 onfocus=alert(1)></address>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<address id=x tabindex=1 onfocusin=alert(1)></address>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<address onbeforecopy="alert(1)" contenteditable>test</address>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<address onbeforecut="alert(1)" contenteditable>test</address>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<address onbeforepaste="alert(1)" contenteditable>test</address>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<address onblur=alert(1) tabindex=1 id=x></address><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<address onclick="alert(1)">test</address>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<address oncontextmenu="alert(1)">test</address>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<address oncopy="alert(1)" contenteditable>test</address>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<address oncut="alert(1)" contenteditable>test</address>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<address ondblclick="alert(1)">test</address>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<address onfocusout=alert(1) tabindex=1 id=x></address><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<address onkeydown="alert(1)" contenteditable>test</address>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<address onkeypress="alert(1)" contenteditable>test</address>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<address onkeyup="alert(1)" contenteditable>test</address>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<address onmouseenter="alert(1)">test</address>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<address onmousedown="alert(1)">test</address>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<address onmousemove="alert(1)">test</address>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<address onmouseleave="alert(1)">test</address>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<address onmouseout="alert(1)">test</address>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<address onmouseover="alert(1)">test</address>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<address onmouseup="alert(1)">test</address>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<address onpaste="alert(1)" contenteditable>test</address>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<applet draggable="true" ondrag="alert(1)">test</applet>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<applet draggable="true" ondragend="alert(1)">test</applet>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<applet draggable="true" ondragenter="alert(1)">test</applet>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<applet id=x tabindex=1 onactivate=alert(1)></applet>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<applet draggable="true" ondragleave="alert(1)">test</applet>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<applet draggable="true" ondragstart="alert(1)">test</applet>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<applet id=x tabindex=1 onbeforeactivate=alert(1)></applet>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<applet id=x tabindex=1 onbeforedeactivate=alert(1)></applet><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<applet id=x tabindex=1 ondeactivate=alert(1)></applet><input id=y autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<applet id=x tabindex=1 onfocus=alert(1)></applet>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<applet id=x tabindex=1 onfocusin=alert(1)></applet>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<applet onbeforecopy="alert(1)" contenteditable>test</applet>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<applet onbeforecut="alert(1)" contenteditable>test</applet>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<applet onbeforepaste="alert(1)" contenteditable>test</applet>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<applet onblur=alert(1) tabindex=1 id=x></applet><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<applet onclick="alert(1)">test</applet>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<applet oncopy="alert(1)" contenteditable>test</applet>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<applet oncontextmenu="alert(1)">test</applet>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<applet oncut="alert(1)" contenteditable>test</applet>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<applet ondblclick="alert(1)">test</applet>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<applet onkeydown="alert(1)" contenteditable>test</applet>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<applet onfocusout=alert(1) tabindex=1 id=x></applet><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<applet onkeypress="alert(1)" contenteditable>test</applet>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<applet onkeyup="alert(1)" contenteditable>test</applet>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<applet onmousedown="alert(1)">test</applet>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<applet onmouseleave="alert(1)">test</applet>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<applet onmouseenter="alert(1)">test</applet>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<applet onmousemove="alert(1)">test</applet>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<applet onmouseout="alert(1)">test</applet>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<applet onmouseover="alert(1)">test</applet>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<applet onmouseup="alert(1)">test</applet>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<applet onpaste="alert(1)" contenteditable>test</applet>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<applet onreadystatechange=alert(1)></applet>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<area draggable="true" ondrag="alert(1)">test</area>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<area draggable="true" ondragend="alert(1)">test</area>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<area draggable="true" ondragenter="alert(1)">test</area>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<area draggable="true" ondragstart="alert(1)">test</area>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<area id=x tabindex=1 onactivate=alert(1)></area>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<area id=x tabindex=1 onbeforeactivate=alert(1)></area>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<area draggable="true" ondragleave="alert(1)">test</area>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<area id=x tabindex=1 onbeforedeactivate=alert(1)></area><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<area onbeforecopy="alert(1)" contenteditable>test</area>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<area id=x tabindex=1 ondeactivate=alert(1)></area><input id=y autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<area onbeforecut="alert(1)" contenteditable>test</area>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<area onbeforepaste="alert(1)" contenteditable>test</area>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<area onblur=alert(1) tabindex=1 id=x></area><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<area onclick="alert(1)">test</area>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<area oncontextmenu="alert(1)">test</area>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<area oncopy="alert(1)" contenteditable>test</area>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<area oncut="alert(1)" contenteditable>test</area>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<area ondblclick="alert(1)">test</area>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<area onfocusout=alert(1) tabindex=1 id=x></area><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<area onkeydown="alert(1)" contenteditable>test</area>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<area onkeypress="alert(1)" contenteditable>test</area>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<area onkeyup="alert(1)" contenteditable>test</area>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<area onmousedown="alert(1)">test</area>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<area onmouseenter="alert(1)">test</area>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<area onmouseleave="alert(1)">test</area>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<area onmousemove="alert(1)">test</area>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<area onmouseout="alert(1)">test</area>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<area onmouseover="alert(1)">test</area>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<area onmouseup="alert(1)">test</area>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<area onpaste="alert(1)" contenteditable>test</area>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<article draggable="true" ondrag="alert(1)">test</article>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<article draggable="true" ondragend="alert(1)">test</article>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<article draggable="true" ondragleave="alert(1)">test</article>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<article draggable="true" ondragenter="alert(1)">test</article>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<article draggable="true" ondragstart="alert(1)">test</article>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<article id=x tabindex=1 onactivate=alert(1)></article>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<article id=x tabindex=1 onbeforeactivate=alert(1)></article>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<article id=x tabindex=1 onbeforedeactivate=alert(1)></article><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<article id=x tabindex=1 ondeactivate=alert(1)></article><input id=y autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<article id=x tabindex=1 onfocus=alert(1)></article>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<article id=x tabindex=1 onfocusin=alert(1)></article>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<article onbeforecopy="alert(1)" contenteditable>test</article>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<article onbeforecut="alert(1)" contenteditable>test</article>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<article onbeforepaste="alert(1)" contenteditable>test</article>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<article onblur=alert(1) tabindex=1 id=x></article><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<article onclick="alert(1)">test</article>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<article oncontextmenu="alert(1)">test</article>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<article oncopy="alert(1)" contenteditable>test</article>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<article oncut="alert(1)" contenteditable>test</article>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<article ondblclick="alert(1)">test</article>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<article onfocusout=alert(1) tabindex=1 id=x></article><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<article onkeydown="alert(1)" contenteditable>test</article>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<article onkeypress="alert(1)" contenteditable>test</article>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<article onkeyup="alert(1)" contenteditable>test</article>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<article onmousedown="alert(1)">test</article>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<article onmouseenter="alert(1)">test</article>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<article onmouseleave="alert(1)">test</article>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<article onmousemove="alert(1)">test</article>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<article onmouseout="alert(1)">test</article>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<article onmouseover="alert(1)">test</article>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<article onmouseup="alert(1)">test</article>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<article onpaste="alert(1)" contenteditable>test</article>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<aside draggable="true" ondrag="alert(1)">test</aside>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<aside draggable="true" ondragend="alert(1)">test</aside>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<aside draggable="true" ondragleave="alert(1)">test</aside>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<aside draggable="true" ondragenter="alert(1)">test</aside>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<aside draggable="true" ondragstart="alert(1)">test</aside>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<aside id=x tabindex=1 onactivate=alert(1)></aside>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<aside id=x tabindex=1 onbeforeactivate=alert(1)></aside>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<aside id=x tabindex=1 onbeforedeactivate=alert(1)></aside><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<aside id=x tabindex=1 ondeactivate=alert(1)></aside><input id=y autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<aside id=x tabindex=1 onfocus=alert(1)></aside>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<aside id=x tabindex=1 onfocusin=alert(1)></aside>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<aside onbeforecopy="alert(1)" contenteditable>test</aside>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<aside onbeforecut="alert(1)" contenteditable>test</aside>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<aside onbeforepaste="alert(1)" contenteditable>test</aside>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<aside onblur=alert(1) tabindex=1 id=x></aside><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<aside onclick="alert(1)">test</aside>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<aside oncontextmenu="alert(1)">test</aside>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<aside oncopy="alert(1)" contenteditable>test</aside>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<aside oncut="alert(1)" contenteditable>test</aside>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<aside ondblclick="alert(1)">test</aside>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<aside onfocusout=alert(1) tabindex=1 id=x></aside><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<aside onkeypress="alert(1)" contenteditable>test</aside>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<aside onkeydown="alert(1)" contenteditable>test</aside>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<aside onkeyup="alert(1)" contenteditable>test</aside>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<aside onmousedown="alert(1)">test</aside>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<aside onmouseenter="alert(1)">test</aside>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<aside onmouseleave="alert(1)">test</aside>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<aside onmousemove="alert(1)">test</aside>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<aside onmouseout="alert(1)">test</aside>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<aside onmouseover="alert(1)">test</aside>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<aside onmouseup="alert(1)">test</aside>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<aside onpaste="alert(1)" contenteditable>test</aside>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<audio autoplay controls onpause=alert(1)><source src="validaudio.wav" type="audio/wav"></audio>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<audio id=x controls onfocus=alert(1) id=x><source src="validaudio.wav"></audio>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<audio id=x controls onfocusin=alert(1) id=x><source src="validaudio.wav"></audio>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<audio id=x tabindex=1 onactivate=alert(1)></audio>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<audio id=x tabindex=1 onbeforeactivate=alert(1)></audio>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<audio id=x tabindex=1 onbeforedeactivate=alert(1)></audio><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<audio id=x tabindex=1 ondeactivate=alert(1)></audio><input id=y autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<audio onbeforecopy="alert(1)" contenteditable>test</audio>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<audio onblur=alert(1) tabindex=1 id=x></audio><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<audio oncanplay=alert(1)><source src="validaudio.wav" type="audio/wav"></audio>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<audio onclick="alert(1)">test</audio>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<audio oncontextmenu="alert(1)">test</audio>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<audio oncopy="alert(1)" contenteditable>test</audio>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<audio oncut="alert(1)" contenteditable>test</audio>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<audio ondblclick="alert(1)">test</audio>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<audio onfocusout=alert(1) tabindex=1 id=x></audio><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<audio onkeydown="alert(1)" contenteditable>test</audio>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<audio onkeyup="alert(1)" contenteditable>test</audio>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<audio onkeypress="alert(1)" contenteditable>test</audio>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<audio onloadeddata=alert(1)><source src="validaudio.wav" type="audio/wav"></audio>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<audio onmousedown="alert(1)">test</audio>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<audio onmouseenter="alert(1)">test</audio>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<audio onmouseleave="alert(1)">test</audio>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<audio onmousemove="alert(1)">test</audio>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<audio onmouseout="alert(1)">test</audio>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<audio onmouseover="alert(1)">test</audio>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<audio onpaste="alert(1)" contenteditable>test</audio>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<audio onmouseup="alert(1)">test</audio>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<audio src/onerror=alert(1)>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<b draggable="true" ondrag="alert(1)">test</b>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<b draggable="true" ondragend="alert(1)">test</b>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<b draggable="true" ondragleave="alert(1)">test</b>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<b draggable="true" ondragstart="alert(1)">test</b>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<b id=x tabindex=1 onactivate=alert(1)></b>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<b id=x tabindex=1 onbeforeactivate=alert(1)></b>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<b id=x tabindex=1 onbeforedeactivate=alert(1)></b><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<b id=x tabindex=1 ondeactivate=alert(1)></b><input id=y autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<b id=x tabindex=1 onfocus=alert(1)></b>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<b id=x tabindex=1 onfocusin=alert(1)></b>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<b onblur=alert(1) tabindex=1 id=x></b><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<b onclick="alert(1)">test</b>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<b oncontextmenu="alert(1)">test</b>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<b oncopy="alert(1)" contenteditable>test</b>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<b ondblclick="alert(1)">test</b>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<b oncut="alert(1)" contenteditable>test</b>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<b onfocusout=alert(1) tabindex=1 id=x></b><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<b onkeypress="alert(1)" contenteditable>test</b>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<b onkeydown="alert(1)" contenteditable>test</b>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<b onkeyup="alert(1)" contenteditable>test</b>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<b onmouseenter="alert(1)">test</b>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<b onmouseleave="alert(1)">test</b>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<b onmousemove="alert(1)">test</b>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<b onmouseout="alert(1)">test</b>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<b onmouseup="alert(1)">test</b>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<b onmouseover="alert(1)">test</b>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<b onpaste="alert(1)" contenteditable>test</b>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<base draggable="true" ondrag="alert(1)">test</base>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<base draggable="true" ondragend="alert(1)">test</base>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<base draggable="true" ondragenter="alert(1)">test</base>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<base draggable="true" ondragleave="alert(1)">test</base>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<base draggable="true" ondragstart="alert(1)">test</base>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<base id=x tabindex=1 onactivate=alert(1)></base>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<base id=x tabindex=1 onbeforeactivate=alert(1)></base>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<base id=x tabindex=1 onbeforedeactivate=alert(1)></base><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<base id=x tabindex=1 onfocus=alert(1)></base>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<base id=x tabindex=1 ondeactivate=alert(1)></base><input id=y autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<base id=x tabindex=1 onfocusin=alert(1)></base>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<base onbeforecopy="alert(1)" contenteditable>test</base>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<base onbeforecut="alert(1)" contenteditable>test</base>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<base onbeforepaste="alert(1)" contenteditable>test</base>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<base onblur=alert(1) tabindex=1 id=x></base><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<base onclick="alert(1)">test</base>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<base oncontextmenu="alert(1)">test</base>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<base oncopy="alert(1)" contenteditable>test</base>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<base oncut="alert(1)" contenteditable>test</base>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<base ondblclick="alert(1)">test</base>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<base onkeypress="alert(1)" contenteditable>test</base>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<base onmousedown="alert(1)">test</base>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<base onmouseenter="alert(1)">test</base>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<base onmouseleave="alert(1)">test</base>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<base onmousemove="alert(1)">test</base>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<base onmouseout="alert(1)">test</base>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<base onmouseover="alert(1)">test</base>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<base onmouseup="alert(1)">test</base>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<base onpaste="alert(1)" contenteditable>test</base>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<basefont draggable="true" ondrag="alert(1)">test</basefont>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<basefont draggable="true" ondragend="alert(1)">test</basefont>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<basefont draggable="true" ondragenter="alert(1)">test</basefont>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<basefont draggable="true" ondragleave="alert(1)">test</basefont>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<basefont draggable="true" ondragstart="alert(1)">test</basefont>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<basefont id=x tabindex=1 onactivate=alert(1)></basefont>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<basefont id=x tabindex=1 onbeforeactivate=alert(1)></basefont>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<basefont id=x tabindex=1 onbeforedeactivate=alert(1)></basefont><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<basefont id=x tabindex=1 ondeactivate=alert(1)></basefont><input id=y autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<basefont id=x tabindex=1 onfocus=alert(1)></basefont>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<basefont id=x tabindex=1 onfocusin=alert(1)></basefont>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<basefont onbeforecopy="alert(1)" contenteditable>test</basefont>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<basefont onbeforecut="alert(1)" contenteditable>test</basefont>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<basefont onbeforepaste="alert(1)" contenteditable>test</basefont>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<basefont onblur=alert(1) tabindex=1 id=x></basefont><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<basefont onclick="alert(1)">test</basefont>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<basefont oncontextmenu="alert(1)">test</basefont>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<basefont oncopy="alert(1)" contenteditable>test</basefont>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<basefont oncut="alert(1)" contenteditable>test</basefont>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<basefont ondblclick="alert(1)">test</basefont>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<basefont onfocusout=alert(1) tabindex=1 id=x></basefont><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<basefont onkeydown="alert(1)" contenteditable>test</basefont>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<basefont onkeypress="alert(1)" contenteditable>test</basefont>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<basefont onkeyup="alert(1)" contenteditable>test</basefont>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<basefont onmousedown="alert(1)">test</basefont>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<basefont onmouseenter="alert(1)">test</basefont>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<basefont onmousemove="alert(1)">test</basefont>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<basefont onmouseleave="alert(1)">test</basefont>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<basefont onmouseout="alert(1)">test</basefont>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<basefont onmouseover="alert(1)">test</basefont>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<basefont onmouseup="alert(1)">test</basefont>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<basefont onpaste="alert(1)" contenteditable>test</basefont>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdi draggable="true" ondrag="alert(1)">test</bdi>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdi draggable="true" ondragend="alert(1)">test</bdi>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdi draggable="true" ondragenter="alert(1)">test</bdi>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdi draggable="true" ondragleave="alert(1)">test</bdi>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdi draggable="true" ondragstart="alert(1)">test</bdi>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdi id=x tabindex=1 onactivate=alert(1)></bdi>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdi id=x tabindex=1 onbeforeactivate=alert(1)></bdi>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdi id=x tabindex=1 onbeforedeactivate=alert(1)></bdi><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdi id=x tabindex=1 ondeactivate=alert(1)></bdi><input id=y autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdi id=x tabindex=1 onfocus=alert(1)></bdi>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdi id=x tabindex=1 onfocusin=alert(1)></bdi>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdi onbeforecopy="alert(1)" contenteditable>test</bdi>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdi onbeforecut="alert(1)" contenteditable>test</bdi>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdi onbeforepaste="alert(1)" contenteditable>test</bdi>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdi onblur=alert(1) tabindex=1 id=x></bdi><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdi onclick="alert(1)">test</bdi>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdi oncontextmenu="alert(1)">test</bdi>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdi oncopy="alert(1)" contenteditable>test</bdi>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdi oncut="alert(1)" contenteditable>test</bdi>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdi ondblclick="alert(1)">test</bdi>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdi onfocusout=alert(1) tabindex=1 id=x></bdi><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdi onkeydown="alert(1)" contenteditable>test</bdi>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdi onkeypress="alert(1)" contenteditable>test</bdi>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdi onkeyup="alert(1)" contenteditable>test</bdi>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdi onmousedown="alert(1)">test</bdi>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdi onmouseenter="alert(1)">test</bdi>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdi onmouseleave="alert(1)">test</bdi>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdi onmousemove="alert(1)">test</bdi>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdi onmouseout="alert(1)">test</bdi>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdi onmouseup="alert(1)">test</bdi>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdi onmouseover="alert(1)">test</bdi>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdi onpaste="alert(1)" contenteditable>test</bdi>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdo draggable="true" ondrag="alert(1)">test</bdo>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdo draggable="true" ondragend="alert(1)">test</bdo>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdo draggable="true" ondragenter="alert(1)">test</bdo>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdo draggable="true" ondragleave="alert(1)">test</bdo>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdo draggable="true" ondragstart="alert(1)">test</bdo>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdo id=x tabindex=1 onactivate=alert(1)></bdo>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdo id=x tabindex=1 onbeforeactivate=alert(1)></bdo>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdo id=x tabindex=1 onbeforedeactivate=alert(1)></bdo><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdo id=x tabindex=1 ondeactivate=alert(1)></bdo><input id=y autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdo id=x tabindex=1 onfocus=alert(1)></bdo>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdo id=x tabindex=1 onfocusin=alert(1)></bdo>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdo onbeforecopy="alert(1)" contenteditable>test</bdo>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdo onbeforecut="alert(1)" contenteditable>test</bdo>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdo onbeforepaste="alert(1)" contenteditable>test</bdo>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdo onblur=alert(1) tabindex=1 id=x></bdo><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdo onclick="alert(1)">test</bdo>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdo oncopy="alert(1)" contenteditable>test</bdo>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdo oncontextmenu="alert(1)">test</bdo>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdo oncut="alert(1)" contenteditable>test</bdo>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdo ondblclick="alert(1)">test</bdo>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdo onfocusout=alert(1) tabindex=1 id=x></bdo><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdo onkeydown="alert(1)" contenteditable>test</bdo>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdo onkeypress="alert(1)" contenteditable>test</bdo>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdo onkeyup="alert(1)" contenteditable>test</bdo>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdo onmousedown="alert(1)">test</bdo>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdo onmouseenter="alert(1)">test</bdo>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdo onmouseleave="alert(1)">test</bdo>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdo onmousemove="alert(1)">test</bdo>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdo onmouseout="alert(1)">test</bdo>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdo onmouseover="alert(1)">test</bdo>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdo onmouseup="alert(1)">test</bdo>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bdo onpaste="alert(1)" contenteditable>test</bdo>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bgsound draggable="true" ondrag="alert(1)">test</bgsound>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bgsound draggable="true" ondragend="alert(1)">test</bgsound>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bgsound draggable="true" ondragleave="alert(1)">test</bgsound>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bgsound draggable="true" ondragstart="alert(1)">test</bgsound>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bgsound id=x tabindex=1 onactivate=alert(1)></bgsound>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bgsound draggable="true" ondragenter="alert(1)">test</bgsound>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bgsound id=x tabindex=1 onbeforeactivate=alert(1)></bgsound>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bgsound id=x tabindex=1 onbeforedeactivate=alert(1)></bgsound><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bgsound id=x tabindex=1 ondeactivate=alert(1)></bgsound><input id=y autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bgsound id=x tabindex=1 onfocus=alert(1)></bgsound>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bgsound id=x tabindex=1 onfocusin=alert(1)></bgsound>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bgsound onbeforecopy="alert(1)" contenteditable>test</bgsound>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bgsound onbeforecut="alert(1)" contenteditable>test</bgsound>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bgsound onblur=alert(1) tabindex=1 id=x></bgsound><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bgsound onbeforepaste="alert(1)" contenteditable>test</bgsound>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bgsound onclick="alert(1)">test</bgsound>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bgsound oncontextmenu="alert(1)">test</bgsound>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bgsound oncopy="alert(1)" contenteditable>test</bgsound>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bgsound oncut="alert(1)" contenteditable>test</bgsound>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bgsound ondblclick="alert(1)">test</bgsound>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bgsound onkeydown="alert(1)" contenteditable>test</bgsound>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bgsound onfocusout=alert(1) tabindex=1 id=x></bgsound><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bgsound onkeypress="alert(1)" contenteditable>test</bgsound>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bgsound onkeyup="alert(1)" contenteditable>test</bgsound>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bgsound onmousedown="alert(1)">test</bgsound>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bgsound onmouseenter="alert(1)">test</bgsound>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bgsound onmouseleave="alert(1)">test</bgsound>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bgsound onmousemove="alert(1)">test</bgsound>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bgsound onmouseover="alert(1)">test</bgsound>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<bgsound onmouseup="alert(1)">test</bgsound>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<big draggable="true" ondragend="alert(1)">test</big>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<big draggable="true" ondrag="alert(1)">test</big>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<big draggable="true" ondragenter="alert(1)">test</big>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<big draggable="true" ondragleave="alert(1)">test</big>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<big draggable="true" ondragstart="alert(1)">test</big>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<big id=x tabindex=1 onactivate=alert(1)></big>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<big id=x tabindex=1 ondeactivate=alert(1)></big><input id=y autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<big id=x tabindex=1 onfocus=alert(1)></big>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<big id=x tabindex=1 onfocusin=alert(1)></big>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<big onbeforecopy="alert(1)" contenteditable>test</big>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<big onbeforecut="alert(1)" contenteditable>test</big>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<big onblur=alert(1) tabindex=1 id=x></big><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<big onbeforepaste="alert(1)" contenteditable>test</big>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<big onclick="alert(1)">test</big>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<big oncontextmenu="alert(1)">test</big>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<big oncopy="alert(1)" contenteditable>test</big>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<big oncut="alert(1)" contenteditable>test</big>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<big ondblclick="alert(1)">test</big>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<big onfocusout=alert(1) tabindex=1 id=x></big><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<big onkeydown="alert(1)" contenteditable>test</big>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<big onkeypress="alert(1)" contenteditable>test</big>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<big onkeyup="alert(1)" contenteditable>test</big>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<big onmousedown="alert(1)">test</big>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<big onmouseenter="alert(1)">test</big>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<big onmouseleave="alert(1)">test</big>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<big onmousemove="alert(1)">test</big>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<big onmouseout="alert(1)">test</big>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<big onmouseover="alert(1)">test</big>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<big onmouseup="alert(1)">test</big>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<big onpaste="alert(1)" contenteditable>test</big>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blink draggable="true" ondrag="alert(1)">test</blink>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blink draggable="true" ondragend="alert(1)">test</blink>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blink draggable="true" ondragenter="alert(1)">test</blink>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blink draggable="true" ondragstart="alert(1)">test</blink>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blink draggable="true" ondragleave="alert(1)">test</blink>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blink id=x tabindex=1 onactivate=alert(1)></blink>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blink id=x tabindex=1 onbeforeactivate=alert(1)></blink>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blink id=x tabindex=1 onbeforedeactivate=alert(1)></blink><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blink id=x tabindex=1 ondeactivate=alert(1)></blink><input id=y autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blink id=x tabindex=1 onfocus=alert(1)></blink>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blink id=x tabindex=1 onfocusin=alert(1)></blink>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blink onbeforecopy="alert(1)" contenteditable>test</blink>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blink onbeforecut="alert(1)" contenteditable>test</blink>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blink onbeforepaste="alert(1)" contenteditable>test</blink>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blink onclick="alert(1)">test</blink>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blink onblur=alert(1) tabindex=1 id=x></blink><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blink oncontextmenu="alert(1)">test</blink>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blink oncopy="alert(1)" contenteditable>test</blink>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blink oncut="alert(1)" contenteditable>test</blink>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blink onfocusout=alert(1) tabindex=1 id=x></blink><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blink ondblclick="alert(1)">test</blink>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blink onkeydown="alert(1)" contenteditable>test</blink>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blink onkeypress="alert(1)" contenteditable>test</blink>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blink onmousemove="alert(1)">test</blink>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blink onmouseout="alert(1)">test</blink>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blink onmouseover="alert(1)">test</blink>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blink onmouseup="alert(1)">test</blink>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blink onpaste="alert(1)" contenteditable>test</blink>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blockquote draggable="true" ondrag="alert(1)">test</blockquote>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blockquote draggable="true" ondragend="alert(1)">test</blockquote>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blockquote id=x tabindex=1 onbeforeactivate=alert(1)></blockquote>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blockquote id=x tabindex=1 onbeforedeactivate=alert(1)></blockquote><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blockquote id=x tabindex=1 onfocus=alert(1)></blockquote>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blockquote onbeforecopy="alert(1)" contenteditable>test</blockquote>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blockquote id=x tabindex=1 onfocusin=alert(1)></blockquote>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blockquote oncontextmenu="alert(1)">test</blockquote>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blockquote oncopy="alert(1)" contenteditable>test</blockquote>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blockquote onfocusout=alert(1) tabindex=1 id=x></blockquote><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blockquote onkeydown="alert(1)" contenteditable>test</blockquote>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blockquote onkeypress="alert(1)" contenteditable>test</blockquote>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blockquote onkeyup="alert(1)" contenteditable>test</blockquote>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blockquote onmousemove="alert(1)">test</blockquote>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blockquote onmouseleave="alert(1)">test</blockquote>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blockquote onmouseout="alert(1)">test</blockquote>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blockquote onmouseover="alert(1)">test</blockquote>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blockquote onmouseup="alert(1)">test</blockquote>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<blockquote onpaste="alert(1)" contenteditable>test</blockquote>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<body draggable="true" ondrag="alert(1)">test</body>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<body draggable="true" ondragenter="alert(1)">test</body>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<body draggable="true" ondragend="alert(1)">test</body>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<body draggable="true" ondragleave="alert(1)">test</body>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<body onbeforeprint=alert(1)>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=<body onbeforeunload="location='javascript:alert(1)'">
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<body oncontextmenu="alert(1)">test</body>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<body oncopy="alert(1)" contenteditable>test</body>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<body ondblclick="alert(1)">test</body>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<body oncut="alert(1)" contenteditable>test</body>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=<body onerror=alert(1) onload=/>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<body onkeyup="alert(1)" contenteditable>test</body>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Detect_XSS_Payloads3, Dangerous_XSS_Payloads] | request: query=<body onload=alert(1)>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<body onmessage=alert(1)>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<body onmousedown="alert(1)">test</body>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<body onmouseenter="alert(1)">test</body>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<body onmouseleave="alert(1)">test</body>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<body onmousemove="alert(1)">test</body>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<body onmouseout="alert(1)">test</body>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<body onmouseover="alert(1)">test</body>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<body onpaste="alert(1)" contenteditable>test</body>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<body onscroll=alert(1)><div style=height:1000px></div><div id=x></div>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<body onresize="alert(1)">
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<body onpopstate=alert(1)>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [xss_multiple_payload_detection, Dangerous_XSS_Payloads] | request: query=<body onunhandledrejection=alert(1)><script>fetch('//xyz')</script>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<body onwheel=alert(1)>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<br draggable="true" ondrag="alert(1)">test</br>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<br draggable="true" ondragend="alert(1)">test</br>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<br draggable="true" ondragenter="alert(1)">test</br>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<br draggable="true" ondragleave="alert(1)">test</br>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<br draggable="true" ondragstart="alert(1)">test</br>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<br id=x tabindex=1 onactivate=alert(1)></br>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<br id=x tabindex=1 onbeforeactivate=alert(1)></br>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<br id=x tabindex=1 onbeforedeactivate=alert(1)></br><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<br id=x tabindex=1 ondeactivate=alert(1)></br><input id=y autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<br id=x tabindex=1 onfocus=alert(1)></br>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<br id=x tabindex=1 onfocusin=alert(1)></br>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<br onbeforecopy="alert(1)" contenteditable>test</br>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<br onbeforecut="alert(1)" contenteditable>test</br>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<br onbeforepaste="alert(1)" contenteditable>test</br>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<br onblur=alert(1) tabindex=1 id=x></br><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<br oncontextmenu="alert(1)">test</br>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<br onclick="alert(1)">test</br>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<br oncopy="alert(1)" contenteditable>test</br>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<br ondblclick="alert(1)">test</br>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<br oncut="alert(1)" contenteditable>test</br>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<br onfocusout=alert(1) tabindex=1 id=x></br><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<br onkeydown="alert(1)" contenteditable>test</br>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<br onkeypress="alert(1)" contenteditable>test</br>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<br onkeyup="alert(1)" contenteditable>test</br>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<br onmousedown="alert(1)">test</br>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<br onmouseenter="alert(1)">test</br>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<br onmouseleave="alert(1)">test</br>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<br onmousemove="alert(1)">test</br>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<br onmouseout="alert(1)">test</br>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<br onmouseover="alert(1)">test</br>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<br onmouseup="alert(1)">test</br>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<br onpaste="alert(1)" contenteditable>test</br>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<button autofocus onfocus=alert(1)>test</button>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<button draggable="true" ondrag="alert(1)">test</button>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<button autofocus onfocusin=alert(1)>test</button>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<button draggable="true" ondragleave="alert(1)">test</button>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<button draggable="true" ondragend="alert(1)">test</button>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<button draggable="true" ondragenter="alert(1)">test</button>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<button draggable="true" ondragstart="alert(1)">test</button>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<button id=x tabindex=1 onbeforeactivate=alert(1)></button>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<button id=x tabindex=1 onactivate=alert(1)></button>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<button id=x tabindex=1 onbeforedeactivate=alert(1)></button><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<button id=x tabindex=1 ondeactivate=alert(1)></button><input id=y autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<button onbeforecopy="alert(1)" contenteditable>test</button>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<button onbeforecut="alert(1)" contenteditable>test</button>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<button onbeforepaste="alert(1)" contenteditable>test</button>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<button onblur=alert(1) id=x></button><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<button onclick="alert(1)">test</button>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<button oncontextmenu="alert(1)">test</button>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<button oncopy="alert(1)" contenteditable>test</button>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<button ondblclick="alert(1)">test</button>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<button oncut="alert(1)" contenteditable>test</button>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<button onfocusout=alert(1) id=x></button><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<button onkeydown="alert(1)" contenteditable>test</button>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<button onkeypress="alert(1)" contenteditable>test</button>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<button onkeyup="alert(1)" contenteditable>test</button>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<button onmousedown="alert(1)">test</button>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<button onmouseenter="alert(1)">test</button>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<button onmousemove="alert(1)">test</button>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<button onmouseleave="alert(1)">test</button>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<button onmouseout="alert(1)">test</button>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<button onmouseover="alert(1)">test</button>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<button onmouseup="alert(1)">test</button>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<button onpaste="alert(1)" contenteditable>test</button>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<canvas draggable="true" ondrag="alert(1)">test</canvas>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<canvas draggable="true" ondragend="alert(1)">test</canvas>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<canvas draggable="true" ondragenter="alert(1)">test</canvas>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<canvas draggable="true" ondragleave="alert(1)">test</canvas>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<canvas draggable="true" ondragstart="alert(1)">test</canvas>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<canvas id=x tabindex=1 onactivate=alert(1)></canvas>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<canvas id=x tabindex=1 onbeforeactivate=alert(1)></canvas>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<canvas id=x tabindex=1 onbeforedeactivate=alert(1)></canvas><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<canvas id=x tabindex=1 ondeactivate=alert(1)></canvas><input id=y autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<canvas id=x tabindex=1 onfocus=alert(1)></canvas>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<canvas id=x tabindex=1 onfocusin=alert(1)></canvas>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<canvas onbeforecopy="alert(1)" contenteditable>test</canvas>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<canvas onbeforecut="alert(1)" contenteditable>test</canvas>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<canvas onbeforepaste="alert(1)" contenteditable>test</canvas>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<canvas onblur=alert(1) tabindex=1 id=x></canvas><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<canvas onclick="alert(1)">test</canvas>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<canvas oncontextmenu="alert(1)">test</canvas>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<canvas oncopy="alert(1)" contenteditable>test</canvas>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<canvas oncut="alert(1)" contenteditable>test</canvas>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<canvas ondblclick="alert(1)">test</canvas>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<canvas onfocusout=alert(1) tabindex=1 id=x></canvas><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<canvas onkeydown="alert(1)" contenteditable>test</canvas>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<canvas onkeypress="alert(1)" contenteditable>test</canvas>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<canvas onkeyup="alert(1)" contenteditable>test</canvas>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<canvas onmousedown="alert(1)">test</canvas>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<canvas onmouseenter="alert(1)">test</canvas>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<canvas onmousemove="alert(1)">test</canvas>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<canvas onmouseleave="alert(1)">test</canvas>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<canvas onmouseout="alert(1)">test</canvas>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<canvas onmouseover="alert(1)">test</canvas>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<canvas onmouseup="alert(1)">test</canvas>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<canvas onpaste="alert(1)" contenteditable>test</canvas>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<caption draggable="true" ondrag="alert(1)">test</caption>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<caption draggable="true" ondragend="alert(1)">test</caption>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<caption draggable="true" ondragenter="alert(1)">test</caption>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<caption draggable="true" ondragleave="alert(1)">test</caption>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<caption draggable="true" ondragstart="alert(1)">test</caption>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<caption id=x tabindex=1 onactivate=alert(1)></caption>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<caption id=x tabindex=1 onbeforeactivate=alert(1)></caption>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<caption id=x tabindex=1 onbeforedeactivate=alert(1)></caption><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<caption id=x tabindex=1 ondeactivate=alert(1)></caption><input id=y autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<caption id=x tabindex=1 onfocus=alert(1)></caption>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<caption onbeforecopy="alert(1)" contenteditable>test</caption>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<caption id=x tabindex=1 onfocusin=alert(1)></caption>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<caption onbeforecut="alert(1)" contenteditable>test</caption>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<caption onbeforepaste="alert(1)" contenteditable>test</caption>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<caption onblur=alert(1) tabindex=1 id=x></caption><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<caption onclick="alert(1)">test</caption>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<caption oncontextmenu="alert(1)">test</caption>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<caption oncopy="alert(1)" contenteditable>test</caption>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<caption oncut="alert(1)" contenteditable>test</caption>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<caption ondblclick="alert(1)">test</caption>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<caption onfocusout=alert(1) tabindex=1 id=x></caption><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<caption onkeydown="alert(1)" contenteditable>test</caption>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<caption onkeypress="alert(1)" contenteditable>test</caption>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<caption onkeyup="alert(1)" contenteditable>test</caption>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<caption onmousedown="alert(1)">test</caption>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<caption onmouseenter="alert(1)">test</caption>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<caption onmousemove="alert(1)">test</caption>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<caption onmouseleave="alert(1)">test</caption>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<caption onmouseout="alert(1)">test</caption>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<caption onmouseover="alert(1)">test</caption>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<caption onmouseup="alert(1)">test</caption>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<caption onpaste="alert(1)" contenteditable>test</caption>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<center draggable="true" ondrag="alert(1)">test</center>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<center draggable="true" ondragend="alert(1)">test</center>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<center draggable="true" ondragenter="alert(1)">test</center>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<center draggable="true" ondragleave="alert(1)">test</center>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<center draggable="true" ondragstart="alert(1)">test</center>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<center id=x tabindex=1 onactivate=alert(1)></center>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<center id=x tabindex=1 onbeforeactivate=alert(1)></center>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<center id=x tabindex=1 onbeforedeactivate=alert(1)></center><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<center id=x tabindex=1 ondeactivate=alert(1)></center><input id=y autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<center id=x tabindex=1 onfocus=alert(1)></center>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<center id=x tabindex=1 onfocusin=alert(1)></center>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<center onbeforecopy="alert(1)" contenteditable>test</center>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<center onbeforepaste="alert(1)" contenteditable>test</center>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<center onblur=alert(1) tabindex=1 id=x></center><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<center oncontextmenu="alert(1)">test</center>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<center oncopy="alert(1)" contenteditable>test</center>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<center oncut="alert(1)" contenteditable>test</center>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<center ondblclick="alert(1)">test</center>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<center onfocusout=alert(1) tabindex=1 id=x></center><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<center onkeydown="alert(1)" contenteditable>test</center>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<center onkeypress="alert(1)" contenteditable>test</center>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<center onkeyup="alert(1)" contenteditable>test</center>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<center onmousedown="alert(1)">test</center>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<center onmouseleave="alert(1)">test</center>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<center onmouseenter="alert(1)">test</center>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<center onmousemove="alert(1)">test</center>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<center onmouseout="alert(1)">test</center>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<center onmouseover="alert(1)">test</center>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<center onmouseup="alert(1)">test</center>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<center onpaste="alert(1)" contenteditable>test</center>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<cite draggable="true" ondrag="alert(1)">test</cite>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<cite draggable="true" ondragend="alert(1)">test</cite>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<cite draggable="true" ondragenter="alert(1)">test</cite>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<cite draggable="true" ondragleave="alert(1)">test</cite>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<cite draggable="true" ondragstart="alert(1)">test</cite>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<cite id=x tabindex=1 onactivate=alert(1)></cite>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<cite id=x tabindex=1 onbeforeactivate=alert(1)></cite>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<cite id=x tabindex=1 onbeforedeactivate=alert(1)></cite><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<cite id=x tabindex=1 ondeactivate=alert(1)></cite><input id=y autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<cite id=x tabindex=1 onfocus=alert(1)></cite>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<cite id=x tabindex=1 onfocusin=alert(1)></cite>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<cite onbeforecopy="alert(1)" contenteditable>test</cite>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<cite onbeforepaste="alert(1)" contenteditable>test</cite>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<cite onbeforecut="alert(1)" contenteditable>test</cite>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<cite onblur=alert(1) tabindex=1 id=x></cite><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<cite onclick="alert(1)">test</cite>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<cite oncontextmenu="alert(1)">test</cite>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<cite oncopy="alert(1)" contenteditable>test</cite>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<cite oncut="alert(1)" contenteditable>test</cite>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<cite ondblclick="alert(1)">test</cite>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<cite onfocusout=alert(1) tabindex=1 id=x></cite><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<cite onkeydown="alert(1)" contenteditable>test</cite>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<cite onkeypress="alert(1)" contenteditable>test</cite>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<cite onkeyup="alert(1)" contenteditable>test</cite>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<cite onmousedown="alert(1)">test</cite>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<cite onmouseenter="alert(1)">test</cite>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<cite onmouseleave="alert(1)">test</cite>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<cite onmousemove="alert(1)">test</cite>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<cite onmouseout="alert(1)">test</cite>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<cite onmouseover="alert(1)">test</cite>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<cite onmouseup="alert(1)">test</cite>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<cite onpaste="alert(1)" contenteditable>test</cite>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<code draggable="true" ondrag="alert(1)">test</code>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<code draggable="true" ondragend="alert(1)">test</code>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<code draggable="true" ondragenter="alert(1)">test</code>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<code draggable="true" ondragleave="alert(1)">test</code>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<code draggable="true" ondragstart="alert(1)">test</code>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<code id=x tabindex=1 onactivate=alert(1)></code>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<code id=x tabindex=1 onbeforeactivate=alert(1)></code>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<code id=x tabindex=1 onbeforedeactivate=alert(1)></code><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<code id=x tabindex=1 ondeactivate=alert(1)></code><input id=y autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<code onbeforecut="alert(1)" contenteditable>test</code>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<code onbeforepaste="alert(1)" contenteditable>test</code>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<code onblur=alert(1) tabindex=1 id=x></code><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<code onclick="alert(1)">test</code>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<code ondblclick="alert(1)">test</code>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<code onfocusout=alert(1) tabindex=1 id=x></code><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<code onkeydown="alert(1)" contenteditable>test</code>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<code onkeyup="alert(1)" contenteditable>test</code>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<code onmousedown="alert(1)">test</code>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<code onmouseenter="alert(1)">test</code>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<code onmouseleave="alert(1)">test</code>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<code onmousemove="alert(1)">test</code>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<code onmouseout="alert(1)">test</code>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<code onmouseover="alert(1)">test</code>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<code onmouseup="alert(1)">test</code>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<code onpaste="alert(1)" contenteditable>test</code>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<col draggable="true" ondrag="alert(1)">test</col>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<col draggable="true" ondragend="alert(1)">test</col>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<col draggable="true" ondragenter="alert(1)">test</col>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<col draggable="true" ondragleave="alert(1)">test</col>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<col draggable="true" ondragstart="alert(1)">test</col>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<col id=x tabindex=1 onactivate=alert(1)></col>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<col id=x tabindex=1 onbeforedeactivate=alert(1)></col><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<col id=x tabindex=1 ondeactivate=alert(1)></col><input id=y autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<col id=x tabindex=1 onfocus=alert(1)></col>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<col id=x tabindex=1 onfocusin=alert(1)></col>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<col onbeforepaste="alert(1)" contenteditable>test</col>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<col onblur=alert(1) tabindex=1 id=x></col><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<col oncopy="alert(1)" contenteditable>test</col>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<col oncut="alert(1)" contenteditable>test</col>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<col onmousemove="alert(1)">test</col>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<col onmouseout="alert(1)">test</col>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<col onmouseover="alert(1)">test</col>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<colgroup draggable="true" ondragend="alert(1)">test</colgroup>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<colgroup draggable="true" ondragstart="alert(1)">test</colgroup>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<colgroup id=x tabindex=1 onactivate=alert(1)></colgroup>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<colgroup id=x tabindex=1 onbeforeactivate=alert(1)></colgroup>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<colgroup id=x tabindex=1 onbeforedeactivate=alert(1)></colgroup><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<colgroup id=x tabindex=1 onfocus=alert(1)></colgroup>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<colgroup id=x tabindex=1 ondeactivate=alert(1)></colgroup><input id=y autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<colgroup id=x tabindex=1 onfocusin=alert(1)></colgroup>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<colgroup onbeforecut="alert(1)" contenteditable>test</colgroup>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<colgroup onbeforecopy="alert(1)" contenteditable>test</colgroup>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<colgroup onblur=alert(1) tabindex=1 id=x></colgroup><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<colgroup onclick="alert(1)">test</colgroup>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<colgroup oncontextmenu="alert(1)">test</colgroup>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<colgroup oncopy="alert(1)" contenteditable>test</colgroup>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<colgroup oncut="alert(1)" contenteditable>test</colgroup>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<colgroup ondblclick="alert(1)">test</colgroup>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<colgroup onfocusout=alert(1) tabindex=1 id=x></colgroup><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<colgroup onmouseenter="alert(1)">test</colgroup>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<colgroup onmouseleave="alert(1)">test</colgroup>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<colgroup onmousemove="alert(1)">test</colgroup>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<colgroup onmouseout="alert(1)">test</colgroup>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<colgroup onmouseover="alert(1)">test</colgroup>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<colgroup onmouseup="alert(1)">test</colgroup>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<colgroup onpaste="alert(1)" contenteditable>test</colgroup>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<command draggable="true" ondrag="alert(1)">test</command>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<command draggable="true" ondragend="alert(1)">test</command>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<command draggable="true" ondragenter="alert(1)">test</command>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<command onfocusout=alert(1) tabindex=1 id=x></command><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<command ondblclick="alert(1)">test</command>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<command onmouseout="alert(1)">test</command>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<command onmouseover="alert(1)">test</command>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<command onmouseup="alert(1)">test</command>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<command onpaste="alert(1)" contenteditable>test</command>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<content draggable="true" ondrag="alert(1)">test</content>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<content draggable="true" ondragstart="alert(1)">test</content>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<content id=x tabindex=1 onbeforeactivate=alert(1)></content>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<content id=x tabindex=1 onbeforedeactivate=alert(1)></content><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<content id=x tabindex=1 ondeactivate=alert(1)></content><input id=y autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<content id=x tabindex=1 onfocus=alert(1)></content>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<content onbeforecopy="alert(1)" contenteditable>test</content>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<content id=x tabindex=1 onfocusin=alert(1)></content>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<content onbeforecut="alert(1)" contenteditable>test</content>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<content onbeforepaste="alert(1)" contenteditable>test</content>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<content onclick="alert(1)">test</content>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<content onblur=alert(1) tabindex=1 id=x></content><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<content oncontextmenu="alert(1)">test</content>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<content oncopy="alert(1)" contenteditable>test</content>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<content oncut="alert(1)" contenteditable>test</content>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<content onfocusout=alert(1) tabindex=1 id=x></content><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<content ondblclick="alert(1)">test</content>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<content onkeydown="alert(1)" contenteditable>test</content>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<content onkeypress="alert(1)" contenteditable>test</content>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<content onkeyup="alert(1)" contenteditable>test</content>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<content onmousedown="alert(1)">test</content>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<content onmouseenter="alert(1)">test</content>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<content onmouseleave="alert(1)">test</content>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<content onmousemove="alert(1)">test</content>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<content onmouseout="alert(1)">test</content>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<content onmouseover="alert(1)">test</content>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<content onmouseup="alert(1)">test</content>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<content onpaste="alert(1)" contenteditable>test</content>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<data draggable="true" ondrag="alert(1)">test</data>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<data draggable="true" ondragend="alert(1)">test</data>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<data draggable="true" ondragenter="alert(1)">test</data>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<data draggable="true" ondragleave="alert(1)">test</data>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<data draggable="true" ondragstart="alert(1)">test</data>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<data id=x tabindex=1 onactivate=alert(1)></data>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<data id=x tabindex=1 onbeforeactivate=alert(1)></data>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<data id=x tabindex=1 onbeforedeactivate=alert(1)></data><input autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<data id=x tabindex=1 ondeactivate=alert(1)></data><input id=y autofocus>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<data id=x tabindex=1 onfocus=alert(1)></data>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<data onbeforecopy="alert(1)" contenteditable>test</data>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<data id=x tabindex=1 onfocusin=alert(1)></data>
+Tue Jun 25 00:29:32 2024 - From: 192.168.193.130 | Match: [Dangerous_XSS_Payloads] | request: query=<data onbeforecut="alert(1)" contenteditable>test</data>
